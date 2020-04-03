@@ -25,7 +25,7 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 
 .wrap header .hd_middle { padding: 10px 0; height: 150px; position: relative;  }
 .wrap header .hd_middle #M_logo { display: none; } 
-.wrap header .hd_middle .logo { float: left; margin-top: 30px; }
+.wrap header .hd_middle .logo { float: left; margin-top: 3%;}
 .wrap header .hd_middle::after { content: ''; display: block; overflow: hidden; clear: both; }
 
 .wrap header .hd_middle .slide_btn { position: absolute; right: 0; bottom: 0; }
@@ -60,19 +60,18 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 }
 .wrap header .hd_middle .formArea::after { content: ''; display: block; overflow: hidden; clear: both; }
 .wrap header .hd_middle .formArea #sch_submit span { display: none; }
-
 .wrap header .hd_middle .menu_slide .slide_btn a img { border: 1px solid #ddd; padding: 5px; }
 .wrap header .hd_middle .menu_slide .sub_slide { margin-top: 15px; }
 
 .wrap header .hd_bottom { background-color: #e5e5e5; position: relative; } 
 .wrap header .hd_bottom .hdb_menu div .f_color { color: #ec6d86;}
 .wrap header .hd_bottom .menu_btn 
-{ background:#c51315; color:#fff; width:50px; height:40px; border:0; vertical-align:top; font-size:18px;}
-
-.wrap header .hd_bottom .hdb_menu {  height: 40px; }
-.wrap header .hd_bottom .hdb_menu div { float: left; line-height: 40px; padding: 0 25px; font-size: 14px;  font-weight: 600;  }
-.wrap header .hd_bottom .hdb_menu div:first-child { padding-right: 0; padding-left: 0; }
-.wrap header .hd_bottom .hdb_menu::after { content: ''; display: block; overflow: hidden; clear: both; }
+{ background:#c51315; color:#fff; width:50px; height:40px; border:0; vertical-align:top; font-size:18px; }
+.wrap header .hd_bottom .hdb_menu div { float: left; }
+.wrap header .hd_bottom .hdb_menu::after{ content: ''; display: block; overflow: hidden; clear: both; }
+.wrap header .hd_bottom .hdb_menu .tmenu_slide { width: 95%; margin-left: 10px; }
+.wrap header .hd_bottom .hdb_menu .tmenu_slide .hm_slide { line-height: 41px; font-size: 15px; }
+.wrap header .hd_bottom .hdb_menu .tmenu_slide .m_width { width: 75px !important;  }
 
 /*header_left menu*/
 .wrap .hd_wrap { position: fixed;  width: 100%; height: 100%; top: 0; z-index: 2000;  display: none; }
@@ -165,24 +164,8 @@ input::placeholder { font-size: 80%; }
     background-color: #d1d1d1;
     border-radius: 23px;
 }
-.slick-dots {
-    position: absolute;
-    bottom: 10px;
-    list-style: none;
-    display: block;
-    text-align: center;
-    padding: 0;
-    width: 100%;
-}
-.slick-dots li {
-    position: relative;
-    display: inline-block;
-    height: 20px;
-    width: 17px;
-    margin: 0 5px;
-    padding: 0;
-    cursor: pointer;
-}
+.slick-dots { position: absolute; bottom: 10px; list-style: none; display: block; text-align: center; padding: 0; width: 100%; }
+.slick-dots li { position: relative; display: inline-block; height: 20px; width: 17px; margin: 0 5px; padding: 0; cursor: pointer; }
 .slick-dots li button:hover { background-color: #9c9c9c; }
 .main_slide div img { width: 100%; height: auto; }
 .main_slide .slick-dots .slick-active button { background-color: #9c9c9c; }
@@ -197,6 +180,8 @@ input::placeholder { font-size: 80%; }
 .ctm_slide img { width: 50px; height: 50px; display: block; margin: 5px auto 10px auto; }
 .ctm_slide span { font-size: 13px; }
 .ctm_slide:hover { background-color:#ec6d88; color: #ffffff; }
+
+/* .ctm_slide .slick-slide .slick-current .slick-active { width: 149px; } */
 
 /* 호버했을 때 화이트이미지가 나와야함 */
 .ctm_slide:hover img:first-child { display: none; }
@@ -215,44 +200,66 @@ input::placeholder { font-size: 80%; }
 
 /* footer PC버전 (768이상부터만 적용됩니다.) */
 .wrap footer { overflow: hidden; background-color: #f8f8f8; padding-bottom: 3%; }
-.wrap footer .ft_top { width: 100%; margin: 20px auto; border-bottom: 1px solid #ddd; padding-bottom: 15px; }
-.wrap footer .ft_top div { float: left; padding-right: 31px; font-size: 13px; }
-.wrap footer .ft_top div a { color: #555; font-weight: 600; }
-.wrap footer .ft_top::after { content: ''; display: block; overflow: hidden; clear: both; }
+.wrap footer .ft_wrap .ft_top { width: 100%; margin: 20px auto; border-bottom: 1px solid #ddd; padding-bottom: 15px; }
+.wrap footer .ft_wrap .ft_top div .pr0 { padding-right: 0; }
+/* .wrap foot.ft_wrap er .ft_top .ft_slide { float: left; padding-right: 31px; font-size: 13px; } */
+.wrap footer .ft_wrap .ft_top::after { content: ''; display: block; overflow: hidden; clear: both; }
+.wrap footer .ft_wrap .ft_top .ft_slide::after { content: ''; display: block; overflow: hidden; clear: both; }
+.wrap footer .ft_wrap .ft_top .ft_slide > div { float: left; padding-right: 2%; }
+.wrap footer .ft_wrap .ft_top .ft_slide > div:first-child { margin-left: 4%; }
+.wrap footer .ft_wrap .ft_top .ft_slide a { color: #555; font-size: 13px; }
+
+
 
 .wrap footer .ft_middle { margin-top: 3%; }
 .wrap footer .ft_middle .ft_left { float: left; margin-right: 10px; }
 .wrap footer .ft_middle::after { content: ''; display: block; overflow: hidden; clear: both; }
 
-.wrap footer .ft_center { float:left; }
+.wrap footer .ft_center { float:left; padding-top: 1%; }
 .wrap footer .ft_center ul li:not(.ft_bottom) { font-size: 14px; color: #777; margin-bottom: 1%; }
 .wrap footer .ft_middle .ft_right { float: right; }
 .wrap footer .ft_middle .ft_right ul li { margin-top: 2%; }
 .wrap footer .ft_center .ft_bottom { margin-top: 3%; font-size: 13px; }
 .wrap footer .ft_middle .ft_right ul li:first-child,.wrap footer .ft_middle .ft_right ul li:nth-child(2) { margin-bottom: 8%; }
-.wrap footer .ft_middle .ft_right ul li:nth-child(3),.wrap footer .ft_middle .ft_right ul li:last-child { margin-bottom: 4%; font-size: 13px; }
+.wrap footer .ft_middle .ft_right ul li:nth-child(3),.wrap footer .ft_middle .ft_right ul li:last-child { margin-bottom: 6%; font-size: 13px; }
 
-/* footer 모바일 버전일 때 추가해주세요 767이하부터 적용함 */
-/* .wrap footer .ft_wrap .ft_middle .ft_mobile_menu a { background-color: white; border: 1px solid #ddd; padding: 5px 15px; font-size: 13px; }
-.wrap footer .ft_middle .ft_left { float: none; }
-.wrap footer .ft_center { text-align: center; float: none; }
-.wrap footer .ft_center ul li { font-size: 12px; }
-.wrap footer .ft_center ul li strong { font-weight: 600; }
-.wrap footer .ft_center .ft_bottom { margin-top: 0; } */
 
-/* 모바일 버전일 때 하단 메뉴 css 추가해주세요 */
-/* .wrap footer .ft_wrap .ft_botmenu { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #eee; border-top: 1px solid #ddd; }
-.wrap footer .ft_wrap .ft_botmenu ul li { float: left; width: 20%; text-align: center; }
-.wrap footer .ft_wrap .ft_botmenu ul::after { content: ''; display: block; overflow: hidden; clear: both; }
-.wrap footer .ft_wrap .ft_botmenu ul li a { display: block; padding: 10px 0 15px 0; font-size: 20px; color: #555; } */
 
 
 /*media*/
-@media (max-width:992px) {
+@media (max-width:1220px) {
+.wrap header .hd_middle { width: 90%; }
+.dw_1200px { width: 90%; }
+.wrap header .hd_middle .menu_slide .sub_slide { width: 70%; margin-top: 20%; }
+.wrap header .hd_middle .logo { margin-top: 4%; }
+.wrap header .hd_middle .logo img { width: 80%; }
+.wrap header .hd_middle .formArea #sch_str { width: 260px; }
+.wrap header .hd_middle .formArea #sch_submit { width: 40px; }
 
 }
 
 @media (max-width:768px) {
+.wrap header .header_slide { display: none; }
+
+
+
+
+/* footer 모바일 버전일 때 추가된 html의 css입니다. */
+.wrap footer .ft_wrap .ft_middle .ft_mobile_menu a { background-color: white; border: 1px solid #ddd; padding: 5px 15px; font-size: 13px; }
+.wrap footer .ft_middle .ft_left { float: none; }
+.wrap footer .ft_center { text-align: center; float: none; }
+.wrap footer .ft_center ul li { font-size: 12px; }
+.wrap footer .ft_center ul li strong { font-weight: 600; }
+.wrap footer .ft_center .ft_bottom { margin-top: 0; }
+
+/* 모바일 버전일 때 추가된 하단 메뉴html의 css입니다. */
+.wrap footer .ft_wrap .ft_botmenu { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #eee; border-top: 1px solid #ddd; }
+.wrap footer .ft_wrap .ft_botmenu ul li { float: left; width: 20%; text-align: center; }
+.wrap footer .ft_wrap .ft_botmenu ul::after { content: ''; display: block; overflow: hidden; clear: both; }
+.wrap footer .ft_wrap .ft_botmenu ul li a { display: block; padding: 10px 0 15px 0; font-size: 20px; color: #555; }
+}
+
+@media (max-width:500px) {
 
 }
 
