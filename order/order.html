@@ -4,33 +4,56 @@
         <meta charset="UTF-8">
 
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.2.0/css/all.css">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="http//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http//use.fontawesome.com/releases/v5.2.0/css/all.css">
+		<link rel="stylesheet" href="http//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		
 
         <style>
             body {padding:0; margin:0;}
             div {overflow:hidden;}
             input[type=text] {padding:1%;}
+            ul {list-style:none;}
+            ul, li {margin:0px;padding:0px;}
 
             .header {width:100%; min-height:50px; background-color: aquamarine;}
             .content {width:1200px; min-height:50px;  margin:0 auto;}
+            .content .ob_top, .ob_middle {padding-bottom:3%;}
+
+            .content .order_box .obt_list {width:100%;}
+
+            .board_list {width:100%;}
+            .board_list .bl_top {float:left; width:100%; border-bottom:1px solid #dddddd;}
+            .board_list .bl_top div {padding:1.5% 0;}
+            .board_list .bl_top .blb_subject {float:left; font-weight:bold;}
+
+            .board_list .bl_list {float:left; width:100%; border-bottom:1px solid #dddddd;}
+            .board_list .bl_list div {padding:1% 0;}
+            .board_list .bl_list .blb_box {float:left;}
+            .board_list .bl_list .blb_box ul li {float:left;}
+            .board_list .bl_list .blb_box ul li:first-child {padding-right:2%;}            
+            .board_list .bl_list .blb_box ul li img {width:100px;}
+
             .content .order_box {padding:2% 0;}
             .content .order_box .obm_left .obm_box_subject {border-bottom:1px solid #dddddd; margin-bottom:2%;}
             .content .order_box .obm_left .obm_i_box {padding:1.5% 0;}
             .content .order_box .obm_left .obm_i_box div {float:left;}
             .content .order_box .obm_left .obm_i_box .obmib_subject {width:15%; font-size:15px; font-weight:bold;}
             .content .order_box .obm_left .obm_i_box .obmib_input {width:85%;}
-
-            .content .order_box .obm_right {background-color: burlywood;}
+            .content .order_box .obm_left .obm_i_box .obmib_input input[type=text], .obmib_input .zip_btn {float:left;}
+            .content .order_box .obm_left .obm_i_box .obmib_input .zip_btn {margin-left:2%; padding:1% 2.5%; background-color: cadetblue; color:#ffffff;}
+            .content .order_box .obm_right {background-color: #cb87de;}
             .content .order_box .obm_right .obmr_box {padding:2% 0; margin-bottom:2%; }
-            .content .order_box .obm_right .obmr_box .obmrb_box {width:100%; background-color: #ffffff; padding:1% 0; border-bottom:1px solid #dddddd;}
+            .content .order_box .obm_right .obmr_box .obmrb_box {width:100%; background-color: #ffffff; padding:1.5% 1%; border-bottom:1px solid #dddddd;}
             .content .order_box .obm_right .obmr_box .obmrb_box .obmrbb_subject {float:left;}
             .content .order_box .obm_right .obmr_box .obmrb_box .obmrbb_price {float:right;}
+            .content .order_box .obm_right .obmrs_pay_info, .obmrs_card_info {display:none;}
+            .content .order_box .obm_right .obmrs_pay_info, .obmrs_card_info div {padding:1% 0;}
 
             .content .order_box .obm_right .obmr_select {width:100%;}
-            .content .order_box .obm_right .obmr_select div {float:left; width:50%;}
+            .content .order_box .obm_right .obmr_select div {float:left; width:50%; font-size:20px; font-weight:bold; color:#ffffff; text-align: center; padding:1.5% 0; cursor:pointer;}
+            .content .order_box .obm_right .obmr_select .obmrs_pay {background-color: chocolate;}
+            .content .order_box .obm_right .obmr_select .obmrs_card {background-color: greenyellow;}
             .content .order_box .obm_right .obmr_btn_box {width:100%; margin-bottom:3%;}
             .content .order_box .obm_right .obmr_btn_box input {float:left; width:50%; padding:3% 0; text-align: center; font-size:20px; font-weight:bold; border:none; color:#ffffff;}
             .content .order_box .obm_right .obmr_btn_box input[type=submit] {background-color: crimson;}
@@ -38,13 +61,21 @@
 
             .footer {width:100%; min-height:50px; background-color: blueviolet;}
 
-            /*common css*/
-            .text_s_20b {font-size:20px; font-weight:bold;}
-            .text_s_20 {font-size:20px;}
 
-            .text_s_17b {font-size:17px; font-weight:bold;}
-            .text_s_17 {font-size:17px;}
+            /**
+             * common css
+            */
 
+           /*basic*/
+           .cursor {cursor:pointer;}
+
+            /*font-size*/
+            .font_s_20b {font-size:20px; font-weight:bold;}
+            .font_s_20 {font-size:20px;}
+            .font_s_17b {font-size:17px; font-weight:bold;}
+            .font_s_17 {font-size:17px;}
+
+            /*input width*/
             .i_w_98 {width:98%;}
             .i_w_90 {width:90%;}
             .i_w_70 {width:70%;}
@@ -53,10 +84,57 @@
             .i_w_20 {width:20%;}
             .i_w_10 {width:10%;}
 
+            /*text align*/
+            .text_a_l {text-align: left;}
+            .text_a_c {text-align: center;}
+            .text_a_r {text-align: right;}
+
+            /*board list box width common*/
+            .board_list .bl_w_50 {width:50%;}
+            .board_list .bl_w_40 {width:40%;}
+            .board_list .bl_w_35 {width:35%;}
+            .board_list .bl_w_30 {width:30%;}
+            .board_list .bl_w_25 {width:25%;}
+            .board_list .bl_w_20 {width:20%;}
+            .board_list .bl_w_15 {width:15%;}
+            .board_list .bl_w_10 {width:10%;}
+            .board_list .bl_w_5 {width:5%;}            
+
             @media screen and (max-width: 768px) {
                 .content {width:100%;}
+                .board_list .bl_top  { width:20% !important; }
+                .board_list .bl_top > div {width:100%; padding: 0 !important;}
+                
+                .board_list .bl_list  { width:80% !important;}
+                .board_list .bl_list > div {width:100%; text-align: left !important; padding: 0 !important;}
             }            
         </style>
+
+        <script>
+            $("document").ready(function(){
+
+                //zip_btn
+                $(".zip_btn").click(function(){
+                    //COMMON.kakao.addrss call
+                    alert("주소찾기 넣어주세요.");
+                });
+
+                //obmrs_pay button click
+                $(".obmrs_pay").click(function(){
+                    $(".obmrs_card").css("color", "#ffffff");
+                    $(this).css("color", "red");
+                    $(".obmrs_card_info").hide();
+                    $(".obmrs_pay_info").show();
+                });
+
+                $(".obmrs_card").click(function(){
+                    $(".obmrs_pay").css("color", "#ffffff");
+                    $(this).css("color", "red");
+                    $(".obmrs_pay_info").hide();
+                    $(".obmrs_card_info").show();
+                });
+            });
+        </script>
     </head>
  
     <body>
@@ -66,13 +144,44 @@
 
             <div class="order_box">
                 <div class="ob_top">
-                    <div class="obt_subject text_s_20b">
+                    <div class="obt_subject font_s_20b">
                         주문서 작성
                     </div>
 
                     <div class="obt_list">
-                        
+                        <div class="board_list">
+                            <div class="bl_top">
+                                <div class="bl_w_40 blb_subject text_a_c">상품명</div>
+                                <div class="bl_w_5 blb_subject text_a_c">수량</div>
+                                <div class="bl_w_15 blb_subject text_a_c">판매가</div>
+                                <div class="bl_w_15 blb_subject text_a_c">소계</div>
+                                <div class="bl_w_15 blb_subject text_a_c">포인트</div>
+                                <div class="bl_w_10 blb_subject text_a_c">배송비</div>
+                            </div>
+
+                            <div class="bl_list">
+                                <div class="bl_w_40 blb_box">
+                                    <ul>
+                                        <li><img src="http://oksusumarket.co.kr/uploads/images/product/320/20200204172128_1580804488767756.jpg" alt=""></li>
+                                        <li>zzzzzzzzzzzz</li>
+                                    </ul>
+                                </div>
+                                <div class="bl_w_5 blb_box text_a_c">1</div>
+                                <div class="bl_w_15 blb_box text_a_r">100,000</div>
+                                <div class="bl_w_15 blb_box text_a_r">100,000</div>
+                                <div class="bl_w_15 blb_box text_a_r">0</div>
+                                <div class="bl_w_10 blb_box text_a_c">무료배송</div>
+                            </div>
+
+
+                        </div>
                     </div>
+
+                    <style>
+
+
+                        
+                    </style>
                 </div>
 
                 <div class="ob_middle">
@@ -81,7 +190,7 @@
 
                         <div class="obm_left col-sm-8">
                             <div class="obm_order_box">
-                                <div class="obm_box_subject text_s_17b">
+                                <div class="obm_box_subject font_s_17b">
                                     주문하시는 분
                                 </div>
 
@@ -109,78 +218,80 @@
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">우편번호</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_20" value = "" placeholder="우편번호 입력하세요.">
+                                        <input type="text" name="mb_zip" id="mb_zip" class = "i_w_20" value = "" placeholder="우편번호 입력하세요.">
+                                        <div class="zip_btn cursor">주소찾기</div>
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">기본주소</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_98" value = "" placeholder="기본주소 입력하세요.">
+                                        <input type="text" name="mb_addr_1" id="mb_addr_1" class = "i_w_98" value = "" placeholder="기본주소 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">상세주소</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_98" value = "" placeholder="상세주소 입력하세요.">
+                                        <input type="text" name="mb_addr_2" id="mb_addr_2" class = "i_w_98" value = "" placeholder="상세주소 입력하세요.">
                                     </div>
                                 </div>
 
                             </div>
 
                             <div class="obm_receiver_box">
-                                <div class="obm_box_subject text_s_17b">
+                                <div class="obm_box_subject font_s_17b">
                                     받으시는 분
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">배송지 선택</div>
                                     <div class="obmib_input">
-                                        <input type="radio" name="" id=""> 주문자와 동일 &nbsp;&nbsp;&nbsp;
-                                        <input type="radio" name="" id=""> 최근 배송지
+                                        <input type="radio" name="" id=""> 주문자와 동일<!--  &nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="" id=""> 최근 배송지 -->
                                     </div>
                                 </div>
                                 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">이름</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_50" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="r_name" id="r_name" class = "i_w_50" value = "" placeholder="이름 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">전화번호</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_50" value = "" placeholder="전화번호 입력하세요.">
+                                        <input type="text" name="r_tel" id="r_tel" class = "i_w_50" value = "" placeholder="전화번호 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">핸드폰</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_50" value = "" placeholder="핸드폰 입력하세요.">
+                                        <input type="text" name="r_mobile" id="r_mobile" class = "i_w_50" value = "" placeholder="핸드폰 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">우편번호</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_20" value = "" placeholder="우편번호 입력하세요.">
+                                        <input type="text" name="r_zip" id="r_zip" class = "i_w_20" value = "" placeholder="우편번호 입력하세요.">
+                                        <div class="zip_btn cursor">주소찾기</div>
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">기본주소</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_98" value = "" placeholder="기본주소 입력하세요.">
+                                        <input type="text" name="r_addr_1" id="r_addr_1" class = "i_w_98" value = "" placeholder="기본주소 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">상세주소</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_98" value = "" placeholder="상세주소 입력하세요.">
+                                        <input type="text" name="r_addr_2" id="r_addr_2" class = "i_w_98" value = "" placeholder="상세주소 입력하세요.">
                                     </div>
                                 </div>
 
@@ -226,14 +337,14 @@
                                 </div>
                             </div>
 
-                            <div class="text_s_17b">결제수단</div>
+                            <div class="font_s_17b">결제수단</div>
 
                             <div class="obmr_select">
                                 <div class="obmrs_pay">
                                     <i class="fab fa-cc-visa"></i>
                                     무통장입금
                                 </div>
-                                <div class="obmrs_신용카드">
+                                <div class="obmrs_card">
                                     <i class="fab fa-cc-visa"></i>
                                     신용카드
                                 </div>
@@ -258,10 +369,48 @@
                                 </div>
                             </div>
 
-                            <div class="obmr_box">
+                            <div class="obmr_box obmrs_pay_info">
                                 <div class="obmrb_box">
-                                    <div class="obmrbb_subject">최대 사용 가능 포인트</div>
-                                    <div class="obmrbb_price"> 10,0000,000 P</div>
+                                    <div class="obmrbb_subject">기업은행 : 167-141774-01-019</div>
+                                    <div class="obmrbb_subject">예금주명 주식회사 예원엠앤디</div>
+                                    <div class="obmrbb_subject"> 입금자 명 : <input type="text" class = "i_w_50" name="" id=""></div>
+                                </div>
+                            </div>
+
+                            <div class="obmr_box obmrs_card_info">
+                                <div class="obmrb_box">
+                                    <div class="obmrbb_subject">
+                                        카드번호
+                                        <input type="number" class = "i_w_20" name="" id="">
+                                        <input type="number" class = "i_w_20" name="" id="">
+                                        <input type="number" class = "i_w_20" name="" id="">
+                                        <input type="number" class = "i_w_20" name="" id="">
+                                    </div>
+                                    <div class="obmrbb_subject">
+                                        유효기간
+                                        <input type="number" class = "i_w_20" name="" id="">
+                                        <input type="number" class = "i_w_20" name="" id="">
+                                    </div>
+                                    <div class="obmrbb_subject">
+                                        할부기간
+                                        <select name="install_period" id="">
+                                            <option value="">선택하세요.</option>
+                                            <option value="01">1개월</option>
+                                            <option value="02">2개월</option>
+                                            <option value="03">3개월</option>
+                                            <option value="04">4개월</option>
+                                            <option value="05">5개월</option>
+
+                                            <option value="06">6개월</option>
+                                            <option value="07">7개월</option>
+                                            <option value="08">8개월</option>
+                                            <option value="09">9개월</option>
+                                            <option value="10">10개월</option>
+
+                                            <option value="11">11개월</option>
+                                            <option value="12">12개월</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 

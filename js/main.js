@@ -1,5 +1,9 @@
  $(document).ready(function() {
 
+    /**
+     * @param string
+     * @brief header 왼쪽 small 슬라이드 동작.
+     */
     $('.header_slide').slick({
         slide: 'div',		
         infinite : true, 	
@@ -18,7 +22,10 @@
     });
 
 
-        
+    /**
+     * @param string
+     * @brief 메인슬라이드 동작.
+     */
     $('.main_slide').slick({
         slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
         infinite : true, 	//무한 반복 옵션	 
@@ -28,7 +35,7 @@
         arrows : true, 		// 옆으로 이동하는 화살표 표시 여부
         dots : true, 		// 스크롤바 아래 점으로 페이지네이션 여부
         autoplay : true,			// 자동 스크롤 사용 여부
-        autoplaySpeed : 5000, 		// 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
+        autoplaySpeed : 4000, 		// 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
         prevArrow : "<i class='slick-prev fas fa-chevron-left'></i>",		// 이전 화살표 모양 설정
         nextArrow : "<i class='slick-prev fas fa-chevron-right'></i>",		// 다음 화살표 모양 설정
         dotsClass : "slick-dots", 	//아래 나오는 페이지네이션(점) css class 지정
@@ -38,21 +45,84 @@
                 breakpoint: 992, //화면 사이즈 960px
                 settings: {
                     //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
-                    slidesToShow:1
+                    slidesToShow:1,
+                    slidesToScroll : 1
                 } 
             },
             { 
                 breakpoint: 768, //화면 사이즈 768px
                 settings: {	
                     //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
-                    slidesToShow:1
+                    slidesToShow:1,
+                    slidesToScroll : 1
+                } 
+            },
+            { 
+                breakpoint: 400, //화면 사이즈 768px
+                settings: {	
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow:1,
+                    slidesToScroll : 1
                 } 
             }
         ]
 
     });
+    
+    /**
+     * @param string
+     * @brief 메인슬라이드 resize 동작.
+     */
+    $(window).resize(function() {
+        $('.main_slide').slick('resize');
+    });
+    
+    /**
+     * @param string
+     * @brief header 메뉴버튼 클릭시 header left 메뉴 펼쳐짐. 
+     */
+    $('.menu_btn,.hdl_close').click( function(){
+    
+        $(".hd_wrap").toggle();
+    });
+
+    /**
+     * @param string
+     * @brief header left 탭메뉴 탭동작.
+     */
+    $('.tablinks').each( function(){
+        $(this).click( function(){
+            
+            $(".tablinks").removeClass("f_active");
+            $(this).addClass("f_active");
+            
+        
+            $(".tabcontent").removeClass("tab_active");
+            $(".tabcontent").css("display", "none");
+        
+            var chk = $(this).attr("tab_name");
+            $('#' + chk).css("display", "block");
+        });
+    
+    });
+
+    /**
+     * @param string
+     * @brief aside right top, bottom 버튼 동작.
+     */
+    $(".top_btn").click(function () {
+        $('html').animate({
+            scrollTop: 0
+        }, 500);
+    });
+
+    $(".bottom_btn").click(function () {
+        $('html').animate({
+            scrollTop: ($('footer').offset().top)
+        }, 500);
+    });
 
 
 
 
-});
+}); 

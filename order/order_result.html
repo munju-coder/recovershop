@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="http//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http//use.fontawesome.com/releases/v5.2.0/css/all.css">
+		
+		
+
+        <style>
+            body {padding:0; margin:0;}
+            div {overflow:hidden;}
+            input[type=text] {padding:1%;}
+            ul {list-style:none;}
+            ul, li {margin:0px;padding:0px;}
+
+            .header {width:100%; min-height:50px; background-color: aquamarine;}
+            .content {width:1200px; min-height:50px;  margin:0 auto;}
+            .content .ob_top, .ob_middle {padding-bottom:3%;}
+
+            .content .order_box .obt_list {width:100%;}
+
+            .board_list {width:100%;}
+            .board_list .bl_top {float:left; width:100%; border-bottom:1px solid #dddddd;}
+            .board_list .bl_top div {padding:1.5% 0;}
+            .board_list .bl_top .blb_subject {float:left; font-weight:bold;}
+
+            .board_list .bl_list {float:left; width:100%; border-bottom:1px solid #dddddd;}
+            .board_list .bl_list div {padding:1% 0;}
+            .board_list .bl_list .blb_box {float:left;}
+            .board_list .bl_list .blb_box ul li {float:left;}
+            .board_list .bl_list .blb_box ul li:first-child {padding-right:2%;}            
+            .board_list .bl_list .blb_box ul li img {width:100px;}
+
+            .content .order_box {padding:2% 0;}
+            .content .order_box .obm_left .obm_box_subject {border-bottom:1px solid #dddddd; margin-bottom:2%;}
+            .content .order_box .obm_left .obm_i_box {padding:1.5% 0;}
+            .content .order_box .obm_left .obm_i_box div {float:left;}
+            .content .order_box .obm_left .obm_i_box .obmib_subject {width:15%; font-size:15px; font-weight:bold;}
+            .content .order_box .obm_left .obm_i_box .obmib_input {width:85%;}
+            .content .order_box .obm_left .obm_i_box .obmib_input input[type=text], .obmib_input .zip_btn {float:left;}
+            .content .order_box .obm_left .obm_i_box .obmib_input .zip_btn {margin-left:2%; padding:1% 2.5%; background-color: cadetblue; color:#ffffff;}
+            .content .order_box .obm_right {background-color: #cb87de;}
+            .content .order_box .obm_right .obmr_box {padding:2% 0; margin-bottom:2%; }
+            .content .order_box .obm_right .obmr_box .obmrb_box {width:100%; background-color: #ffffff; padding:1.5% 1%; border-bottom:1px solid #dddddd;}
+            .content .order_box .obm_right .obmr_box .obmrb_box .obmrbb_subject {float:left;}
+            .content .order_box .obm_right .obmr_box .obmrb_box .obmrbb_price {float:right;}
+            .content .order_box .obm_right .obmrs_pay_info, .obmrs_card_info {display:none;}
+            .content .order_box .obm_right .obmrs_pay_info, .obmrs_card_info div {padding:1% 0;}
+
+            .content .order_box .obm_right .obmr_select {width:100%;}
+            .content .order_box .obm_right .obmr_select div {float:left; width:50%; font-size:20px; font-weight:bold; color:#ffffff; text-align: center; padding:1.5% 0; cursor:pointer;}
+            .content .order_box .obm_right .obmr_select .obmrs_pay {background-color: chocolate;}
+            .content .order_box .obm_right .obmr_select .obmrs_card {background-color: greenyellow;}
+            .content .order_box .obm_right .obmr_btn_box {width:100%; margin-bottom:3%;}
+            .content .order_box .obm_right .obmr_btn_box input {float:left; width:50%; padding:3% 0; text-align: center; font-size:20px; font-weight:bold; border:none; color:#ffffff;}
+            .content .order_box .obm_right .obmr_btn_box input[type=submit] {background-color: crimson;}
+            .content .order_box .obm_right .obmr_btn_box input[type=button] {background-color: rebeccapurple;}            
+
+            .footer {width:100%; min-height:50px; background-color: blueviolet;}
+
+
+            /**
+             * common css
+            */
+
+           /*basic*/
+           .cursor {cursor:pointer;}
+
+            /*font-size*/
+            .font_s_20b {font-size:20px; font-weight:bold;}
+            .font_s_20 {font-size:20px;}
+            .font_s_17b {font-size:17px; font-weight:bold;}
+            .font_s_17 {font-size:17px;}
+
+            /*input width*/
+            .i_w_98 {width:98%;}
+            .i_w_90 {width:90%;}
+            .i_w_70 {width:70%;}
+            .i_w_50 {width:50%;}
+            .i_w_30 {width:30%;}
+            .i_w_20 {width:20%;}
+            .i_w_10 {width:10%;}
+
+            /*text align*/
+            .text_a_l {text-align: left;}
+            .text_a_c {text-align: center;}
+            .text_a_r {text-align: right;}
+
+            /*board list box width common*/
+            .board_list .bl_w_50 {width:50%;}
+            .board_list .bl_w_40 {width:40%;}
+            .board_list .bl_w_35 {width:35%;}
+            .board_list .bl_w_30 {width:30%;}
+            .board_list .bl_w_25 {width:25%;}
+            .board_list .bl_w_20 {width:20%;}
+            .board_list .bl_w_15 {width:15%;}
+            .board_list .bl_w_10 {width:10%;}
+            .board_list .bl_w_5 {width:5%;}            
+
+            @media screen and (max-width: 768px) {
+                .content {width:100%;}
+                .board_list .bl_top  { width:20% !important; }
+                .board_list .bl_top > div {width:100%; padding: 0 !important;}
+                
+                .board_list .bl_list  { width:80% !important;}
+                .board_list .bl_list > div {width:100%; text-align: left !important; padding: 0 !important;}
+            }            
+        </style>
+
+        <script>
+            $("document").ready(function(){
+
+                //zip_btn
+                $(".zip_btn").click(function(){
+                    //COMMON.kakao.addrss call
+                    alert("주소찾기 넣어주세요.");
+                });
+
+                //obmrs_pay button click
+                $(".obmrs_pay").click(function(){
+                    $(".obmrs_card").css("color", "#ffffff");
+                    $(this).css("color", "red");
+                    $(".obmrs_card_info").hide();
+                    $(".obmrs_pay_info").show();
+                });
+
+                $(".obmrs_card").click(function(){
+                    $(".obmrs_pay").css("color", "#ffffff");
+                    $(this).css("color", "red");
+                    $(".obmrs_pay_info").hide();
+                    $(".obmrs_card_info").show();
+                });
+            });
+        </script>
+    </head>
+ 
+    <body>
+        <div class="header">header</div>
+
+        <div class="content">
+
+            <div class="order_box">
+                <div class="ob_top">
+                    <div class="obt_subject font_s_20b">
+                        주문 상세 내역
+                    </div>
+
+                    <div class="obt_list">
+                        <div class="board_list">
+                            <div class="bl_top">
+                                <div class="bl_w_40 blb_subject text_a_c">상품명</div>
+                                <div class="bl_w_5 blb_subject text_a_c">수량</div>
+                                <div class="bl_w_15 blb_subject text_a_c">판매가</div>
+                                <div class="bl_w_15 blb_subject text_a_c">소계</div>
+                                <div class="bl_w_15 blb_subject text_a_c">포인트</div>
+                                <div class="bl_w_10 blb_subject text_a_c">배송비</div>
+                            </div>
+
+                            <div class="bl_list">
+                                <div class="bl_w_40 blb_box">
+                                    <ul>
+                                        <li><img src="http://oksusumarket.co.kr/uploads/images/product/320/20200204172128_1580804488767756.jpg" alt=""></li>
+                                        <li>zzzzzzzzzzzz</li>
+                                    </ul>
+                                </div>
+                                <div class="bl_w_5 blb_box text_a_c">1</div>
+                                <div class="bl_w_15 blb_box text_a_r">100,000</div>
+                                <div class="bl_w_15 blb_box text_a_r">100,000</div>
+                                <div class="bl_w_15 blb_box text_a_r">0</div>
+                                <div class="bl_w_10 blb_box text_a_c">무료배송</div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <style>
+
+
+                        
+                    </style>
+                </div>
+
+                <div class="ob_middle">
+
+                    <div class="obm_left col-sm-8">
+                        <div class="obm_order_box">
+                            <div class="obm_box_subject font_s_17b">
+                                결제 정보
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">주문번호</div>
+                                <div class="obmib_input">2019031020065070</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">주문일시</div>
+                                <div class="obmib_input">2019-03-10 20:09:19</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">결제방식</div>
+                                <div class="obmib_input">무통장</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">결제금액</div>
+                                <div class="obmib_input">아직 입금되지 않았거나 입금정보를 입력하지 못하였습니다.</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">입금자명</div>
+                                <div class="obmib_input">조문주</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">입금계좌</div>
+                                <div class="obmib_input">조문기업은행 : 167-141774-01-019 예금주명 주식회사 예원엠앤디주</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">포인트사용</div>
+                                <div class="obmib_input">0 P</div>
+                            </div>
+                        </div>
+
+                        <div class="obm_order_box">
+                            <div class="obm_box_subject font_s_17b">
+                                주문자 정보
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">이름</div>
+                                <div class="obmib_input">조문주</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">전화번호</div>
+                                <div class="obmib_input">2019031020065070</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">핸드폰</div>
+                                <div class="obmib_input"> 	010-0000-0000</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">주소</div>
+                                <div class="obmib_input">(14303) 경기 광명시 오리로619번길 11, 2층 (하안동)</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">E-mail</div>
+                                <div class="obmib_input">test2@test.co.kr</div>
+                            </div>                            
+                        </div>
+
+                        <div class="obm_order_box">
+                            <div class="obm_box_subject font_s_17b">
+                                배송 정보
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">이름</div>
+                                <div class="obmib_input">조문주</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">전화번호</div>
+                                <div class="obmib_input">2019031020065070</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">핸드폰</div>
+                                <div class="obmib_input"> 	010-0000-0000</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">주소</div>
+                                <div class="obmib_input">(14303) 경기 광명시 오리로619번길 11, 2층 (하안동)</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">E-mail</div>
+                                <div class="obmib_input">test2@test.co.kr</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">요청사항</div>
+                                <div class="obmib_input">ㅋㅋㅋ</div>
+                            </div>
+
+                            <div class="obm_i_box">
+                                <div class="obmib_subject">택배</div>
+                                <div class="obmib_input">배송 정보를 입력하지 않았습니다.</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="obm_right col-sm-4">
+                        <div class="obmr_box">
+                            <div class="obmrb_box">
+                                <div class="obmrbb_subject">주문총액</div>
+                                <div class="obmrbb_price">100,000 원</div>
+                            </div>
+
+                            <div class="obmrb_box">
+                                <div class="obmrbb_subject">총계</div>
+                                <div class="obmrbb_price">100,000 원</div>
+                            </div>
+
+                            <div class="obmrb_box">
+                                <div class="obmrbb_subject">적립포인트</div>
+                                <div class="obmrbb_price">5,000 원</div>
+                            </div>
+                        </div>
+
+                        <div class="obmr_box">
+                            <div class="obmrb_box">
+                                <div class="obmrbb_subject">총 구매액</div>
+                                <div class="obmrbb_price"> 0 원</div>
+                            </div>
+
+                            <div class="obmrb_box">
+                                <div class="obmrbb_subject">미결제액</div>
+                                <div class="obmrbb_price"> 0 원</div>
+                            </div>
+
+                            <div class="obmrb_box">
+                                <div class="obmrbb_subject">결제액</div>
+                                <div class="obmrbb_price"> 0 원</div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="ob_bottom"></div>
+            </div>
+
+        </div>
+
+        <div class="footer"></div>
+    </body>
+</html>

@@ -16,8 +16,8 @@
         <!--slick slide-->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-        <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+        <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
         <!--style sheet-->
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/main.css">
@@ -34,10 +34,10 @@
                 <!--hd_top 모바일버전에서는 삭제해주세요-->
                 <div class="hd_top">
                     <ul>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i> 장바구니</a></li>
-                        <li><a href="#">마이페이지</a></li>
-                        <li><a href="#">회원가입</a></li>
-                        <li><a href="#">로그인</a></li>
+                        <li><a class="fw_600" href="#"><i class="fas fa-shopping-cart"></i> 장바구니</a></li>
+                        <li><a class="fw_600" href="#">마이페이지</a></li>
+                        <li><a class="fw_600" href="#">회원가입</a></li>
+                        <li><a class="fw_600" href="#">로그인</a></li>
 
                         <!--모바일버전에서 추가 
                         <li><a href="#">정보수정</a></li>
@@ -74,73 +74,102 @@
                 </div>
 
                 <div class="hd_bottom">
-                    <div class="hdb_menu dw_1200px">
-                        <div>
+                    <div class="hdb_menu dw_1200px menu_slide">
+                        <div class="ft_600">
                             <button type="button" class="menu_btn">
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                             </button>
                         </div>
 
-                        <div><a href="#">더블포인트</a></div>
-                        <div><a class="f_color" href="#">핫딜</a></div>
-                        <div><a href="#">무료배송데이</a></div>
-                        <div><a href="#">선착순이벤트</a></div>
-                        <div><a class="f_color" href="#">리커버랭킹</a></div>
-                        <div><a href="#">건강검진이벤트</a></div>
-                        <div><a href="#">공동구매</a></div>
+                        <div><a class="hm_slide" href="#">더블포인트</a></div>
+                        <div><a class="hm_slide" class="f_color" href="#">핫딜</a></div>
+                        <div><a class="hm_slide" href="#">무료배송데이</a></div>
+                        <div><a class="hm_slide" href="#">선착순이벤트</a></div>
+                        <div><a class="hm_slide" class="f_color" href="#">리커버랭킹</a></div>
+                        <div><a class="hm_slide" href="#">건강검진이벤트</a></div>
+                        <div><a class="hm_slide" href="#">공동구매</a></div>
                     </div>                    
                 </div>
+
+                <script>
+                    $(document).ready( function(){
+
+                      
+                    });
+                </script>
 
             </header>
             <!--} header-->
 
-            <!--{ aside (mobile menu)-->
+            <!--{ aside menu-->
             <aside class="hd_left">
                 <div class="hd_wrap">
+                    
                     <div class="hdl_close cursor">
                         <i class="fas fa-times"></i>
                     </div>
 
                     <div class="hdl_login t_center">
                         <div class="hdl_lwrap">
-                            <form name="foutlogin" action="http://recovershop.co.kr/bbs/login_check.php" onsubmit="return fhead_submit(this);" method="post" autocomplete="off">
-                            <fieldset>
+                            <form name="" action="">
+                            <!-- 로그인 전 적용해야할 폼 -->
+                            <fieldset class="before_logoin">
                                 <input type="text" name="mb_id" id="ol_id" placeholder="아이디" required="" maxlength="20">
                                 <input type="password" id="ol_pw" name="mb_password" placeholder="비밀번호" required="" maxlength="20">
 
                                 <div id="al_wrap">
-                                    <ul class="cursor">
-                                        <li><input type="checkbox" id="auto_login" name="auto_login" value="1"></li>
-                                        <li>자동로그인</li>
-                                    </ul>
+                                    <input type="checkbox" id="auto_login" name="auto_login" value="1">
+                                    <label for="auto_login" id="auto_login_label">자동로그인</label>
                                 </div>
                                 
-                                <input type="submit" id="ol_submit" value="로그인" class="btn_submit">
+                                <input type="submit" id="ol_submit" value="로그인" class="btn_submit ft_600">
                             </fieldset>
+
+                            <!-- 로그인 후 적용해야할 폼
+                            <div class="after_login">
+                                <div class="al_top">
+                                    <div class="alt_right">
+                                        <img src="images/no_profile.gif" alt="profile image">
+                                        <a href=""><i class="fa fa-cog" aria-hidden="true"></i></a>
+                                    </div>
+
+                                    <div class="alt_left">
+                                        <p>테스트28님</p>
+                                        <button type="text">로그아웃</button>
+                                    </div>
+                                </div>
+
+                                <div class="al_bottom">
+                                    <div class="alb_right">
+                                        <div class="c">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </div>
+                                        <span>0</span>
+                                    </div>
+
+                                    <div class="alb_left">
+                                        <div class="">
+                                            <i class="fa fa-database" aria-hidden="true"></i>
+                                        </div>
+                                        <span>1,015,564</span>
+                                    </div>
+                                </div>
+                            </div> -->
+
                             </form>
                         </div>
                     </div>
-                    
-                    <script>
-                        $(document).ready( function(){
-
-                            $('.menu_btn,.hdl_close').click( function(){
-
-                                $(".hd_wrap").toggle();
-                            });
-                        });
-                    </script>
 
                     <div class="hdl_twrap">
                         <div class="hdl_tab">
                             <ul>
-                                <li class="tablinks cursor active" tab_name="hdl_tab1">카테고리</li>
-                                <li class="tablinks cursor" tab_name="hdl_tab2">마이페이지</li>
-                                <li class="tablinks cursor" tab_name="hdl_tab3">오늘본상품</li>
+                                <li class="tablinks cursor f_active" tab_name="tab1"><a href="#">카테고리</a></li>
+                                <li class="tablinks cursor" tab_name="tab2"><a href="#">마이페이지</a></li>
+                                <li class="tablinks cursor" tab_name="tab3"><a href="#">오늘본상품</a></li>
                             </ul>
                         </div>
                     
-                        <div class="tabcontent" id="hdl_tab1">
+                        <div class="tabcontent tab_active" id="tab1">
                             <ul>
                                 <li>패션</li>
                                 <li>뷰티</li>
@@ -154,7 +183,7 @@
                             </ul>
                         </div>
                     
-                        <div class="tabcontent" id="hdl_tab2">
+                        <div class="tabcontent" id="tab2">
                             <ul>
                                 <li>마이페이지</li>
                                 <li>주문내역</li>
@@ -167,93 +196,17 @@
                             </ul>
                         </div>
                     
-                        <div class="tabcontent" id="hdl_tab3">
-                            <p>없음</p>
+                        <div class="tabcontent" id="tab3">
+                            <ul>
+                                <li>없음</li>
+                            </ul>
                         </div>
                 
                     </div>    
                 </div>
 
-                <style>
-                    
-
-                    /*header_left menu*/
-                    .wrap .hd_wrap { position: fixed;  width: 100%; height: 100%; top: 0; z-index: 2000; }
-
-                     .wrap .hd_wrap {
-                        width: 260px;
-                        height: 100%;
-                        background-color: #fff;
-                        padding: 15px;
-                        position: absolute;
-                        z-index: 2000;
-                        -webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4);
-                        -moz-box-shadow: 0 0 5px rgba(55,55,5,0.4);
-                        box-shadow: 0 0 5px rgba(55,55,5,0.4);
-                    } 
-
-                    .wrap .hd_left .hdl_login {
-                        position: relative;
-                        margin: 0 0 10px;
-                        padding: 10px 0;
-                    }
-                    .wrap .hd_left .hdl_close { position: absolute; top: 0; background-color: #000; padding: 10px 15px; left: 100%;}
-                    .wrap .hd_left .hdl_close i { color: white; font-size: 20px; }
-                    .hdl_lwrap form fieldset input { width: 100%; height: 30px; border: 1px solid #ddd; }
-                    .hdl_lwrap form fieldset input:first-child { margin-bottom: 10px; }
-
-                    .hd_left .hdl_login #al_wrap ul li { float: left; width: 30%; }
-                    .hd_left .hdl_login #al_wrap ul::after { content: ''; display: block; overflow: hidden; clear: both; }
-                    .hd_left .hdl_login #al_wrap ul li:last-child { font-size: 13px; margin-top: 11px; }
-                    #ol_submit {
-                        width: 100%;
-                        height: 40px;
-                        background-color: #333;
-                        font-weight: bold;
-                        font-size: 14px;
-                        color: white;
-                    }
-                    .hdl_tab ul li { float: left; font-size: 12px; margin-right: 30px; margin-bottom: 10px; color: rgb(104, 104, 104); }
-                    .hdl_tab ul { margin-bottom: 20px;  border-bottom: 1px solid #ddd; }
-                    .hdl_tab ul li:last-child { margin-right: 0; }
-                    .hdl_tab ul::after { content: ''; display: block; overflow: hidden; clear: both; }
-                    .hdl_tab ul li:hover { color: #000; }
-                    
-                    .hdl_tab ul li.active { color: red; }
-                    .tab_active { display: block; }
-
-
-
-    
-    
-    
-                </style>
-                <script>
-                    $(document).ready( function(){
-
-                        $('.tablinks').each( function(){
-                            $(this).click( function(){
-                                
-                                $(".tablinks").removeClass("bg_active");
-                                $(this).addClass("bg_active");
-
-                                $(".tabcontent").removeClass("tab_active");
-                                $(".tabcontent").css("display", "none");
-
-                                var chk = $(this).attr("tab_name");
-                                $('#' + chk).css("display", "block");
-                                //jquery ui data 참고
-
-                            });
-                    
-                        });
-                    });
-                </script>
-
             </aside>
-            <!--} aside (mobile menu)-->
-
-            
+            <!--} aside menu-->
 
             <!--{ aside fixed top,bottom btn-->
             <aside class="side_menu">
@@ -288,878 +241,318 @@
                 <div class="ct_menu">
                     <div class="ctm_wrap">
                         <div class="ctm_slide">
-                            <img src="images/m-iconmenu-01.png" alt="icon_color img">
-                            <img src="images/m-iconmenu-001.png" alt="icon_transparent img">
-                            <span>패션</span>
+                            <img src="images/ca_id_01.png" alt="icon_color img">
+                            <img src="images/ca_id_01_1.png" alt="icon_transparent img">
+                            <span class="ft_600">패션</span>
                         </div>
 
-                        <div>
-                            <img src="images/m-iconmenu-02.png" alt="icon_color img">
-                            <img src="images/m-iconmenu-002.png" alt="icon_transparent img">
-                            <span>뷰티</span>
-                        </div>
-
-                        <div>
-                            <img src="images/m-iconmenu-03.png" alt="icon_color img">
-                            <img src="images/m-iconmenu-003.png" alt="icon_transparent img">
-                            <span>생활가전</span>
-                        </div>
-
-                        <div>
+                        <div class="ctm_slide">
                             <img src="images/m-iconmenu-04.png" alt="icon_color img">
                             <img src="images/m-iconmenu-004.png" alt="icon_transparent img">
-                            <span>식품</span>
+                            <span class="ft_600">뷰티</span>
+                        </div>
+
+                        <div class="ctm_slide">
+                            <img src="images/m-iconmenu-03.png" alt="icon_color img">
+                            <img src="images/m-iconmenu-003.png" alt="icon_transparent img">
+                            <span class="ft_600">생활가전</span>
+                        </div>
+
+                        <div class="ctm_slide">
+                            <img src="images/m-iconmenu-01.png" alt="icon_color img">
+                            <img src="images/m-iconmenu-001.png" alt="icon_transparent img">
+                            <span class="ft_600">식품</span>
                         </div>
                         
-                        <div>
-                            <img src="images/m-iconmenu-05.png" alt="icon_color img">
-                            <img src="images/m-iconmenu-005.png" alt="icon_transparent img">
-                            <span>건강</span>
-                        </div>
-                        
-                        <div>
+                        <div class="ctm_slide">
                             <img src="images/m-iconmenu-06.png" alt="icon_color img">
                             <img src="images/m-iconmenu-006.png" alt="icon_transparent img">
-                            <span>인테리어</span>
+                            <span class="ft_600">건강</span>
                         </div>
                         
-                        <div>
+                        <div class="ctm_slide">
+                            <img src="images/m-iconmenu-05.png" alt="icon_color img">
+                            <img src="images/m-iconmenu-005.png" alt="icon_transparent img">
+                            <span class="ft_600">인테리어</span>
+                        </div>
+                        
+                        <div class="ctm_slide">
                             <img src="images/m-iconmenu-07.png" alt="icon_color img">
                             <img src="images/m-iconmenu-007.png" alt="icon_transparent img">
-                            <span>잡화</span>
+                            <span class="ft_600">잡화</span>
                         </div>
                         
-                        <div>
-                            <img src="images/m-iconmenu-08.png" alt="icon_color img">
-                            <img src="images/m-iconmenu-008.png" alt="icon_transparent img">
-                            <span>생활용품</span>
+                        <div class="ctm_slide">
+                            <img src="images/ca_id_08.png" alt="icon_color img">
+                            <img src="images/ca_id_08_8.png" alt="icon_transparent img">
+                            <span class="ft_600">생활용품</span>
                         </div>
 
                     </div>
                 </div>
                 <!--} contents slide menu-->
 
-                <!--{ contents product 시작 -->
-                <!--{ contents sct_Area-->   
+                <!--{ contents product(1) 시작 -->  
                 <div class="ct_inner">
-                    <section class="sct_wrap">
+                    <section class="product_wrap">
                         <div class="title_text">
                             <h2 class="main-title">
                                 <a href="http://recovershop.co.kr/shop/listtype3.php?type=9">스켈리도 20 S/S</a>
                             </h2>
                         </div>
-                        
-                        <ul class="sct_Area">
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
+
+                        <ul class="product_box">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class="thumbnail">
                                         <img src="images/pr_img1.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
+                                <div class="pbl_subject">
                                     <a href="#">SJWT1237M 300g</a>
                                 </div>
-                                <div class="sct_cost">49,000 원</div>
-                                <div class="sct_point"><span>10,384 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img2.jpg" alt="SJWT4378M 코쿤타이트 SRX 웜업 기모 긴바지[히트기어]" width="230" height="230">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class="thumbnail">
+                                        <img src="images/pr_img2.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
+                                <div class="pbl_subject">
                                     <a href="#">SJWT1237M 300g</a>
                                 </div>
-                                <div class="sct_cost">49,000 원</div>
-                                <div class="sct_point"><span>10,384 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class="thumbnail">
                                         <img src="images/pr_img3.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
+                                <div class="pbl_subject">
                                     <a href="#">SJWT1237M 300g</a>
                                 </div>
-                                <div class="sct_cost">49,000 원</div>
-                                <div class="sct_point"><span>10,384 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class="thumbnail">
                                         <img src="images/pr_img4.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
+                                <div class="pbl_subject">
                                     <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">49,000 원</div>
-                                <div class="sct_point"><span>10,384 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class="thumbnail">
                                         <img src="images/pr_img5.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
+                                <div class="pbl_subject">
                                     <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">49,000 원</div>
-                                <div class="sct_point"><span>10,384 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class="thumbnail">
                                         <img src="images/pr_img6.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
+                                <div class="pbl_subject">
                                     <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">49,000 원</div>
-                                <div class="sct_point"><span>10,384 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class="thumbnail">
                                         <img src="images/pr_img7.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
+                                <div class="pbl_subject">
                                     <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">49,000 원</div>
-                                <div class="sct_point"><span>10,384 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class="thumbnail">
                                         <img src="images/pr_img8.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
+                                <div class="pbl_subject">
                                     <a href="#">SJWT1237M 300g</a>
                                 </div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
+                            </li>
 
-                                <div class="sct_cost">49,000 원</div>
-                                <div class="sct_point"><span>10,384 P</span></div>
-                            </li>  
-            
                         </ul>
                     </section>
                 </div>
-                <!--} contents sct_Area-->
 
-                <!--{ contents rubz_Area-->
-                <div class="cont-inner">
-                    <section class="sct_wrap">
+                <!--{ product(2)시작-->
+                <div class="ct_inner">
+                    <section class="product_wrap">
                         <div class="title_text">
                             <h2 class="main-title">
-                                <a href="#">더럽즈쥬얼리</a>
+                                <a href="http://recovershop.co.kr/shop/listtype3.php?type=9">더럽즈쥬얼리</a>
                             </h2>
                         </div>
-                        
-                        <ul class="sct_Area">
-                                    
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img9.jpg" alt="[더럽즈]BANGLE-SOLAR DOT GOLD_15mm" title="" width="230" height="230">
+                    
+                        <ul class="product_box">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class = "thumbnail">
+                                        <img src="images/pr_img1.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
-                                    <a href="#">[더럽즈]BANGLE-SOL</a>
+                                <div class="pbl_subject">
+                                    <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">89,000 원</div>
-                                <div class="sct_point"><span>10,324 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img10.jpg" alt="[더럽즈]BANGLE-SOLAR DOT GOLD_15mm" title="" width="230" height="230">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class = "thumbnail">
+                                        <img src="images/pr_img2.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
-                                    <a href="#">[더럽즈]BANGLE-SOL</a>
+                                <div class="pbl_subject">
+                                    <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">89,000 원</div>
-                                <div class="sct_point"><span>10,324 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img11.jpg" alt="[더럽즈]BANGLE-SOLAR DOT GOLD_15mm" title="" width="230" height="230">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class = "thumbnail">
+                                        <img src="images/pr_img3.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
-                                    <a href="#">[더럽즈]BANGLE-SOL</a>
+                                <div class="pbl_subject">
+                                    <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">89,000 원</div>
-                                <div class="sct_point"><span>10,324 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img12.jpg" alt="[더럽즈]BANGLE-SOLAR DOT GOLD_15mm" title="" width="230" height="230">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class = "thumbnail">
+                                        <img src="images/pr_img4.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
-                                    <a href="#">[더럽즈]BANGLE-SOL</a>
+                                <div class="pbl_subject">
+                                    <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">89,000 원</div>
-                                <div class="sct_point"><span>10,324 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img13.jpg" alt="[더럽즈]BANGLE-SOLAR DOT GOLD_15mm" title="" width="230" height="230">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class = "thumbnail">
+                                        <img src="images/pr_img5.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
-                                    <a href="#">[더럽즈]BANGLE-SOL</a>
+                                <div class="pbl_subject">
+                                    <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">89,000 원</div>
-                                <div class="sct_point"><span>10,324 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img14.jpg" alt="[더럽즈]BANGLE-SOLAR DOT GOLD_15mm" title="" width="230" height="230">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class = "thumbnail">
+                                        <img src="images/pr_img6.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
-                                    <a href="#">[더럽즈]BANGLE-SOL</a>
+                                <div class="pbl_subject">
+                                    <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">89,000 원</div>
-                                <div class="sct_point"><span>10,324 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img15.jpg" alt="[더럽즈]BANGLE-SOLAR DOT GOLD_15mm" title="" width="230" height="230">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class = "thumbnail">
+                                        <img src="images/pr_img7.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
-                                    <a href="#">[더럽즈]BANGLE-SOL</a>
+                                <div class="pbl_subject">
+                                    <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">89,000 원</div>
-                                <div class="sct_point"><span>10,324 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
 
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img16.jpg" alt="[더럽즈]BANGLE-SOLAR DOT GOLD_15mm" title="" width="230" height="230">
+                            <li class="col-xs-6 col-sm-3 pb_list">
+                                <div class="pbl_img">
+                                    <a href="#" class = "thumbnail">
+                                        <img src="images/pr_img8.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
-                                <div class="sct_txt">
-                                    <a href="#">[더럽즈]BANGLE-SOL</a>
+                                <div class="pbl_subject">
+                                    <a href="#">SJWT1237M 300g</a>
                                 </div>
-
-                                <div class="sct_cost">89,000 원</div>
-                                <div class="sct_point"><span>10,324 P</span></div>
+                                <div class="pbl_cost fw_600 mb5">49,000 원</div>
+                                <div class="pbl_point"><span>10,384 P</span></div>
                             </li>
                         </ul>
-                    </section>		
+                    </section>
                 </div>
-                <!--} contents rubz_Area-->
-
-                <!--{ contents Chichera_Area-->
-                <div class="cont-inner">
-                    <section class="sct_wrap">
-                        <div class="title_text">
-                            <h2 class="main-title">
-                                <a href="#">시크헤라 20 S/S</a>
-                            </h2>
-                        </div>
-                        
-                        <ul class="sct_Area">
-                                    
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img17.jpg" alt="[시크헤라]데일리컬러맨투맨" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">[시크헤라]데일리컬러맨투맨</a>
-                                </div>
-
-                                <div class="sct_cost">19,900 원</div>
-                                <div class="sct_point"><span>796 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img18.jpg" alt="[시크헤라]데일리컬러맨투맨" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">[시크헤라]데일리컬러맨투맨</a>
-                                </div>
-
-                                <div class="sct_cost">19,900 원</div>
-                                <div class="sct_point"><span>796 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img19.jpg" alt="[시크헤라]데일리컬러맨투맨" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">[시크헤라]데일리컬러맨투맨</a>
-                                </div>
-
-                                <div class="sct_cost">19,900 원</div>
-                                <div class="sct_point"><span>796 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img20.jpg" alt="[시크헤라]데일리컬러맨투맨" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">[시크헤라]데일리컬러맨투맨</a>
-                                </div>
-
-                                <div class="sct_cost">19,900 원</div>
-                                <div class="sct_point"><span>796 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img21.jpg" alt="[시크헤라]데일리컬러맨투맨" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">[시크헤라]데일리컬러맨투맨</a>
-                                </div>
-
-                                <div class="sct_cost">19,900 원</div>
-                                <div class="sct_point"><span>796 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img22.jpg" alt="[시크헤라]데일리컬러맨투맨" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">[시크헤라]데일리컬러맨투맨</a>
-                                </div>
-
-                                <div class="sct_cost">19,900 원</div>
-                                <div class="sct_point"><span>796 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img23.jpg" alt="[시크헤라]데일리컬러맨투맨" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">[시크헤라]데일리컬러맨투맨</a>
-                                </div>
-
-                                <div class="sct_cost">19,900 원</div>
-                                <div class="sct_point"><span>796 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img24.jpg" alt="[시크헤라]데일리컬러맨투맨" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">[시크헤라]데일리컬러맨투맨</a>
-                                </div>
-
-                                <div class="sct_cost">19,900 원</div>
-                                <div class="sct_point"><span>796 P</span></div>
-                            </li>
-                        </ul>
-                    </section>		
-                </div>
-                <!--} contents Chichera_Area-->
-
-                <!--{ contents 기획전-->
-                <div class="cont-inner">
-                    <section class="sct_wrap">
-                        <div class="title_text">
-                            <h2 class="main-title">
-                                <a href="#">기획전</a>
-                            </h2>
-                        </div>
-                        
-                        <ul class="sct_Area">
-                                    
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img25.jpg" alt="홍이화 LED 마스크/의료기기" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">홍이화 LED 마스크/의료기기</a>
-                                </div>
-
-                                <div class="sct_cost">1,240,000 원</div>
-                                <div class="sct_point"><span>408,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img26.jpg" alt="홍이화 LED 마스크/의료기기" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">홍이화 LED 마스크/의료기기</a>
-                                </div>
-
-                                <div class="sct_cost">1,240,000 원</div>
-                                <div class="sct_point"><span>408,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img27.jpg" alt="홍이화 LED 마스크/의료기기" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">홍이화 LED 마스크/의료기기</a>
-                                </div>
-
-                                <div class="sct_cost">1,240,000 원</div>
-                                <div class="sct_point"><span>408,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img28.jpg" alt="홍이화 LED 마스크/의료기기" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">홍이화 LED 마스크/의료기기</a>
-                                </div>
-
-                                <div class="sct_cost">1,240,000 원</div>
-                                <div class="sct_point"><span>408,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img29.jpg" alt="홍이화 LED 마스크/의료기기" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">홍이화 LED 마스크/의료기기</a>
-                                </div>
-
-                                <div class="sct_cost">1,240,000 원</div>
-                                <div class="sct_point"><span>408,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img30.jpg" alt="홍이화 LED 마스크/의료기기" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">홍이화 LED 마스크/의료기기</a>
-                                </div>
-
-                                <div class="sct_cost">1,240,000 원</div>
-                                <div class="sct_point"><span>408,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img31.jpg" alt="홍이화 LED 마스크/의료기기" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">홍이화 LED 마스크/의료기기</a>
-                                </div>
-
-                                <div class="sct_cost">1,240,000 원</div>
-                                <div class="sct_point"><span>408,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img32.jpg" alt="홍이화 LED 마스크/의료기기" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">홍이화 LED 마스크/의료기기</a>
-                                </div>
-
-                                <div class="sct_cost">1,240,000 원</div>
-                                <div class="sct_point"><span>408,000 P</span></div>
-                            </li>
-
-                           
-                        </ul>
-                    </section>		
-                </div>
-                <!--} contents 기획전-->
-
-                <!--{ contents 건강검진이벤트-->
-                <div class="cont-inner">
-                    <section class="sct_wrap">
-                        <div class="title_text">
-                            <h2 class="main-title">
-                                <a href="#">건강검진이벤트</a>
-                            </h2>
-                        </div>
-                        
-                        <ul class="sct_Area">
-                                    
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img33.png" alt="yewon 건강검진 수원다인병원 특수검진패키지" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">yewon 건강검진 수원다인병원 특수검진패키지</a>
-                                </div>
-
-                                <div class="sct_cost">1 원</div>
-                                <div class="sct_point"><span>2,000,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img34.jpg" alt="yewon 건강검진 수원다인병원 특수검진패키지" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">yewon 건강검진 수원다인병원 특수검진패키지</a>
-                                </div>
-
-                                <div class="sct_cost">1 원</div>
-                                <div class="sct_point"><span>2,000,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img35.jpg" alt="yewon 건강검진 수원다인병원 특수검진패키지" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">yewon 건강검진 수원다인병원 특수검진패키지</a>
-                                </div>
-
-                                <div class="sct_cost">1 원</div>
-                                <div class="sct_point"><span>2,000,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img41.jpg" alt="yewon 건강검진 수원다인병원 특수검진패키지" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">yewon 건강검진 수원다인병원 특수검진패키지</a>
-                                </div>
-
-                                <div class="sct_cost">1 원</div>
-                                <div class="sct_point"><span>2,000,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img33.png" alt="yewon 건강검진 수원다인병원 특수검진패키지" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">yewon 건강검진 수원다인병원 특수검진패키지</a>
-                                </div>
-
-                                <div class="sct_cost">1 원</div>
-                                <div class="sct_point"><span>2,000,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img34.jpg" alt="yewon 건강검진 수원다인병원 특수검진패키지" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">yewon 건강검진 수원다인병원 특수검진패키지</a>
-                                </div>
-
-                                <div class="sct_cost">1 원</div>
-                                <div class="sct_point"><span>2,000,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img35.jpg" alt="yewon 건강검진 수원다인병원 특수검진패키지" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">yewon 건강검진 수원다인병원 특수검진패키지</a>
-                                </div>
-
-                                <div class="sct_cost">1 원</div>
-                                <div class="sct_point"><span>2,000,000 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img41.jpg" alt="yewon 건강검진 수원다인병원 특수검진패키지" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">yewon 건강검진 수원다인병원 특수검진패키지</a>
-                                </div>
-
-                                <div class="sct_cost">1 원</div>
-                                <div class="sct_point"><span>2,000,000 P</span></div>
-                            </li>
-
-                        </ul>
-                    </section>		
-                </div>
-                <!--} contents 건강검진이벤트-->
-
-                <!--{ contents 리커버랭킹-->
-                <div class="cont-inner">
-                    <section class="sct_wrap">
-                        <div class="title_text">
-                            <h2 class="main-title">
-                                <a href="#">리커버랭킹</a>
-                            </h2>
-                        </div>
-                        
-                        <ul class="sct_Area">
-                                    
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img36.jpg" alt="숨초 블루베리 1000ml* 1병" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">숨초 블루베리 1000ml* 1병</a>
-                                </div>
-
-                                <div class="sct_cost">23,000 원</div>
-                                <div class="sct_point"><span>1,840 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img37.jpg" alt="숨초 블루베리 1000ml* 1병" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">숨초 블루베리 1000ml* 1병</a>
-                                </div>
-
-                                <div class="sct_cost">23,000 원</div>
-                                <div class="sct_point"><span>1,840 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img38.jpg" alt="숨초 블루베리 1000ml* 1병" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">숨초 블루베리 1000ml* 1병</a>
-                                </div>
-
-                                <div class="sct_cost">23,000 원</div>
-                                <div class="sct_point"><span>1,840 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img39.jpg" alt="숨초 블루베리 1000ml* 1병" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">숨초 블루베리 1000ml* 1병</a>
-                                </div>
-
-                                <div class="sct_cost">23,000 원</div>
-                                <div class="sct_point"><span>1,840 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img40.jpg" alt="숨초 블루베리 1000ml* 1병" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">숨초 블루베리 1000ml* 1병</a>
-                                </div>
-
-                                <div class="sct_cost">23,000 원</div>
-                                <div class="sct_point"><span>1,840 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img36.jpg" alt="숨초 블루베리 1000ml* 1병" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">숨초 블루베리 1000ml* 1병</a>
-                                </div>
-
-                                <div class="sct_cost">23,000 원</div>
-                                <div class="sct_point"><span>1,840 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img37.jpg" alt="숨초 블루베리 1000ml* 1병" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">숨초 블루베리 1000ml* 1병</a>
-                                </div>
-
-                                <div class="sct_cost">23,000 원</div>
-                                <div class="sct_point"><span>1,840 P</span></div>
-                            </li>
-
-                            <li class="sct_li" style="width:230px">
-                                <div class="sct_img">
-                                    <a href="#">
-                                        <img src="images/pr_img38.jpg" alt="숨초 블루베리 1000ml* 1병" title="" width="230" height="230">
-                                    </a>
-                                </div>
-                                
-                                <div class="sct_txt">
-                                    <a href="#">숨초 블루베리 1000ml* 1병</a>
-                                </div>
-
-                                <div class="sct_cost">23,000 원</div>
-                                <div class="sct_point"><span>1,840 P</span></div>
-                            </li>
-
-                        </ul>
-                    </section>		
-                </div>
-                    <!--{ contents 리커버랭킹-->
-                <!--} contents product 끝 -->
+                <!--} product(2) 끝-->
 
             </div>
             <!--} contents 끝 -->
 
             <!--{ footer 시작 -->
-            <footer class="dw_100p">
-                <div class="ft_wrap">
+            <footer>
+                <div class="ft_wrap dw_1200px">
+                    <!-- PC와 Mobile 버전 슬라이드 적용 -->
                     <div class="ft_top">
-                        <div><a href="#">회사소개</a></div>
+                        <div><a href="#">회사소개</ac></div>
                         <div><a href="#">공지사항</a></div>
                         <div><a href="#">서비스이용약관</a></div>
                         <div><a href="#">개인정보처리방침</a></div>
@@ -1171,58 +564,59 @@
                         <div><a href="#">환불및반품규정</a></div>
                         <div><a href="#">포인트적립</a></div>
                     </div>
-                </div>
 
-                <div class="ft_middle">
-                    
-                    <div class="footer-menu">
-						<a href="#">로그인</a>
-		                <a href="#">회원가입</a>
-                    </div>
-                    
-                    <div class="ft_left">
-                        <a href="#"><img src="images/ft_card_img.png" alt="하단 로고 이미지"></a>
-                        <a href="#"><img src="images/mobile_logo_img2.png" alt="모바일 로고 이미지"></a>
+                    <div class="ft_middle">
+                        <!-- 모바일 버전일 때 추가해주세요 -->
+                        <!-- <div class="ft_mobile_menu mb3">
+                            <a href="#">로그인</a>
+                            <a href="#">회원가입</a>
+                            모바일 로그인 후 로그인,회원가입-> 정보수정, 로그아웃으로 바뀜
+                            <a href="#">정보수정</a>
+                            <a href="#">로그아웃</a>
+                        </div> -->
+
+                        <div class="ft_left mb3">
+                            <!-- PC 버전 하단 로고 -->
+                            <a href="#"><img src="images/ft_card_img.png" alt="하단 로고 이미지"></a>
+                            <!-- 모바일 버전 하단로고 교체해주세요 -->
+                            <!-- <a href="#"><img src="images/mobile_logo_img2.png" alt="모바일 로고 이미지"></a> -->
+                        </div>
+
+                        <div class="ft_center t_left">
+                            <ul>
+                                <li><strong>회사명</strong>: 주식회사 예원엠엔디 <strong>주소</strong>: 경기도 광명시 오리로길 619번길 11( 하안동 232번지 ) 예원이케이빌딩</li>
+                                <li><strong>사업자 등록번호</strong> : 835-87-00673 <strong>대표</strong> : 서제학</li>
+                                <li><strong>전화</strong> : 02-2616-8952 <strong>팩스</strong> : 02-897-8952 email : gmlquf74@naver.com <strong>개인정보 보호책임자</strong> : 김영민</li>
+                                <li><strong>부가통신사업신고번호</strong> : 제2017-경기광명-0300호</li>
+                                <li class="ft_bottom aaa_color"><span>Copyright © 2018 주식회사 예원엠앤디. All Rights Reserved.</span></li>  
+                            </ul>
+                        </div>
+
+                        <!-- 모바일 버전에서는 고객센터 삭제해주세요 -->
+                        <div class="ft_right t_right">
+                            <ul>
+                                <li class="ft_color fw_600 fs_22px g_color">고객센터</li>
+                                <li class="ft_color fw_600 fs_22px g_color">02-2616-8952</li>
+                                <li class="aaa_color">월-금 am 9:00 - pm 18:00</li>
+                                <li class="aaa_color">점심시간 pm 12:00 - pm 13:00</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="ft_center">
+                    <!-- 모바일 버전에서 하단 메뉴 추가해주세요 -->
+                    <!-- <div class="ft_botmenu">
                         <ul>
-                            <li>회사명: 주식회사 예원엠엔디 주소: 경기도 광명시 오리로길 619번길 11( 하안동 232번지 ) 예원이케이빌딩</li>
-                            <li>사업자 등록번호 : 835-87-00673 대표 : 서제학</li>
-                            <li>전화 : 02-2616-8952 팩스 : 02-897-8952 email : gmlquf74@naver.com 개인정보 보호책임자 : 김영민</li>
-                            <li>부가통신사업신고번호 : 제2017-경기광명-0300호</li>
+                            <li><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="menu_btn"><a href="#"><i class="fas fa-align-justify"></i></a></li>
+                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-user"></i></a></li>
+                            <li class="top_btn"><a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a></li>
                         </ul>
-                    </div>
-
-                    <div class="ft_right">
-                        <ul>
-                            <li>고객센터</li>
-                            <li>02-2616-8952</li>
-                            <li>월-금 am 9:00 - pm 18:00</li>
-                            <li>점심시간 pm 12:00 - pm 13:00</li>
-                        </ul>
-                    </div>
+                    </div> -->
                 </div>
-
-                <div class="ft_bottom">
-                    <span>Copyright © 2018 주식회사 예원엠앤디. All Rights Reserved.</span>
-                </div>
-
-                <div class="ft_menu">
-                    <ul>
-                        <li><a href="#"><i class="fas fa-home"></i></a></li>
-                        <li><a href="#"><i class="fas fa-align-justify"></i></a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                        <li><a href="#"><i class="fas fa-user"></i></a></li>
-                        <li><a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a></li>
-                    </ul>
-
-                </div>
-
             </footer>
             <!--} footer 끝 -->
         </div>
         <!--} wrap-->
-
     </body>
 </html>

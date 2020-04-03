@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		
+
+        <style>
+            body {padding:0; margin:0;}
+            div {overflow:hidden;}
+            input[type=text] {padding:1%;}
+            ul {list-style:none;}
+            ul, li {margin:0px;padding:0px;}
+
+            .header {width:100%; min-height:50px; background-color: aquamarine;}
+            .content {width:1200px; min-height:50px;  margin:0 auto;}
+            
+            .content .member_box {width:100%; min-height: 200px; }
+            .content .member_box .mb_top, .mb_middle {padding-bottom:3%;}
+            .content .member_box .mb_top, .mb_middle, .mb_bottom {padding:1.5% 0;}
+            .content .member_box .mbm_mb_reg_box {border:1px solid #dddddd; padding:1.5%;}
+            .content .member_box .mbm_box_subject {border-bottom:1px solid #dddddd; margin-bottom:2%; padding:2% 0;}
+            .content .member_box .mbm_i_box {padding:2% 0;}
+            /* .content .member_box .mbm_i_box div {float:left;} */
+            .content .member_box .mbm_i_box .mbmib_subject {width:100%; font-size:15px; font-weight:bold;}
+            .content .member_box i {padding-right:2%;}
+            .content .member_box .mbm_i_box .mbmib_input {width:100%;}
+            .content .member_box .mbm_i_box .mbmib_input input[type=text], .mbmib_input .zip_btn {float:left;}
+            .content .member_box .mbm_i_box .mbmib_input .zip_btn {margin-left:2%; padding:1% 2.5%; background-color: cadetblue; color:#ffffff;}                 
+     
+
+            .footer {width:100%; min-height:50px; background-color: blueviolet;}
+
+
+            /**
+             * common css
+            */
+
+           /*basic*/
+           .cursor {cursor:pointer;}
+
+            /*font-size*/
+            .font_s_20b {font-size:20px; font-weight:bold;}
+            .font_s_20 {font-size:20px;}
+            .font_s_17b {font-size:17px; font-weight:bold;}
+            .font_s_17 {font-size:17px;}
+
+            /*text align*/
+            .text_a_l {text-align: left;}
+            .text_a_c {text-align: center;}
+            .text_a_r {text-align: right;}
+
+            /*width common*/
+            .w_100 {width:100%;}
+            .w_98 {width:98%;}
+            .w_90 {width:90%;}
+            .w_70 {width:70%;}            
+            .w_50 {width:50%;}
+            .w_40 {width:40%;}
+            .w_35 {width:35%;}
+            .w_30 {width:30%;}
+            .w_25 {width:25%;}
+            .w_20 {width:20%;}
+            .w_15 {width:15%;}
+            .w_10 {width:10%;}
+            .w_5 {width:5%;}            
+
+            @media screen and (max-width: 768px) {
+                .content {width:100%;}
+                .board_list .bl_top  { width:20% !important; }
+                .board_list .bl_top > div {width:100%; padding: 0 !important;}
+                
+                .board_list .bl_list  { width:80% !important;}
+                .board_list .bl_list > div {width:100%; text-align: left !important; padding: 0 !important;}
+            }            
+        </style>
+
+        <script>
+            $("document").ready(function(){
+
+            });
+        </script>
+    </head>
+ 
+    <body>
+        <div class="header">order</div>
+
+        <div class="content">
+
+            <div class="member_box">
+                <div class="mb_top font_s_20b">
+                   회원 정보 수정
+                </div>
+
+                <div class="mb_middle">
+
+                    <form id="mb_reg_form" name = "mb_reg_form">
+
+                        <div class="mbm_left col-sm-6">
+                            <div class="mbm_mb_reg_box">
+                                <div class="mbm_box_subject font_s_17b">
+                                    <i class="fas fa-thumbtack"></i>기본 정보
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>아이디</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>비밀번호</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>이름</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>이메일</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>전화번호</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>휴대폰 번호</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="mbm_right col-sm-6">
+                            <div class="mbm_mb_reg_box">
+                                <div class="mbm_box_subject font_s_17b">
+                                    <i class="fas fa-thumbtack"></i>추가 정보
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>주소</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>상세주소</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>우편번호</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_30" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>예금주</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>은행명</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                                <div class="mbm_i_box">
+                                    <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>계좌번호</div>
+                                    <div class="mbmib_input">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="btn_box">
+                            <input type="submit" value="수정">
+                            <input type="button" value="취소">
+                        </div>
+
+                        <style>
+            .btn_box {width:30%; margin:2% 0;}
+            .btn_box input {float:left; width:50%; padding:2% 0; text-align: center; font-size:20px; font-weight:bold; border:none; color:#ffffff;}
+            .btn_box input[type=submit] {background-color: crimson;}
+            .btn_box input[type=button] {background-color: rebeccapurple;}                                     
+                        </style>
+
+                    </form>
+
+                </div>
+
+                <div class="mb_bottom"></div>
+            </div>
+
+        </div>
+
+        <div class="footer">order</div>
+    </body>
+</html>
