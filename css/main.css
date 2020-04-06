@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
 * { font-family: 'Open Sans', sans-serif;  font-family: 'Roboto', sans-serif; }
 /*common*/
-ul { overflow: hidden; }
+body {padding:0; margin:0;}
+input[type=text] {padding:1%;}
+ul, li {margin:0px;padding:0px;}
 a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000; }
 .dw_1200px { width: 100%; margin: 0 auto; max-width: 1200px; text-align: center; }
 .dw_100p { width: 100%; max-width: 0 auto; }
+
 .t_center { text-align: center; }
 .t_left { text-align: left; }    
 .t_right { text-align: right; }
+
 .cursor { cursor: pointer; }
 .g_color { color: #777; }
 .aaa_color { color: #aaa; }
@@ -15,6 +19,7 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .mb3 { margin-bottom: 3%; }
 .mb5 { margin-bottom: 5%; }
 .fw_600 { font-weight: 600;}
+
 /*menu click background-color call*/
 .M_bg { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.486); z-index: 11; }
 
