@@ -29,6 +29,8 @@
     <body>
         <!--{ wrap-->
         <div class="wrap">
+            <!--menu click bg call-->
+            <div class="M_bg"></div> 
             <!--{ header-->
             <header>
                 <!--hd_top 모바일버전에서는 삭제해주세요-->
@@ -48,12 +50,12 @@
 
                 <div class="hd_middle dw_1200px">
                     <div class="logo">
-                        <a href="#"><img src="images/logo_img.png" alt="pc_logo img"></a>
+                        <a href="#"><img id="PC_logo" src="images/logo_img.png" alt="pc_logo img"></a>
                         <a href="#"><img id="M_logo" src="images/M_logo.png" alt="M_logo img"></a>
                     </div>
 
                     <div class="formArea">
-                        <form name="frmsearch1" action="http://recovershop.co.kr/shop/search.php" onsubmit="return search_submit(this);">
+                        <form name="frmsearch1" action="http://recovershop.co.kr/shop/search.php">
                             <!-- <label for="sch_str" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label> -->
                             <input type="text" name="q" placeholder="검색어를 입력하세요." value="" id="sch_str" required="">
                             <button type="submit" id="sch_submit"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
@@ -81,7 +83,7 @@
                             </button>
                         </div>
 
-                        <div class="tmenu_slide">
+                        <!-- <div class="tmenu_slide">
                             <div><a class="hm_slide fw_600" href="#">더블포인트</a></div>
                             <div class="m_width"><a class="hm_slide fw_600 f_color" href="#">핫딜</a></div>
                             <div><a class="hm_slide fw_600" href="#">무료배송데이</a></div>
@@ -89,12 +91,13 @@
                             <div><a class="hm_slide fw_600 f_color" href="#">리커버랭킹</a></div>
                             <div><a class="hm_slide fw_600" href="#">건강검진이벤트</a></div>
                             <div><a class="hm_slide fw_600" href="#">공동구매</a></div>
-                        </div>
+                        </div> -->
 
                     </div>                    
                 </div>
 
-                <script>
+                <!-- 메뉴슬라이드 스크립트 -->
+                <!-- <script>
                     $(document).ready( function(){
                         var windowWidth = $( window ).width();
                         console.log(windowWidth);
@@ -137,45 +140,47 @@
 
                         
 
-                      $('.ctm_wrap').slick({
-                        slidesToShow: 8,
-                        slidesToScroll: 1,
-                        dots: false,
-                        arrows: false,
-                        // responsive: [ 
-                        //     { 
-                        //         breakpoint: 768, 
-                        //         settings: {	
-                        //             slidesToShow: 5,
-                        //             slidesToScroll : 1
-                        //         } 
-                        //     }
-                        // ]
-                      });
+                        $('.ctm_wrap').slick({
+                            slidesToShow: 8,
+                            slidesToScroll: 1,
+                            dots: false,
+                            arrows: false,
+                        });
 
-                      $('.ft_top').slick({
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        dots: false,
-                        arrows: false,
-                        // responsive: [ 
-                        //     { 
-                        //         breakpoint: 768, 
-                        //         settings: {	
-                        //             slidesToShow: 5,
-                        //             slidesToScroll : 1
-                        //         } 
-                        //     }
-                        // ]
-                      });
+                        $('.ft_top').slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false,
+                            arrows: false,
+
+                        });
 
 
                     });
-                </script>
-
+                </script> -->
+                
             </header>
             <!--} header-->
 
+            <style>
+
+                /* .wrap aside .hd_left .hd_wrap .hdl_twrap:checked ~ .M_bg { 
+                    background-color: #5f5f5f9e;
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 11; 
+                } */
+                /* header .menubar .menu-btn:checked ~ .BG {     
+                    /* background-color: #5f5f5f9e;
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;  
+                } */
+            </style>
             <!--{ aside menu-->
             <aside class="hd_left">
                 <div class="hd_wrap">
@@ -276,10 +281,11 @@
                                 <li>없음</li>
                             </ul>
                         </div>
-                
-                    </div>    
+                        
+                    </div>  
+                     
                 </div>
-
+                
             </aside>
             <!--} aside menu-->
 
@@ -626,7 +632,7 @@
             <footer>
                 <div class="ft_wrap dw_1200px">
                     <!-- PC와 Mobile 버전 슬라이드 적용 -->
-                    <div class="ft_top">
+                    <!-- <div class="ft_top">
                         <div class="ft_slide">
                             <div><a class="fw_600" href="#">회사소개</ac></div>
                             <div><a class="fw_600" href="#">공지사항</a></div>
@@ -640,23 +646,23 @@
                             <div><a class="fw_600" href="#">환불및반품규정</a></div>
                             <div class="pr0"><a class="fw_600" href="#">포인트적립</a></div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="ft_middle">
                         <!-- 모바일 버전일 때 추가해주세요 -->
-                        <!-- <div class="ft_mobile_menu mb3">
+                        <div class="ft_mobile_menu mb3">
                             <a href="#">로그인</a>
                             <a href="#">회원가입</a>
-                            모바일 로그인 후 로그인,회원가입-> 정보수정, 로그아웃으로 바뀜
-                            <a href="#">정보수정</a>
-                            <a href="#">로그아웃</a>
-                        </div> -->
+                            <!-- 모바일 로그인 후 로그인,회원가입-> 정보수정, 로그아웃으로 바뀜 -->
+                            <!-- <a href="#">정보수정</a>
+                            <a href="#">로그아웃</a> -->
+                        </div>
 
                         <div class="ft_left mb3">
                             <!-- PC 버전 하단 로고 -->
-                            <a href="#"><img src="images/ft_card_img.png" alt="하단 로고 이미지"></a>
+                            <a href="#"><img id="PC_ftlogo" src="images/ft_card_img.png" alt="하단 로고 이미지"></a>
                             <!-- 모바일 버전 하단로고 교체해주세요 -->
-                            <!-- <a href="#"><img src="images/mobile_logo_img2.png" alt="모바일 로고 이미지"></a> -->
+                            <a href="#"><img id="M_ftlogo" src="images/mobile_logo_img2.png" alt="모바일 로고 이미지"></a>
                         </div>
 
                         <div class="ft_center t_left">
@@ -681,7 +687,7 @@
                     </div>
 
                     <!-- 모바일 버전에서 하단 메뉴 추가해주세요 -->
-                    <!-- <div class="ft_botmenu">
+                    <div class="ft_botmenu">
                         <ul>
                             <li><a href="#"><i class="fas fa-home"></i></a></li>
                             <li class="menu_btn"><a href="#"><i class="fas fa-align-justify"></i></a></li>
@@ -689,7 +695,7 @@
                             <li><a href="#"><i class="fas fa-user"></i></a></li>
                             <li class="top_btn"><a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a></li>
                         </ul>
-                    </div> -->
+                    </div>
                 </div>
             </footer>
             <!--} footer 끝 -->

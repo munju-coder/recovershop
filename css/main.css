@@ -15,6 +15,8 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .mb3 { margin-bottom: 3%; }
 .mb5 { margin-bottom: 5%; }
 .fw_600 { font-weight: 600;}
+/*menu click background-color call*/
+.M_bg { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,.3); z-index: 11; }
 
 /*header*/
 .wrap header .hd_top {border-bottom: 1px solid #e9e9e9; }
@@ -23,7 +25,7 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .wrap header .hd_top ul::after { content: ''; display: block; overflow: hidden; clear: both; }
 .wrap header .hd_top ul { width: 1200px; margin: 0 auto; }
 
-.wrap header .hd_middle { padding: 10px 0; height: 150px; position: relative;  }
+.wrap header .hd_middle { padding: 10px 0; height: 150px; max-height:140px; position: relative;  }
 .wrap header .hd_middle #M_logo { display: none; } 
 .wrap header .hd_middle .logo { float: left; margin-top: 3%;}
 .wrap header .hd_middle::after { content: ''; display: block; overflow: hidden; clear: both; }
@@ -32,26 +34,20 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .wrap header .header_slide { width: 200px; height: 125px; position: absolute; right: 0;   }
 .wrap header .hd_middle .formArea { position: absolute; top: 55px; left: 32%; }
 .wrap header .hd_middle .formArea #sch_str {
-    padding-left: 10px;
-    height: 40px;
-    background: #fff;
-    border: 2px solid #2a963e;
-    border-right-color: rgb(42, 150, 62);
-    border-right-style: solid;
-    border-right-width: 2px;
     width: 370px;
-    border-right: 0;
+    height: 40px;
     float: left;
+    background-color: #fff;
+    border: 2px solid #2a963e;
+    border-right: transparent;
+    padding-left: 10px;
 }
 .wrap header .hd_middle .formArea #sch_submit {
     height: 40px;
     border: 0;
-    background: #fff;
+    background-color: #fff;
     border: 2px solid #2a963e;
-    border-left-color: rgb(42, 150, 62);
-    border-left-style: solid;
-    border-left-width: 2px;
-    border-left: 0;
+    border-left: transparent;
     color: #2a963e;
     width: 50px;
     float: left;
@@ -66,14 +62,14 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .wrap header .hd_bottom { background-color: #e5e5e5; position: relative; } 
 .wrap header .hd_bottom .hdb_menu div .f_color { color: #ec6d86;}
 .wrap header .hd_bottom .menu_btn 
-{ background:#c51315; color:#fff; width:50px; height:40px; border:0; vertical-align:top; font-size:18px; }
+{ background-color:#c51315; color:#fff; width:50px; height:40px; border:0; vertical-align:top; font-size:18px; }
 .wrap header .hd_bottom .hdb_menu div { float: left; }
 .wrap header .hd_bottom .hdb_menu::after{ content: ''; display: block; overflow: hidden; clear: both; }
 .wrap header .hd_bottom .hdb_menu .tmenu_slide { width: 95%; margin-left: 10px; }
 .wrap header .hd_bottom .hdb_menu .tmenu_slide .hm_slide { line-height: 41px; font-size: 15px; }
 .wrap header .hd_bottom .hdb_menu .tmenu_slide .m_width { width: 75px !important;  }
 
-/*header_left menu*/
+/*header_left menu 로그인 전 화면 적용*/
 .wrap .hd_wrap { position: fixed;  width: 100%; height: 100%; top: 0; z-index: 2000;  display: none; }
 .wrap .hd_wrap {
     width: 260px;
@@ -112,7 +108,8 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .tabcontent { width: 100%; margin: 0 auto; text-align: left; }
 .tabcontent ul li { font-size: 12px; border-bottom: 1px solid #ddd; padding: 15px 0; }
 .hdl_twrap { width: 100%; margin: 0 auto; max-width: 210px; text-align: center; } 
-input::placeholder { font-size: 80%; }
+input::placeholder { font-size: 80%; padding-left: 5px; }
+
 
 /*aside fixed top,bottom btn*/
 .wrap .side_menu { position: fixed; top: 50%; right: 0; z-index: 100; }
@@ -181,8 +178,6 @@ input::placeholder { font-size: 80%; }
 .ctm_slide span { font-size: 13px; }
 .ctm_slide:hover { background-color:#ec6d88; color: #ffffff; }
 
-/* .ctm_slide .slick-slide .slick-current .slick-active { width: 149px; } */
-
 /* 호버했을 때 화이트이미지가 나와야함 */
 .ctm_slide:hover img:first-child { display: none; }
 .ctm_slide:hover img:nth-child(2) { display: block;}
@@ -194,7 +189,7 @@ input::placeholder { font-size: 80%; }
 .contents .ct_inner .product_wrap .product_box .pbl_img a { border: none; }
 .contents .ct_inner .product_wrap .product_box li { margin-bottom: 3%; }
 .contents .ct_inner .product_wrap .product_box .pb_list .pbl_subject a, 
-.contents .ct_inner .product_wrap .product_box .pb_list .pbl_point { color: #4d4d4d; }
+.contents .ct_inner .product_wrap .product_box .pb_list .pbl_point {color: #4d4d4d;font-size: 14px;}
 .contents .ct_inner .product_wrap .product_box .pb_list .pbl_subject { margin-bottom: 7%; }
 .contents .ct_inner .product_wrap .product_box .pb_list .pbl_cost { margin-bottom: 5%; }
 
@@ -202,19 +197,18 @@ input::placeholder { font-size: 80%; }
 .wrap footer { overflow: hidden; background-color: #f8f8f8; padding-bottom: 3%; }
 .wrap footer .ft_wrap .ft_top { width: 100%; margin: 20px auto; border-bottom: 1px solid #ddd; padding-bottom: 15px; }
 .wrap footer .ft_wrap .ft_top div .pr0 { padding-right: 0; }
-/* .wrap foot.ft_wrap er .ft_top .ft_slide { float: left; padding-right: 31px; font-size: 13px; } */
 .wrap footer .ft_wrap .ft_top::after { content: ''; display: block; overflow: hidden; clear: both; }
 .wrap footer .ft_wrap .ft_top .ft_slide::after { content: ''; display: block; overflow: hidden; clear: both; }
 .wrap footer .ft_wrap .ft_top .ft_slide > div { float: left; padding-right: 2%; }
 .wrap footer .ft_wrap .ft_top .ft_slide > div:first-child { margin-left: 4%; }
 .wrap footer .ft_wrap .ft_top .ft_slide a { color: #555; font-size: 13px; }
 
-
-
 .wrap footer .ft_middle { margin-top: 3%; }
 .wrap footer .ft_middle .ft_left { float: left; margin-right: 10px; }
-.wrap footer .ft_middle::after { content: ''; display: block; overflow: hidden; clear: both; }
 
+/*모바일 버전 푸터 로고*/
+.wrap footer .ft_middle .ft_left #M_ftlogo { display: none; }
+.wrap footer .ft_middle::after { content: ''; display: block; overflow: hidden; clear: both; }
 .wrap footer .ft_center { float:left; padding-top: 1%; }
 .wrap footer .ft_center ul li:not(.ft_bottom) { font-size: 14px; color: #777; margin-bottom: 1%; }
 .wrap footer .ft_middle .ft_right { float: right; }
@@ -222,47 +216,108 @@ input::placeholder { font-size: 80%; }
 .wrap footer .ft_center .ft_bottom { margin-top: 3%; font-size: 13px; }
 .wrap footer .ft_middle .ft_right ul li:first-child,.wrap footer .ft_middle .ft_right ul li:nth-child(2) { margin-bottom: 8%; }
 .wrap footer .ft_middle .ft_right ul li:nth-child(3),.wrap footer .ft_middle .ft_right ul li:last-child { margin-bottom: 6%; font-size: 13px; }
-
-
-
+.wrap footer .ft_wrap .ft_botmenu { display: none; }
+.ft_mobile_menu { display: none; }
 
 /*media*/
 @media (max-width:1220px) {
-.wrap header .hd_middle { width: 90%; }
 .dw_1200px { width: 90%; }
-.wrap header .hd_middle .menu_slide .sub_slide { width: 70%; margin-top: 20%; }
-.wrap header .hd_middle .logo { margin-top: 4%; }
-.wrap header .hd_middle .logo img { width: 80%; }
-.wrap header .hd_middle .formArea #sch_str { width: 260px; }
-.wrap header .hd_middle .formArea #sch_submit { width: 40px; }
+.wrap header .hd_top ul { width: 90%; }
+.wrap header .hd_top ul li a { font-size: 12px; }
+.wrap header .hd_middle { width: 95%; }
+.wrap header .hd_middle .menu_slide .sub_slide { width: 70%; margin-top: 10%; }
+.wrap header .hd_middle .slide_btn { bottom: 10%; }
+.wrap header .hd_middle { height: 125px; max-height: 130px; }
+
+.wrap header .hd_middle .logo { margin-top: 39px; }
+.wrap header .hd_middle .logo #PC_logo { width: 75%; }
+.wrap header .hd_middle .formArea #sch_str { width: 200px; height: 30px; font-size: 13px; padding-left: 0; margin-left: 0; padding-bottom: 5px;}
+.wrap header .hd_middle .formArea #sch_submit { width: 40px; height: 30px; }
+
+.wrap footer .ft_center { width: 50%; word-break: keep-all; }
+.wrap footer .ft_middle .ft_right { width: 20%; word-break: keep-all; }
+.wrap footer .ft_middle .ft_right ul li:first-child, .wrap footer .ft_middle .ft_right ul li:nth-child(2) { margin-bottom: 5%; }
+.fs_22px { font-size: 17px; }
+.wrap footer .ft_center ul li:not(.ft_bottom) { font-size: 12px; }
+.wrap footer .ft_middle .ft_left #PC_ftlogo { width: 95%; }
 
 }
 
 @media (max-width:768px) {
 .wrap header .header_slide { display: none; }
+.wrap header {height: 80px;min-height: 70px;}    
+.wrap header .hd_top { border-bottom: none; }
+.wrap header .hd_top ul { display: none; } 
 
+.wrap header .hd_middle .slide_btn { display: none; }
+.wrap header .hd_middle { height: 80px; }
+
+.wrap header .hd_middle .logo {position: absolute;top: 15%;left: 10%; margin-top: 0;}
+.wrap header .hd_middle .logo #PC_logo { display: none; }
+.wrap header .hd_middle .logo #M_logo { display: block; }
+
+.wrap header .hd_bottom { background-color: transparent; }
+.wrap header .hd_bottom .menu_btn {background-color: transparent;color: #000;position: absolute;left: 0;bottom: 18px;z-index: 10;}
+
+.wrap header .hd_middle .formArea { top: 40%; left: 35%; width:60%; }
+.wrap header .hd_middle .formArea #sch_str 
+{ padding-left: 0; border: 1px solid #cecece; border-right-color: transparent; width:80%; border-right: none; padding-left: 5px;  }
+.wrap header .hd_middle .formArea #sch_submit 
+{ border: 1px solid #cecece; border-left-color: transparent; color: rgb(111, 111, 111); border-left: none;  }
+
+
+.contents .ct_inner .product_wrap .title_text h2 { font-size: 20px; }
+
+.wrap footer .ft_middle .ft_left #PC_ftlogo { display: none; }
+.wrap footer .ft_middle .ft_left #M_ftlogo { display: block; padding: 3% 0; }
+.wrap footer .ft_middle .ft_right { display: none; }
+.wrap footer .ft_middle { margin-top: 0; padding: 10% 0; }
 
 
 
 /* footer 모바일 버전일 때 추가된 html의 css입니다. */
 .wrap footer .ft_wrap .ft_middle .ft_mobile_menu a { background-color: white; border: 1px solid #ddd; padding: 5px 15px; font-size: 13px; }
 .wrap footer .ft_middle .ft_left { float: none; }
-.wrap footer .ft_center { text-align: center; float: none; }
+
+
+.wrap footer .ft_middle .ft_left { float: none; width:70%; margin:0 auto; }
+.wrap footer .ft_middle .ft_left img { width:100%; }
+
+.wrap footer .ft_center { text-align: center; float: none; width: 100%; }
 .wrap footer .ft_center ul li { font-size: 12px; }
 .wrap footer .ft_center ul li strong { font-weight: 600; }
 .wrap footer .ft_center .ft_bottom { margin-top: 0; }
 
-/* 모바일 버전일 때 추가된 하단 메뉴html의 css입니다. */
-.wrap footer .ft_wrap .ft_botmenu { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #eee; border-top: 1px solid #ddd; }
+/* 모바일 버전일 때 추가된 하단 메뉴 html의 css입니다. */
+.ft_mobile_menu { display: block; }
+.wrap footer .ft_wrap .ft_botmenu { display: block; position: fixed; bottom: 0; left: 0; width: 100%; background-color: #eee; border-top: 1px solid #ddd; }
 .wrap footer .ft_wrap .ft_botmenu ul li { float: left; width: 20%; text-align: center; }
 .wrap footer .ft_wrap .ft_botmenu ul::after { content: ''; display: block; overflow: hidden; clear: both; }
 .wrap footer .ft_wrap .ft_botmenu ul li a { display: block; padding: 10px 0 15px 0; font-size: 20px; color: #555; }
+
+
+
 }
 
 @media (max-width:500px) {
+.wrap header .hd_middle .logo { top: 26%; }
+.wrap header .hd_middle .logo #M_logo { width: 75%; }
 
+.fa-chevron-left, .fa-chevron-right { font-size: 40px; }
+.slick-dots li { width: 9px; height: 11px; }
+.slick-dots li button { width: 7px; height: 7px; padding: 4px; }
+
+.contents .ct_inner .product_wrap .title_text h2 { font-size: 16px; font-weight: 600; }
+.contents .ct_inner .product_wrap .product_box .pb_list .pbl_cost { font-size: 12px; }
+.wrap footer .ft_wrap .ft_middle .ft_mobile_menu a { font-size: 11px; }
 }
 
 @media (max-width:400px) {
+.wrap header .hd_middle .logo { left: 13%; }
+.wrap header .hd_middle .formArea #sch_str { width: 155px; }
+.wrap header .hd_middle .formArea { width: 65%; }
+.wrap footer .ft_center ul li { font-size: 11px; }
+
+
 
 }
