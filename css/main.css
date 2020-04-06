@@ -97,7 +97,7 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 #al_wrap input { width: 15px; margin-right: 5%; }
 #al_wrap label { font-size: 12px; position: absolute; top: 27%; }
 #ol_submit { width: 100%; height: 40px; background-color: #333; font-size: 14px; color: white; }
-.hdl_tab ul li { float: left; font-size: 12px; margin-right: 20px; }
+.hdl_tab ul li { float: left; font-size: 12px; margin-right: 12%; }
 .hdl_tab ul { border-bottom: 1px solid #c8c8c8; }
 .hdl_tab ul li:last-child { margin-right: 0; }
 .hdl_tab ul::after { content: ''; display: block; overflow: hidden; clear: both; }
