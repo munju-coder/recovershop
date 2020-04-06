@@ -16,7 +16,7 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .mb5 { margin-bottom: 5%; }
 .fw_600 { font-weight: 600;}
 /*menu click background-color call*/
-.M_bg { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,.3); z-index: 11; }
+.M_bg { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.486); z-index: 11; }
 
 /*header*/
 .wrap header .hd_top {border-bottom: 1px solid #e9e9e9; }
