@@ -266,78 +266,24 @@
                 </div>
 
                 <style>
-                    div {
-                        overflow: hidden;
-                    }
-
-                    .wrap .contents {
-                        margin-top: 2%;
-                    }
-
-                    .wrap .contents .c_top {
-                        margin-bottom: 2%;
-                        border-bottom: 1px solid #333;
-                        padding-bottom: 2%;
-                    }
-
-                    .wrap .contents .c_top a {
-                        font-size: 22px;
-                    }
-
-                    .wrap .contents .c_middle .product_img {
-                        float: left;
-                    }
-
-                    .wrap .contents .c_middle::after {
-                        content: '';
-                        display: block;
-                        overflow: hidden;
-                        clear: both;
-                    }
-
-                    .wrap .contents .c_middle .product_img .main_img {
-                        width: 400px;
-                        height: 400px;
-                        float: left;
-                    }
-
-                    .wrap .contents .c_middle .product_img::after {
-                        content: '';
-                        display: block;
-                        overflow: hidden;
-                        clear: both;
-                    }
-
-                    .wrap .contents .c_middle .product_img {
-                        margin-top: 2%;
-                    }
-
-                    .wrap .contents .c_middle .product_img ul li {
-                        float: left;
-                        margin-top: 2%;
-                    }
-
-                    .wrap .contents .c_middle .product_img ul::after {
-                        content: '';
-                        display: block;
-                        overflow: hidden;
-                        clear: both;
-                    }
-
-                    .wrap .contents .c_middle .product_img ul li a img {
-                        width: 60px;
-                        height: 60px;
-                    }
-                    .wrap .contents .c_middle .c_middle_right {
-                        position: relative;
-                        float: right;
-                        padding: 20px 15px 15px;
-                        width: 600px;
-                        height: 355px;
-                        min-height: 355px;
-                    }
-
-
+                    div { overflow: hidden; }
+                    .wrap .contents { margin-top: 2%; }
+                    .wrap .contents .c_top { margin-bottom: 2%; border-bottom: 1px solid #333; padding-bottom: 2%; }
+                    .wrap .contents .c_top a { font-size: 22px; }
+                    .wrap .contents .c_middle .product_img { float: left; }
+                    .wrap .contents .c_middle::after { content: ''; display: block; overflow: hidden; clear: both; }
+                    .wrap .contents .c_middle .product_img .main_img { width: 400px; height: 400px; float: left; }
+                    .wrap .contents .c_middle .product_img::after { content: ''; display: block; overflow: hidden; clear: both; }
+                    .wrap .contents .c_middle .product_img { margin-top: 2%; }
+                    .wrap .contents .c_middle .product_img ul li { float: left; margin-top: 2%; }
+                    .wrap .contents .c_middle .product_img ul::after { content: ''; display: block; overflow: hidden; clear: both; }
+                    .wrap .contents .c_middle .product_img ul li a img { width: 60px; height: 60px; }
+                    .wrap .contents .c_middle .c_middle_right { width: 66%; min-height: 500px; padding-left: 10%; }
+                    .wrap .contents .c_middle .c_middle_right h2 { font-size: 22px; color:#333; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+                    .wrap .contents .c_middle .c_middle_right .pro_info { padding: 10px; border-top: 1px solid #ebeff3; margin: 15px 0 0; border-bottom: 1px solid #ebeff3; background: #fafafa; height: 222px; }
+                    .wrap .contents .c_middle .c_middle_right .pro_info table { width: 100%; border: none; border-collapse: collapse; color: #666; }
+                    /* .wrap .contents .c_middle .c_middle_right .pro_info table th { text-align: left; } */
+                    .wrap .contents .c_middle .c_middle_right .pro_info table  { }
 
                 </style>
 
@@ -345,7 +291,29 @@
                 <div class="c_middle_right">
                     <h2>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]</h2>
                     <div class="pro_info">
-                        <table class="">
+
+
+                        <div class="pro_info_left">
+                            <div>123</div>
+                            <div>123</div>
+                            <div>123</div>
+                        </div>
+
+                        <div class="pro_info_right">
+                            <div>123</div>
+                            <div>123</div>
+                            <div>123</div>                            
+                        </div>
+
+
+                        <style>
+                            .pro_info {width:100%}
+                            .pro_info .pro_info_left, .pro_info .pro_info_right {float:left;}
+                            .pro_info .pro_info_left {width:30%;}
+                            .pro_info .pro_info_right {width:70%;}
+                        </style>
+
+                        <!-- <table class="">
                             <tbody>
                                 <tr>
                                     <th scope>제조사</th>
@@ -385,7 +353,7 @@
                                 </tr>
 
                             </tbody>
-                        </table>
+                        </table> -->
                     </div>
 
                     <!-- 선택옵션 시작 { -->

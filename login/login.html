@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		
+
+        <style>
+            body {padding:0; margin:0;}
+            div {overflow:hidden;}
+            input[type=text], input[type=password] {padding:1%;}
+            input[type=submit] {border:none;}
+
+            ul {list-style:none; overflow:hidden;}
+            ul, li {margin:0px;padding:0px;}
+
+            .header {width:100%; min-height:50px; background-color: aquamarine;}
+            .content {width:1200px; min-height:50px;  margin:0 auto;}
+            .content div {padding:2% 0;}
+            .content div img {width:100%;}
+
+            .footer {width:100%; min-height:50px; background-color: blueviolet;}
+
+            /**
+             * common css
+            */
+
+           /*basic*/
+           .cursor {cursor:pointer;}
+
+            /*font-size*/
+            .font_s_23b {font-size:23px; font-weight:bold;}
+            .font_s_23 {font-size:23px;}
+            .font_s_20b {font-size:20px; font-weight:bold;}
+            .font_s_20 {font-size:20px;}
+            .font_s_17b {font-size:17px; font-weight:bold;}
+            .font_s_17 {font-size:17px;}
+
+            /*text align*/
+            .text_a_l {text-align: left;}
+            .text_a_c {text-align: center;}
+            .text_a_r {text-align: right;}
+
+            .text_c_ff2b64 {color:#ff2b64;}
+
+            /*board list box width common*/
+            .w_100 {width:100%;}
+            .w_98 {width:98%;}
+            .w_50 {width:50%;}
+            .w_40 {width:40%;}
+            .w_35 {width:35%;}
+            .w_30 {width:30%;}
+            .w_25 {width:25%;}
+            .w_20 {width:20%;}
+            .w_15 {width:15%;}
+            .w_10 {width:10%;}
+            .w_5 {width:5%;}
+
+            @media screen and (max-width: 768px) {
+                .content, .content img, .c_middle {width:100%;}
+                .content .c_middle .login_box  {width:100% !important;}
+                .board_list .bl_top  { width:20% !important; }
+                .board_list .bl_top > div {width:100%; padding: 0 !important;}
+                
+                .board_list .bl_list  { width:80% !important;}
+                .board_list .bl_list > div {width:100%; text-align: left !important; padding: 0 !important;}
+            }            
+        </style>
+
+        <script>
+            $("document").ready(function(){
+                
+
+                $("#login_form").submit(function(e){
+                    e.preventDefault();
+                    var formObject = $(this).serializeObject();
+
+                    /* var mb_id = $("#mb_id").val();
+                    var mb_passwd = $("#mb_passwd").val();
+
+                    console.log(formObject);
+
+                    console.log(typeof(mb_id));
+                    console.log(mb_passwd); */
+
+
+                    if(formObject['mb_id'] == "")
+                    {
+                        alert("아이디를 입력하세요.");
+                        return false;
+                    }
+
+                    if(formObject['mb_passwd'] == "")
+                    {
+                        alert("패스워드를 입력하세요.");
+                        return false;
+                    }
+
+                    /* 
+                    * 이렇게 까지만 넣어줘~
+                    $.ajax({
+                        type : "GET",
+                        dataType: "json",
+                        url: "",
+                        cache : false,		
+                        data: JSON.stringify(formObject),
+                        success : function(data)
+                        {
+                            //추후
+                        },
+                        error : function(e)
+                        {
+                            alert("통신 실패.");
+                        }
+                    });  */
+
+                    
+                });
+
+            });
+
+            /**
+            * @brief serializeObject
+            * form  작업하는 곳에는 꼭 넣어줘
+            */
+            $.fn.serializeObject = function() {
+                var obj = null;
+                try {
+                    if (this[0].tagName && this[0].tagName.toUpperCase() == "FORM") {
+                        var arr = this.serializeArray();
+                        if (arr) {
+                            obj = {};
+                            jQuery.each(arr, function() {
+                                obj[this.name] = this.value;
+                            });
+                        }
+                    }
+                } catch (e) {
+                    alert(e.message);
+                } finally {
+                }
+            
+                return obj;
+            };            
+        </script>
+    </head>
+ 
+    <body>
+        <div class="header">mypage</div>
+
+        <div class="content">
+            
+            <div class="c_top"></div>
+
+            <div class="c_middle">
+                
+                <form id = "login_form">
+                    <div class="login_box">
+
+                        <div class="logbox_top">
+                            <div class="lbt_subject font_s_23b text_a_c">로그인</div>
+                            <div class="lbt_logo">이미지 넣어~</div>
+                        </div>
+
+                        <div class="logbox_middle">
+                            <div class="lbm_box">
+                                <div class="lbmb_icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+
+                                <div class="lbmb_ibox">
+                                    <input type="text" class = "w_98" name="mb_id" id="mb_id" placeholder="아이디를 입력하세요.">
+                                </div>
+                            </div>
+
+                            <div class="lbm_box">
+                                <div class="lbmb_icon">
+                                    <i class="fas fa-key"></i>
+                                </div>
+
+                                <div class="lbmb_ibox">
+                                    <input type="password" class = "w_98" name="mb_passwd" id="mb_passwd" placeholder="패스워드를 입력하세요.">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="logbox_bottom">
+                            
+                        </div>
+
+                        <div class="logbox_btn">
+                            <input type="submit" value="로그인">
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+            <style>
+                .content .c_middle .login_box {width:50%; min-height: 300px; margin:0 auto; background-color: blueviolet; }
+                .content .c_middle .login_box .logbox_top,
+                .content .c_middle .login_box .logbox_middle,
+                .content .c_middle .login_box .logbox_bottom {padding:2%;}
+
+                .content .c_middle .login_box .logbox_middle .lbm_box {width:100%;}
+                .content .c_middle .login_box .logbox_middle .lbm_box div {float:left;}
+                .content .c_middle .login_box .logbox_middle .lbm_box .lbmb_icon {width:10%;}
+                .content .c_middle .login_box .logbox_middle .lbm_box .lbmb_icon i {font-size:3.3rem;}
+                .content .c_middle .login_box .logbox_middle .lbm_box .lbmb_ibox {width:90%;}
+
+                .content .c_middle .login_box .logbox_btn {width:20%; margin:0 auto; padding:2% 0; }
+                .content .c_middle .login_box .logbox_btn input[type=submit] {padding:10% 0%; background-color: #ff2b64; color:#ffffff; font-weight:bold; width:100%; }
+            </style>
+
+            <div class="c_bottom"></div>
+
+        </div>
+
+
+        <div class="footer">mypage</div>
+    </body>
+</html>

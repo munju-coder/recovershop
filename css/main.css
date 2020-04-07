@@ -2,11 +2,12 @@
 * { font-family: 'Open Sans', sans-serif;  font-family: 'Roboto', sans-serif; }
 /*common*/
 body {padding:0; margin:0;}
-input[type=text] {padding:1%;}
-ul, li {margin:0px;padding:0px;}
+input[type=text] { padding:1%; }
 a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000; }
-.dw_1200px { width: 100%; margin: 0 auto; max-width: 1200px; text-align: center; }
+.dw_1200px { width: 100%; margin: 0 auto; max-width: 1200px; }
 .dw_100p { width: 100%; max-width: 0 auto; }
+
+/* div {overflow:hidden;} */
 
 .t_center { text-align: center; }
 .t_left { text-align: left; }    
@@ -18,6 +19,7 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .fs_22px { font-size: 22px; }
 .mb3 { margin-bottom: 3%; }
 .mb5 { margin-bottom: 5%; }
+.mb10 { margin-bottom: 10%; }
 .fw_600 { font-weight: 600;}
 
 /*menu click background-color call*/
