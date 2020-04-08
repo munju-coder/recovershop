@@ -301,16 +301,16 @@
                                     <li class="o_color7 fw_600 mb3 f17">선택옵션</li>
                                     <li class="f14">색상/사이즈</li>
                                     <li>
-                                        <select class="pro_select_list unit_price">
-                                            <option value="">선택</option>
-                                            <option value="1000">SJWT1237M_블랙_M(95) 8809575842969&nbsp;&nbsp;+ 1000원</option>
-                                            <option value="0">SJWT1237M_블랙_L(100) 8809575842976&nbsp;&nbsp;+ 0원</option>
-                                            <option value="0">SJWT1237M_블랙_XL(105) 8809575842983&nbsp;&nbsp;+ 0원</option>
-                                            <option value="0">SJWT1237M_블랙_2XL(110) 8809575842990&nbsp;&nbsp;+ 0원</option>
-                                            <option value="0">SJWT1237M_화이트_M(95) 8809575843003&nbsp;&nbsp;+ 0원</option>
-                                            <option value="0">SJWT1237M_화이트_L(100) 8809575843010&nbsp;&nbsp;+ 0원</option>
-                                            <option value="0">SJWT1237M_화이트_XL(105) 8809575843027&nbsp;&nbsp;+ 0원</option>
-                                            <option value="0">SJWT1237M_화이트_2XL(110) 8809575843034&nbsp;&nbsp;+ 0원</option>
+                                        <select class="pro_select_list">
+                                            <option class="unit_price"value="">선택</option>
+                                            <option class="unit_price"value="1000">SJWT1237M_블랙_M(95) 8809575842969&nbsp;&nbsp;+ 1000원</option>
+                                            <option class="unit_price"value="0">SJWT1237M_블랙_L(100) 8809575842976&nbsp;&nbsp;+ 0원</option>
+                                            <option class="unit_price"value="0">SJWT1237M_블랙_XL(105) 8809575842983&nbsp;&nbsp;+ 0원</option>
+                                            <option class="unit_price"value="0">SJWT1237M_블랙_2XL(110) 8809575842990&nbsp;&nbsp;+ 0원</option>
+                                            <option class="unit_price"value="0">SJWT1237M_화이트_M(95) 8809575843003&nbsp;&nbsp;+ 0원</option>
+                                            <option class="unit_price"value="0">SJWT1237M_화이트_L(100) 8809575843010&nbsp;&nbsp;+ 0원</option>
+                                            <option class="unit_price"value="0">SJWT1237M_화이트_XL(105) 8809575843027&nbsp;&nbsp;+ 0원</option>
+                                            <option class="unit_price"value="0">SJWT1237M_화이트_2XL(110) 8809575843034&nbsp;&nbsp;+ 0원</option>
                                         </select>
                                     </li>
                                     
@@ -383,10 +383,10 @@
                                     <li class="price_list f18"><span class="fw_600 total number unit_price">49,000</span>원</li>
                                 </ul>
 
-                                <script>
+                                <!-- <script>
                                     $(document).ready( function(){
 
-                                        var $count = $('.count'), //인풋수량값
+                                        var $count = $('.count').val(), //인풋수량값
                                             $unit = $('.unit_price').text(), //합계금액값
                                             $unitPrice = parseInt($('.unit_price').text()),
                                             $unitPrice = parseInt($unit.replace(',','')),
@@ -419,31 +419,83 @@
 
 
                                     });
-                                </script>
+                                </script> -->
 
-                                <style>
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name li,
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price li { float: left; width: 50%; margin-top: 5%; }
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name::after,
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price::after { content: ''; display: block; overflow: hidden; clear: both; }
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name { border-bottom: 1px solid #ddd; padding-bottom: 4%; }
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name button { height: 31px; }
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name input { width: 55%; }
-
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list { padding-left: 22%; }
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list span { font-size: 26px; color: red; margin-right: 1%; }
-
-
-                                </style>
-    
-                                <div class="c_btn f18 t_center">
-                                    <div class="left_btn fw_600"><i class="fa fa-credit-card" aria-hidden="true"></i>바로구매</div>
-                                    <div class="right_btn fw_600"><i class="fa fa-shopping-cart" aria-hidden="true"></i>장바구니</div>
+                                <!--일반상품버튼-->
+                                <!-- <div class="c_btn f18 t_center">
+                                    <div class="left_btn fw_600"><i class="fa fa-credit-card"></i>바로구매</div>
+                                    <div class="right_btn fw_600"><i class="fa fa-shopping-cart"></i>장바구니</div>
                                     <div class="favorite_icon"><i class="far fa-heart"></i></div>
+                                </div> -->
+
+                                <!--건강프로모션 검진예약 버튼-->
+                                <div class="health_btn">
+                                    <div class="left_btn fw_600 t_center cursor"><i class="fas fa-cart-plus"></i></i>검진예약</div>
+                                    <div class="favorite_icon t_center cursor"><i class="far fa-heart"></i></div>
                                 </div>
+
                             </div>
                         </div>
                         <!--} 상품정보 끝-->
+                    </div>
+                    <!--검진예약박스-->
+                    <div class="cm_middle">
+                        <h3 class="t_center f18 fw_600 mb2 mt3">추가 정보 입력</h3>
+                        <div class="health_wrap">
+                            <div class="health_box">
+                                <ul class="hbl_left">
+                                    <li class="pb10 fw_600">추가정보입력</li>
+                                    <li class="pb20 fw_600">검진자 이름</li>
+                                    <li class="pb20 fw_600">생년월일</li>
+                                    <li class="fw_600">성별</li>
+                                </ul>
+                                
+                                <ul class="hbl_right">
+                                    <li class="f14 pb5 c_red fw_600">병원에 전달되는 <strong>예약 시 필수 사항</strong>입니다.</li>
+                                    <li class="pb5"><input class="w100" type="text"></li>
+                                    <li class="pb5"><input class="w100" type="text" value="ex) 2000-01-01"></li>
+                                    <li class="gender">
+                                        <div>
+                                            <input type="radio" id="" name="" value="남성">남성
+                                            <input type="radio" id="" name="" value="여성">여성
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <style>
+                                    .health_wrap .health_box:not(.health_box_right) { border-right: 1px solid #000; }
+                                    .health_wrap .health_box_right { padding-left: 3%; }
+                                </style>
+
+                                <script>
+                                    $(document).ready( function(){
+
+                                        $('.health_btn .left_btn').click( function(){
+                                            $('.cm_middle').toggle();
+
+                                        });
+                                    });
+                                </script>
+                                
+                            </div>
+
+                            <div class="health_box health_box_right">
+                                <ul class="hbr_left">
+                                    <li class="pb18 fw_600">예약희망일</li>
+                                    <li class="pb18 fw_600">연락처</li>
+                                    <li class="pb18 fw_600">남기실말씀</li>
+                                </ul>
+
+                                <ul class="hbr_right">
+                                    <li class="pb5"><input class="w100" type="text" value="가급적 1주일 이후로 예약해주세요"></li>
+                                    <li class="pb5"><input class="w100" type="text"></li>
+                                    <li class="pb5"><textarea class="w100" name="" id="" cols="30" rows="10"></textarea></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="check_btn t_center fw_600 f18">예약하기</div>
                     </div>
 
                     <!--{ cm_bottom 시작-->

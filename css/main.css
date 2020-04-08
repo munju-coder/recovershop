@@ -13,14 +13,31 @@ a,a:active, a:visited,a:hover, a:link, a:focus {text-decoration:none; color:#000
 .t_left { text-align: left; }    
 .t_right { text-align: right; }
 
+
+.o_color7 { color: #777; }
+.f14 { font-size: 14px; }
+.f17 { font-size: 17px; }
+.f18 { font-size: 18px; }
+.f22 { font-size: 22px; }
+
 .cursor { cursor: pointer; }
 .g_color { color: #777; }
 .aaa_color { color: #aaa; }
-.fs_22px { font-size: 22px; }
+.c_red { color: red; }
+
+.mt3 { margin-top: 3%; }
+.mb2 { margin-bottom: 2%; }
 .mb3 { margin-bottom: 3%; }
 .mb5 { margin-bottom: 5%; }
 .mb10 { margin-bottom: 10%; }
+.pb5 { padding-bottom: 5%; }
+.pb10 { padding-bottom: 10%; }
+.pb15 { padding-bottom: 15%; }
+.pb17 { padding-bottom: 17%; }
+.pb20 { padding-bottom: 20%; }
 .fw_600 { font-weight: 600;}
+
+.w100 { width: 100%; }
 
 /*menu click background-color call*/
 .M_bg { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.486); z-index: 11; }
@@ -233,13 +250,11 @@ input::placeholder { font-size: 80%; padding-left: 5px; }
 .dw_1200px { width: 90%; }
 .wrap header .hd_top ul { width: 90%; }
 .wrap header .hd_top ul li a { font-size: 12px; }
+
 .wrap header .hd_middle { width: 95%; }
 .wrap header .hd_middle .menu_slide .sub_slide { width: 70%; margin-top: 10%; }
 .wrap header .hd_middle .slide_btn { bottom: 10%; }
 .wrap header .hd_middle { height: 125px; max-height: 130px; }
-
-
-
 .wrap header .hd_middle .logo { margin-top: 39px; }
 .wrap header .hd_middle .logo #PC_logo { width: 75%; }
 .wrap header .hd_middle .formArea #sch_str { width: 200px; height: 30px; font-size: 13px; padding-left: 0; margin-left: 0; padding-bottom: 5px;}
@@ -254,6 +269,12 @@ input::placeholder { font-size: 80%; padding-left: 5px; }
 .fs_22px { font-size: 17px; }
 .wrap footer .ft_center ul li:not(.ft_bottom) { font-size: 12px; }
 .wrap footer .ft_middle .ft_left #PC_ftlogo { width: 95%; }
+
+/*health_box*/
+.cm_middle .check_btn { width: 16%; }
+.health_wrap .health_box .hbl_right { width: 66%; }
+.health_wrap .health_box .hbl_right input, .health_wrap .health_box .hbr_right input { font-size: 13px; }
+
 
 
 }
