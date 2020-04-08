@@ -1,0 +1,108 @@
+<!--
+
+/**
+ * @brief 상품 상세 페이지 상품문의
+ * @see product/view 상품문의
+ * @todo 상품문의 버튼 추가
+ */
+$ROOT = $_SERVER['DOCUMENT_ROOT'];
+require $ROOT."/config/config.php";
+
+$seq    	= $_GET['seq'];
+$approval 	= $_GET['approval'];
+$mb_id  	= $_GET['mb_id'];
+$question 	= $_GET['question'];
+$answer   	= $_GET['answer'];
+-->
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>Modal</title>
+		<style>
+		.modal_top {font-size:20px;font-weight:bold;padding:10px 0px;text-align:center;color:#fff;}
+		#modal_table {width:100%;border: 1px solid #ddd;border-collapse: collapse;}
+		#modal_table td {border: 1px solid #ddd;padding: 7px; color:#fff;}
+		.change_btn {padding: 5px 10px;font-size: 15px;font-weight: bold;background-color: #ca73ea;color: #fff;border-radius: 5px;}
+		</style>	
+	</head>
+	
+	<body>
+
+		<div class = "modal_top">product QA reply</div>
+		<table id="modal_table">
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<input type = "hidden" id = "seq" value = "">
+			<input type = "hidden" id = "api_key" name = "api_key" value = "">
+			<tbody>
+				<tr>
+					<td>ID</td>
+					<td class = "c_mb_id">123</td>
+				</tr>
+				
+				<tr>
+					<td>approval</td>
+					<td>
+						<input type = "radio" id = "c_approval" name = "c_approval" value = "Y" > Y&nbsp;&nbsp;&nbsp;
+						<input type = "radio" id = "c_approval" name = "c_approval" value = "N" > N
+					</td>
+				</tr>
+								
+				<tr>
+					<td>관리자메모</td>
+					<td>
+						<textarea id="answer" name="answer">123</textarea>
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan = "2">
+						<center><div class = "change_btn cursor">변경</div></center>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<script>
+		$("document").ready(function(){
+			$(".change_btn").click(function(){
+				var api_key = $("#api_key").val();
+				var seq = $("#seq").val();
+				var c_approval = $(":input:radio[name=c_approval]:checked").val();
+				var answer = trim($("#answer").val());
+								
+				var conf = confirm("변경 하시겠습니까?");		
+				if(conf == true)
+				{						
+					$.ajax({
+						type : "POST",
+						dataType: "json",
+						url: '/REST/product_qa/',
+						cache : false,	
+						async : false,	
+						data: {
+							'api_key' : api_key,
+							'm_type': 'A',
+							'seq' : seq,
+							'approval': c_approval,
+							'answer': answer
+						},
+						success : function(data)
+						{
+							alert(data['return_msg']);
+							location.reload();
+						},
+						error: function(r) {
+							alert("error~~~");
+						}
+					});					
+				}
+			});
+		});
+		</script>
+
+	</body>
+</html> 
