@@ -55,7 +55,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
+            <td>ing</td>
         </tr>
         <tr>
             <td>product_view.html</td>
