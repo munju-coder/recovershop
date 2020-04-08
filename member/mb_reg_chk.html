@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		
+
+        <style>
+            body {padding:0; margin:0;}
+            div {overflow:hidden;}
+            input[type=text] {padding:1%;}
+            ul {list-style:none; overflow:hidden;}
+            ul, li {margin:0px;padding:0px;}
+
+            .header {width:100%; min-height:50px; background-color: aquamarine;}
+            .content {width:1200px; min-height:50px;  margin:0 auto;}
+
+            .content .reg_chk_box {background-color: #dddddd;}
+            .content .cm_top,
+            .content .cm_middle,
+            .content .cm_bottom {padding:2%;}
+
+            .content .cm_top .ncb_top, .content .cm_top .ncb_chk {background-color: #ffffff; padding:1.5% 1%;}
+            .content .cm_top .ncb_btn {width:40%; padding:2%; text-align:center; margin:0 auto; background-color: red; color:#ffffff; margin-top:2%; margin-bottom: 2%;}
+
+            .content .c_middle .cm_middle .cmm_subject,
+            .content .c_middle .cm_middle .cmm_textarea {padding:1% 0;}
+            .content .c_middle .cm_middle .cmm_textarea textarea {width:100%;}
+            .content .c_middle .cm_middle .cmm_chk_box {padding:1% 0;}
+            
+            .footer {width:100%; min-height:50px; background-color: blueviolet;}
+
+            /**
+             * common css
+            */
+
+           /*basic*/
+           .cursor {cursor:pointer;}
+
+            /*font-size*/
+            .font_s_23b {font-size:23px; font-weight:bold;}
+            .font_s_23 {font-size:23px;}
+            .font_s_20b {font-size:20px; font-weight:bold;}
+            .font_s_20 {font-size:20px;}
+            .font_s_17b {font-size:17px; font-weight:bold;}
+            .font_s_17 {font-size:17px;}
+
+            /*text align*/
+            .text_a_l {text-align: left;}
+            .text_a_c {text-align: center;}
+            .text_a_r {text-align: right;}
+
+            .text_c_ff2b64 {color:#ff2b64;}
+
+            /*board list box width common*/
+            .w_50 {width:50%;}
+            .w_40 {width:40%;}
+            .w_35 {width:35%;}
+            .w_30 {width:30%;}
+            .w_25 {width:25%;}
+            .w_20 {width:20%;}
+            .w_15 {width:15%;}
+            .w_10 {width:10%;}
+            .w_5 {width:5%;}
+
+            @media screen and (max-width: 768px) {
+                .content, .content img {width:100%;}
+                .board_list .bl_top  { width:20% !important; }
+                .board_list .bl_top > div {width:100%; padding: 0 !important;}
+                
+                .board_list .bl_list  { width:80% !important;}
+                .board_list .bl_list > div {width:100%; text-align: left !important; padding: 0 !important;}
+            }            
+        </style>
+
+        <script>
+            $("document").ready(function(){
+
+                $(".ncb_btn").click(function(){
+                    var chk_1 = $("input:checkbox[name=chk_1]").is(":checked");
+                    var chk_2 = $("input:checkbox[name=chk_2]").is(":checked");
+                    var chk_3 = $("input:checkbox[name=chk_3]").is(":checked");
+                    var chk_4 = $("input:checkbox[name=chk_4]").is(":checked");                    
+
+                    if(chk_1 == false || chk_2 == false || chk_3 == false || chk_4 == false)
+                    {
+                        alert("하단 내용의 체크박스를 선택하세요.");
+                    }
+                    else
+                    {
+                        alert("본인 확인창 콜해주세요.");
+                    }
+                });
+
+                $("#all_chk").click(function(){
+                    
+                    var chk = $(this).is(":checked");
+        
+                    if(chk == true)
+                    {
+                        $("input:checkbox[id='chk_1']").prop("checked", true);
+                        $("input:checkbox[id='chk_2']").prop("checked", true);
+                        $("input:checkbox[id='chk_3']").prop("checked", true);
+                        $("input:checkbox[id='chk_4']").prop("checked", true);
+                    }
+                    else
+                    {
+                        $("input:checkbox[id='chk_1']").prop("checked", false);
+                        $("input:checkbox[id='chk_2']").prop("checked", false);
+                        $("input:checkbox[id='chk_3']").prop("checked", false);
+                        $("input:checkbox[id='chk_4']").prop("checked", false);
+                    }                    
+                });
+            });
+        </script>
+    </head>
+ 
+    <body>
+        <div class="header">mb_reg_chk</div>
+
+        <div class="content">
+            
+            <div class="c_top"></div>
+
+            <div class="c_middle reg_chk_box">
+                
+                <div class="cm_top">
+                    <div class="nice_chk_box">
+                        <div class="ncb_top">나이스평가정보에서 인증 받은 휴대폰 번호를 사용하고 있습니다.</div>
+
+                        <div class="ncb_btn font_s_20b cursor">휴대폰 본인인증</div>
+
+                        <div class="ncb_chk">
+                            하단 약관에 모두 동의합니다.
+                            <input type="checkbox" name="all_chk" id="all_chk">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cm_middle">
+                    <div class="cmm_chk_box">
+                        <div class="cmm_subject font_s_17b">1. 리커버샵 이용약관</div>
+                        <div class="cmm_textarea">
+                            <textarea name="" id="" ></textarea>
+                        </div>
+                        <div class="cmm_chk_1">
+                            본인은 내용에 동의합니다.
+                            <input type="checkbox" name="chk_1" id="chk_1">
+                        </div>                        
+                    </div>
+
+                    <div class="cmm_chk_box">
+                        <div class="cmm_subject font_s_17b">2. 개인정보취급방침</div>
+                        <div class="cmm_textarea">
+                            <textarea name="" id="" ></textarea>
+                        </div>
+                        <div class="cmm_chk_1">
+                            본인은 내용에 동의합니다.
+                            <input type="checkbox" name="chk_2" id="chk_1">
+                        </div>                        
+                    </div>
+
+                    <div class="cmm_chk_box">
+                        <div class="cmm_subject font_s_17b">3. 포인트 지급 및 사용에 대한 약관</div>
+                        <div class="cmm_textarea">
+                            <textarea name="" id="" ></textarea>
+                        </div>
+                        <div class="cmm_chk_1">
+                            본인은 내용에 동의합니다.
+                            <input type="checkbox" name="chk_3" id="chk_1">
+                        </div>                        
+                    </div>
+
+                    <div class="cmm_chk_box">
+                        <div class="cmm_subject font_s_17b">4. 캐쉬 지급 및 사용에 대한 약관</div>
+                        <div class="cmm_textarea">
+                            <textarea name="" id="" ></textarea>
+                        </div>
+                        <div class="cmm_chk_1">
+                            본인은 내용에 동의합니다.
+                            <input type="checkbox" name="chk_4" id="chk_1">
+                        </div>                        
+                    </div>
+
+                </div>
+
+                <div class="cm_bottom"></div>
+
+            </div>
+
+            <div class="c_bottom"></div>
+
+        </div>
+
+        <div class="footer">mb_reg_chk</div>
+    </body>
+</html>

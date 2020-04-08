@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
 
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="http//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="http//use.fontawesome.com/releases/v5.2.0/css/all.css">
-		<link rel="stylesheet" href="http//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		
 
         <style>
@@ -75,30 +75,24 @@
             .font_s_17b {font-size:17px; font-weight:bold;}
             .font_s_17 {font-size:17px;}
 
-            /*input width*/
-            .i_w_98 {width:98%;}
-            .i_w_90 {width:90%;}
-            .i_w_70 {width:70%;}
-            .i_w_50 {width:50%;}
-            .i_w_30 {width:30%;}
-            .i_w_20 {width:20%;}
-            .i_w_10 {width:10%;}
-
             /*text align*/
             .text_a_l {text-align: left;}
             .text_a_c {text-align: center;}
             .text_a_r {text-align: right;}
 
-            /*board list box width common*/
-            .board_list .bl_w_50 {width:50%;}
-            .board_list .bl_w_40 {width:40%;}
-            .board_list .bl_w_35 {width:35%;}
-            .board_list .bl_w_30 {width:30%;}
-            .board_list .bl_w_25 {width:25%;}
-            .board_list .bl_w_20 {width:20%;}
-            .board_list .bl_w_15 {width:15%;}
-            .board_list .bl_w_10 {width:10%;}
-            .board_list .bl_w_5 {width:5%;}            
+            /*width common*/
+            .w_98 {width:98%;}
+            .w_90 {width:90%;}
+            .w_70 {width:70%;}            
+            .w_50 {width:50%;}
+            .w_40 {width:40%;}
+            .w_35 {width:35%;}
+            .w_30 {width:30%;}
+            .w_25 {width:25%;}
+            .w_20 {width:20%;}
+            .w_15 {width:15%;}
+            .w_10 {width:10%;}
+            .w_5 {width:5%;}            
 
             @media screen and (max-width: 768px) {
                 .content {width:100%;}
@@ -138,7 +132,7 @@
     </head>
  
     <body>
-        <div class="header">header</div>
+        <div class="header">order</div>
 
         <div class="content">
 
@@ -151,29 +145,27 @@
                     <div class="obt_list">
                         <div class="board_list">
                             <div class="bl_top">
-                                <div class="bl_w_40 blb_subject text_a_c">상품명</div>
-                                <div class="bl_w_5 blb_subject text_a_c">수량</div>
-                                <div class="bl_w_15 blb_subject text_a_c">판매가</div>
-                                <div class="bl_w_15 blb_subject text_a_c">소계</div>
-                                <div class="bl_w_15 blb_subject text_a_c">포인트</div>
-                                <div class="bl_w_10 blb_subject text_a_c">배송비</div>
+                                <div class="w_40 blb_subject text_a_c">상품명</div>
+                                <div class="w_5 blb_subject text_a_c">수량</div>
+                                <div class="w_15 blb_subject text_a_c">판매가</div>
+                                <div class="w_15 blb_subject text_a_c">소계</div>
+                                <div class="w_15 blb_subject text_a_c">포인트</div>
+                                <div class="w_10 blb_subject text_a_c">배송비</div>
                             </div>
 
                             <div class="bl_list">
-                                <div class="bl_w_40 blb_box">
+                                <div class="w_40 blb_box">
                                     <ul>
                                         <li><img src="http://oksusumarket.co.kr/uploads/images/product/320/20200204172128_1580804488767756.jpg" alt=""></li>
                                         <li>zzzzzzzzzzzz</li>
                                     </ul>
                                 </div>
-                                <div class="bl_w_5 blb_box text_a_c">1</div>
-                                <div class="bl_w_15 blb_box text_a_r">100,000</div>
-                                <div class="bl_w_15 blb_box text_a_r">100,000</div>
-                                <div class="bl_w_15 blb_box text_a_r">0</div>
-                                <div class="bl_w_10 blb_box text_a_c">무료배송</div>
+                                <div class="w_5 blb_box text_a_c">1</div>
+                                <div class="w_15 blb_box text_a_r">100,000</div>
+                                <div class="w_15 blb_box text_a_r">100,000</div>
+                                <div class="w_15 blb_box text_a_r">0</div>
+                                <div class="w_10 blb_box text_a_c">무료배송</div>
                             </div>
-
-
                         </div>
                     </div>
 
@@ -197,28 +189,28 @@
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">이름</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "i_w_50" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_50" value = "" placeholder="이름 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">전화번호</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_tel" id="mb_tel" class = "i_w_50" value = "" placeholder="전화번호를 입력하세요.">
+                                        <input type="text" name="mb_tel" id="mb_tel" class = "w_50" value = "" placeholder="전화번호를 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">핸드폰</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "i_w_50" value = "" placeholder="핸드폰 입력하세요.">
+                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "w_50" value = "" placeholder="핸드폰 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">우편번호</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_zip" id="mb_zip" class = "i_w_20" value = "" placeholder="우편번호 입력하세요.">
+                                        <input type="text" name="mb_zip" id="mb_zip" class = "w_20" value = "" placeholder="우편번호 입력하세요.">
                                         <div class="zip_btn cursor">주소찾기</div>
                                     </div>
                                 </div>
@@ -226,14 +218,14 @@
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">기본주소</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_addr_1" id="mb_addr_1" class = "i_w_98" value = "" placeholder="기본주소 입력하세요.">
+                                        <input type="text" name="mb_addr_1" id="mb_addr_1" class = "w_98" value = "" placeholder="기본주소 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">상세주소</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="mb_addr_2" id="mb_addr_2" class = "i_w_98" value = "" placeholder="상세주소 입력하세요.">
+                                        <input type="text" name="mb_addr_2" id="mb_addr_2" class = "w_98" value = "" placeholder="상세주소 입력하세요.">
                                     </div>
                                 </div>
 
@@ -255,28 +247,28 @@
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">이름</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="r_name" id="r_name" class = "i_w_50" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="r_name" id="r_name" class = "w_50" value = "" placeholder="이름 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">전화번호</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="r_tel" id="r_tel" class = "i_w_50" value = "" placeholder="전화번호 입력하세요.">
+                                        <input type="text" name="r_tel" id="r_tel" class = "w_50" value = "" placeholder="전화번호 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">핸드폰</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="r_mobile" id="r_mobile" class = "i_w_50" value = "" placeholder="핸드폰 입력하세요.">
+                                        <input type="text" name="r_mobile" id="r_mobile" class = "w_50" value = "" placeholder="핸드폰 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">우편번호</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="r_zip" id="r_zip" class = "i_w_20" value = "" placeholder="우편번호 입력하세요.">
+                                        <input type="text" name="r_zip" id="r_zip" class = "w_20" value = "" placeholder="우편번호 입력하세요.">
                                         <div class="zip_btn cursor">주소찾기</div>
                                     </div>
                                 </div>
@@ -284,14 +276,14 @@
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">기본주소</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="r_addr_1" id="r_addr_1" class = "i_w_98" value = "" placeholder="기본주소 입력하세요.">
+                                        <input type="text" name="r_addr_1" id="r_addr_1" class = "w_98" value = "" placeholder="기본주소 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="obm_i_box">
                                     <div class="obmib_subject">상세주소</div>
                                     <div class="obmib_input">
-                                        <input type="text" name="r_addr_2" id="r_addr_2" class = "i_w_98" value = "" placeholder="상세주소 입력하세요.">
+                                        <input type="text" name="r_addr_2" id="r_addr_2" class = "w_98" value = "" placeholder="상세주소 입력하세요.">
                                     </div>
                                 </div>
 
@@ -353,7 +345,7 @@
                             <div class="obmr_box">
                                 <div class="obmrb_box">
                                     <div class="obmrbb_subject">포인트 사용</div>
-                                    <div class="obmrbb_price"> <input type="text" class = "i_w_70" name="" id=""> P</div>
+                                    <div class="obmrbb_price"> <input type="text" class = "w_70" name="" id=""> P</div>
                                 </div>
                             </div>
 
@@ -373,7 +365,7 @@
                                 <div class="obmrb_box">
                                     <div class="obmrbb_subject">기업은행 : 167-141774-01-019</div>
                                     <div class="obmrbb_subject">예금주명 주식회사 예원엠앤디</div>
-                                    <div class="obmrbb_subject"> 입금자 명 : <input type="text" class = "i_w_50" name="" id=""></div>
+                                    <div class="obmrbb_subject"> 입금자 명 : <input type="text" class = "w_50" name="" id=""></div>
                                 </div>
                             </div>
 
@@ -381,15 +373,15 @@
                                 <div class="obmrb_box">
                                     <div class="obmrbb_subject">
                                         카드번호
-                                        <input type="number" class = "i_w_20" name="" id="">
-                                        <input type="number" class = "i_w_20" name="" id="">
-                                        <input type="number" class = "i_w_20" name="" id="">
-                                        <input type="number" class = "i_w_20" name="" id="">
+                                        <input type="number" class = "w_20" name="" id="">
+                                        <input type="number" class = "w_20" name="" id="">
+                                        <input type="number" class = "w_20" name="" id="">
+                                        <input type="number" class = "w_20" name="" id="">
                                     </div>
                                     <div class="obmrbb_subject">
                                         유효기간
-                                        <input type="number" class = "i_w_20" name="" id="">
-                                        <input type="number" class = "i_w_20" name="" id="">
+                                        <input type="number" class = "w_20" name="" id="">
+                                        <input type="number" class = "w_20" name="" id="">
                                     </div>
                                     <div class="obmrbb_subject">
                                         할부기간
@@ -430,6 +422,6 @@
 
         </div>
 
-        <div class="footer"></div>
+        <div class="footer">order</div>
     </body>
 </html>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
 
-        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -26,6 +26,7 @@
             .content .member_box .mbm_box_subject {border-bottom:1px solid #dddddd; margin-bottom:2%; padding:2% 0;}
             .content .member_box .mbm_i_box {padding:2% 0;}
             /* .content .member_box .mbm_i_box div {float:left;} */
+            .content .member_box .mbm_left i {color:red;}
             .content .member_box .mbm_i_box .mbmib_subject {width:100%; font-size:15px; font-weight:bold;}
             .content .member_box i {padding-right:2%;}
             .content .member_box .mbm_i_box .mbmib_input {width:100%;}
@@ -39,6 +40,12 @@
             /**
              * common css
             */
+
+           /*btn box*/
+            .btn_box {width:30%; margin:2% 0; margin:0 auto;}
+            .btn_box input {float:left; width:49%; padding:2% 0; text-align: center; font-size:20px; font-weight:bold; border:none; color:#ffffff;}
+            .btn_box input[type=submit] {background-color: crimson; margin-right:2%;}
+            .btn_box input[type=button] {background-color: rebeccapurple;}
 
            /*basic*/
            .cursor {cursor:pointer;}
@@ -96,9 +103,9 @@
                    회원 정보 수정
                 </div>
 
-                <div class="mb_middle">
+                <form id="mb_reg_form" name = "mb_reg_form">
 
-                    <form id="mb_reg_form" name = "mb_reg_form">
+                    <div class="mb_middle">                        
 
                         <div class="mbm_left col-sm-6">
                             <div class="mbm_mb_reg_box">
@@ -109,42 +116,42 @@
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>아이디</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_id" id="mb_id" class = "w_100" value = "" placeholder="이름 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>비밀번호</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_passwd" id="mb_passwd" class = "w_100" value = "" placeholder="비밀번호를 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>이름</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름을 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>이메일</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_email" id="mb_email" class = "w_100" value = "" placeholder="이메일을 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>전화번호</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_tel" id="mb_tel" class = "w_100" value = "" placeholder="전화번호를 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>휴대폰 번호</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_mobile" id="mb_mobile" class = "w_100" value = "" placeholder="휴대폰 번호를 입력하세요.">
                                     </div>
                                 </div>
 
@@ -160,42 +167,42 @@
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>주소</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_addr_1" id="mb_addr_1" class = "w_100" value = "" placeholder="이름 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>상세주소</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_addr_2" id="mb_addr_2" class = "w_100" value = "" placeholder="이름 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>우편번호</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_30" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_zip" id="mb_zip" class = "w_30" value = "" placeholder="이름 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>예금주</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_account_nm" id="mb_account_nm" class = "w_100" value = "" placeholder="예금주를 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>은행명</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_bank_name" id="mb_bank_name" class = "w_100" value = "" placeholder="은행명을 입력하세요.">
                                     </div>
                                 </div>
 
                                 <div class="mbm_i_box">
                                     <div class="mbmib_subject"><i class="fas fa-thumbtack"></i>계좌번호</div>
                                     <div class="mbmib_input">
-                                        <input type="text" name="mb_name" id="mb_name" class = "w_100" value = "" placeholder="이름 입력하세요.">
+                                        <input type="text" name="mb_bank_num" id="mb_bank_num" class = "w_100" value = "" placeholder="계좌번호를 입력하세요.">
                                     </div>
                                 </div>
 
@@ -203,23 +210,16 @@
 
                         </div>
 
+                    </div>
+
+                    <div class="mb_bottom">
                         <div class="btn_box">
                             <input type="submit" value="수정">
                             <input type="button" value="취소">
-                        </div>
+                        </div>                    
+                    </div>
 
-                        <style>
-            .btn_box {width:30%; margin:2% 0;}
-            .btn_box input {float:left; width:50%; padding:2% 0; text-align: center; font-size:20px; font-weight:bold; border:none; color:#ffffff;}
-            .btn_box input[type=submit] {background-color: crimson;}
-            .btn_box input[type=button] {background-color: rebeccapurple;}                                     
-                        </style>
-
-                    </form>
-
-                </div>
-
-                <div class="mb_bottom"></div>
+                </form>
             </div>
 
         </div>

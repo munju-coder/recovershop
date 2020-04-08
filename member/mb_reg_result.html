@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		
+
+        <style>
+            body {padding:0; margin:0;}
+            div {overflow:hidden;}
+            input[type=text] {padding:1%;}
+            ul {list-style:none;}
+            ul, li {margin:0px;padding:0px;}
+
+            .header {width:100%; min-height:50px; background-color: aquamarine;}
+            .content {width:1200px; min-height:50px;  margin:0 auto;}
+
+            .content .c_top,
+            .content .c_middle,
+            .content .c_bottom {padding:2%;}
+
+            .footer {width:100%; min-height:50px; background-color: blueviolet;}
+
+
+            /**
+             * common css
+            */
+
+           /*btn box*/
+            .btn_box {width:30%; margin:2% 0; margin:0 auto;}
+            .btn_box input {float:left; width:49%; padding:2% 0; text-align: center; font-size:20px; font-weight:bold; border:none; color:#ffffff;}
+            .btn_box input[type=submit] {background-color: crimson; margin-right:2%;}
+            .btn_box input[type=button] {background-color: rebeccapurple;}
+
+           /*basic*/
+           .cursor {cursor:pointer;}
+
+            /*font-size*/
+            .font_s_20b {font-size:20px; font-weight:bold;}
+            .font_s_20 {font-size:20px;}
+            .font_s_17b {font-size:17px; font-weight:bold;}
+            .font_s_17 {font-size:17px;}
+
+            /*text align*/
+            .text_a_l {text-align: left;}
+            .text_a_c {text-align: center;}
+            .text_a_r {text-align: right;}
+
+            /*width common*/
+            .w_100 {width:100%;}
+            .w_98 {width:98%;}
+            .w_90 {width:90%;}
+            .w_70 {width:70%;}            
+            .w_50 {width:50%;}
+            .w_40 {width:40%;}
+            .w_35 {width:35%;}
+            .w_30 {width:30%;}
+            .w_25 {width:25%;}
+            .w_20 {width:20%;}
+            .w_15 {width:15%;}
+            .w_10 {width:10%;}
+            .w_5 {width:5%;}
+            
+            .border_box_1_p3 {border:1px solid #dddddd; padding:3%;}
+
+            @media screen and (max-width: 768px) {
+                .content {width:100%; line-height:200%;}
+
+                .content .c_top,
+                .content .c_middle,
+                .content .c_bottom {width:100%;}
+
+                .board_list .bl_top  { width:20% !important; }
+                .board_list .bl_top > div {width:100%; padding: 0 !important;}
+                
+                .board_list .bl_list  { width:80% !important;}
+                .board_list .bl_list > div {width:100%; text-align: left !important; padding: 0 !important;}
+            }            
+        </style>
+
+    </head>
+ 
+    <body>
+        <div class="header">mb_reg_result</div>
+
+        <div class="content">
+
+            <div class="c_top font_s_20b">회원 가입 완료</div>
+
+            <div class="c_middle border_box_1_p3 font_s_17">
+                조문주님의 리커버샵 회원 가입을 진심으로 축하합니다.<br>
+                리커버샵에서 다양한 혜택을 누리세요.
+            </div>
+
+            <div class="c_bottom">
+
+            </div>
+
+        </div>
+
+        <div class="footer">mb_reg_result</div>
+    </body>
+</html>
