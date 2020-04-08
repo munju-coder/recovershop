@@ -301,16 +301,16 @@
                                     <li class="o_color7 fw_600 mb3 f17">선택옵션</li>
                                     <li class="f14">색상/사이즈</li>
                                     <li>
-                                        <select class="pro_select_list">
+                                        <select class="pro_select_list unit_price">
                                             <option value="">선택</option>
-                                            <option value="">SJWT1237M_블랙_M(95) 8809575842969&nbsp;&nbsp;+ 0원</option>
-                                            <option value="">SJWT1237M_블랙_L(100) 8809575842976&nbsp;&nbsp;+ 0원</option>
-                                            <option value="">SJWT1237M_블랙_XL(105) 8809575842983&nbsp;&nbsp;+ 0원</option>
-                                            <option value="">SJWT1237M_블랙_2XL(110) 8809575842990&nbsp;&nbsp;+ 0원</option>
-                                            <option value="">SJWT1237M_화이트_M(95) 8809575843003&nbsp;&nbsp;+ 0원</option>
-                                            <option value="">SJWT1237M_화이트_L(100) 8809575843010&nbsp;&nbsp;+ 0원</option>
-                                            <option value="">SJWT1237M_화이트_XL(105) 8809575843027&nbsp;&nbsp;+ 0원</option>
-                                            <option value="">SJWT1237M_화이트_2XL(110) 8809575843034&nbsp;&nbsp;+ 0원</option>
+                                            <option value="1000">SJWT1237M_블랙_M(95) 8809575842969&nbsp;&nbsp;+ 1000원</option>
+                                            <option value="0">SJWT1237M_블랙_L(100) 8809575842976&nbsp;&nbsp;+ 0원</option>
+                                            <option value="0">SJWT1237M_블랙_XL(105) 8809575842983&nbsp;&nbsp;+ 0원</option>
+                                            <option value="0">SJWT1237M_블랙_2XL(110) 8809575842990&nbsp;&nbsp;+ 0원</option>
+                                            <option value="0">SJWT1237M_화이트_M(95) 8809575843003&nbsp;&nbsp;+ 0원</option>
+                                            <option value="0">SJWT1237M_화이트_L(100) 8809575843010&nbsp;&nbsp;+ 0원</option>
+                                            <option value="0">SJWT1237M_화이트_XL(105) 8809575843027&nbsp;&nbsp;+ 0원</option>
+                                            <option value="0">SJWT1237M_화이트_2XL(110) 8809575843034&nbsp;&nbsp;+ 0원</option>
                                         </select>
                                     </li>
                                     
@@ -372,16 +372,54 @@
                                 <ul class="p_name">
                                     <li>스켈리도 기모라운드</li>
                                     <li>
-                                        <button type="button"><i class="fas fa-minus"></i></button>
-                                        <input type="text" class="t_center" value="1">
-                                        <button type="button"><i class="fas fa-plus"></i></button>
+                                        <button type="button" id="minus"><i class="fas fa-minus"></i></button>
+                                        <input type="text" class="t_center count" value="1">
+                                        <button type="button" id="plus" class="plus"><i class="fas fa-plus"></i></button>
                                     </li>
                                 </ul>
 
                                 <ul class="p_price fw_600">
                                     <li class="f18">총금액</li>
-                                    <li class="unit_price f18"><span class="fw_600">49,000</span>원</li>
+                                    <li class="price_list f18"><span class="fw_600 total number unit_price">49,000</span>원</li>
                                 </ul>
+
+                                <script>
+                                    $(document).ready( function(){
+
+                                        var $count = $('.count'), //인풋수량값
+                                            $unit = $('.unit_price').text(), //합계금액값
+                                            $unitPrice = parseInt($('.unit_price').text()),
+                                            $unitPrice = parseInt($unit.replace(',','')),
+                                            $currentNumber = parseInt($count.text()),
+			                                $total = $('.total');
+
+                                        $('.p_name li button').click( function(e){
+                                            console.log(1);
+                                            e.preventDefault();
+                                            if($(this).hasClass('plus')){ //.plus를 클릭한게 판단이 되면 1만큼 증가
+				                            	$currentNumber += 1;
+				                            }else{
+				                            	if($currentNumber > 0) {
+				                            		$currentNumber -= 1;
+                                                
+				                            	}
+                                            
+				                            }
+				                            $count.text($currentNumber);
+                                            
+
+                                        });
+
+                                        $(".pro_select_list").change(function(){
+                                            var val = $(this).val();
+
+                                            // console.log(val);
+                                        });
+
+
+
+                                    });
+                                </script>
 
                                 <style>
                                     .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name li,
@@ -390,10 +428,10 @@
                                     .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price::after { content: ''; display: block; overflow: hidden; clear: both; }
                                     .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name { border-bottom: 1px solid #ddd; padding-bottom: 4%; }
                                     .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name button { height: 31px; }
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name input { width: 22%; }
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name input { width: 55%; }
 
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .unit_price { padding-left: 22%; }
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .unit_price span { font-size: 26px; color: red; margin-right: 1%; }
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list { padding-left: 22%; }
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list span { font-size: 26px; color: red; margin-right: 1%; }
 
 
                                 </style>
