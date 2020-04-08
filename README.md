@@ -4,9 +4,24 @@
     front-end -> munjucho
 
 
-## Commit History
+## Mun Commit History
 - first commit : 20200401 
-- index.html : 20200401 ~ 07
+- index.html : complete "20200401 ~ 07"
+- product_view.html : ing
+
+
+## Geo Commit History
+- order.html : complete
+- order_result.html : complete
+
+- content.html : complete
+
+- mypage.html : complete
+- mb_reg_chk.html : complete
+- mb_reg_form.html : complete
+- mb_reg_result.html : complete
+
+- login.html : complete
 
 
 
