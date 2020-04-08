@@ -373,21 +373,29 @@
                                     <li>스켈리도 기모라운드</li>
                                     <li>
                                         <button type="button"><i class="fas fa-minus"></i></button>
-                                        <input type="text" value="">
+                                        <input type="text" class="t_center" value="1">
                                         <button type="button"><i class="fas fa-plus"></i></button>
                                     </li>
                                 </ul>
 
-                                <ul class="p_price">
-                                    <li>총금액</li>
-                                    <li><span>49,000</span>원</li>
+                                <ul class="p_price fw_600">
+                                    <li class="f18">총금액</li>
+                                    <li class="unit_price f18"><span class="fw_600">49,000</span>원</li>
                                 </ul>
 
                                 <style>
                                     .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name li,
                                     .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price li { float: left; width: 50%; margin-top: 5%; }
-                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name::after { content: ''; display: block; overflow: hidden; clear: both; }
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name::after,
                                     .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price::after { content: ''; display: block; overflow: hidden; clear: both; }
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name { border-bottom: 1px solid #ddd; padding-bottom: 4%; }
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name button { height: 31px; }
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name input { width: 22%; }
+
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .unit_price { padding-left: 22%; }
+                                    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .unit_price span { font-size: 26px; color: red; margin-right: 1%; }
+
+
                                 </style>
     
                                 <div class="c_btn f18 t_center">
