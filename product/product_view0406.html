@@ -9,6 +9,7 @@
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <!--main js-->
         <script src="../js/main.js"></script>
+        <script src="../js/COMMON.js"></script>
         <!--bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!--font Awesome-->
@@ -271,171 +272,278 @@
                         <!--} 상품섬네일 끝-->
     
                         <!--{ 상품정보 시작-->
-                        <div class="cm_right">
-                            <p class="fw_600">SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]</p>
-                            <div class="product_text">
-                                
-                                <ul class="p_info_list">
-                                    <li>제조사</li>
-                                    <li>원산지</li>
-                                    <li>브랜드</li>
-                                    <li>판매가격</li>
-                                    <li>가용포인트</li>
-                                    <li>배송비결제</li>
-                                    <li>관리상품번호</li>
-                                </ul>
-    
-                                <ul class="p_info_contents">
-                                    <li>(주)위스포츠</li>
-                                    <li>대한민국</li>
-                                    <li>스켈리도</li>
-                                    <li class="fw_600 ft_size mb10">49,000원</li>
-                                    <li>10,384P</li>
-                                    <li>주문시 결제</li>
-                                    <li>SJWT1237M</li>
-                                </ul>
-                            </div>
+                        <form id = "product_form">
 
-                            <div class="c_option">
-                                <ul>
-                                    <li class="o_color7 fw_600 mb3 f17">선택옵션</li>
-                                    <li class="f14">색상/사이즈</li>
-                                    <li>
-                                        <select class="pro_select_list">
-                                            <option class="unit_price"value="">선택</option>
-                                            <option class="unit_price"value="1000">SJWT1237M_블랙_M(95) 8809575842969&nbsp;&nbsp;+ 1000원</option>
-                                            <option class="unit_price"value="0">SJWT1237M_블랙_L(100) 8809575842976&nbsp;&nbsp;+ 0원</option>
-                                            <option class="unit_price"value="0">SJWT1237M_블랙_XL(105) 8809575842983&nbsp;&nbsp;+ 0원</option>
-                                            <option class="unit_price"value="0">SJWT1237M_블랙_2XL(110) 8809575842990&nbsp;&nbsp;+ 0원</option>
-                                            <option class="unit_price"value="0">SJWT1237M_화이트_M(95) 8809575843003&nbsp;&nbsp;+ 0원</option>
-                                            <option class="unit_price"value="0">SJWT1237M_화이트_L(100) 8809575843010&nbsp;&nbsp;+ 0원</option>
-                                            <option class="unit_price"value="0">SJWT1237M_화이트_XL(105) 8809575843027&nbsp;&nbsp;+ 0원</option>
-                                            <option class="unit_price"value="0">SJWT1237M_화이트_2XL(110) 8809575843034&nbsp;&nbsp;+ 0원</option>
-                                        </select>
-                                    </li>
+                            <input type="hidden" name="seq" id="seq" value = '1'>
+
+                            <div class="cm_right">
+                                <p class="fw_600">SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]</p>
+                                <div class="product_text">
                                     
-                                    <!-- <li><span class="total_price" total_price = "1000">1000</span> 원</li>
-
-                                    <li>
-                                        
-                                        <input type="text" name="" id="aa_count" value = "1">
-                                        <i class="far fa-plus-square"></i>
-                                    </li> -->
-
-
-                                    <!-- <script>
-
-                                        $("document").ready(function(){
-
-                                            //global variable
-                                            var total_count = 0;
-                                            var total_price = 0;
-
-                                            $(".fa-plus-square").click(function(){
-
-                                                var aa_count = Number($("#aa_count").val());
-                                                var a_total_price = Number($(".total_price").attr("total_price"));
-                                                var p_total_price = Number($(".total_price").text());
-
-                                                aa_count = aa_count + 1;
-                                                total_price = a_total_price + p_total_price;
-
-                                                $("#aa_count").val(aa_count);
-                                                $(".total_price").text(total_price);
-                                            });
-
-                                            $(".fa-minus-square").click(function(){
-
-                                                var aa_count = Number($("#aa_count").val());
-
-                                                aa_count = aa_count - 1;
-
-                                                if(aa_count < 1)
-                                                {
-                                                    alert("최소 구매수량은 1개 입니다.");
-                                                }
-                                                else
-                                                {
-                                                    $("#aa_count").val(aa_count);
-                                                    total_count = aa_count;
-                                                }
-
-                                                
-                                            });
-                                            
-                                        });
-
-                                    </script> -->
-
-                                </ul>
-
-                                <ul class="p_name">
-                                    <li>스켈리도 기모라운드</li>
-                                    <li>
-                                        <button type="button" id="minus"><i class="fas fa-minus"></i></button>
-                                        <input type="text" class="t_center count" value="1">
-                                        <button type="button" id="plus" class="plus"><i class="fas fa-plus"></i></button>
-                                    </li>
-                                </ul>
-
-                                <ul class="p_price fw_600">
-                                    <li class="f18">총금액</li>
-                                    <li class="price_list f18"><span class="fw_600 total number unit_price">49,000</span>원</li>
-                                </ul>
-
-                                <!-- <script>
-                                    $(document).ready( function(){
-
-                                        var $count = $('.count').val(), //인풋수량값
-                                            $unit = $('.unit_price').text(), //합계금액값
-                                            $unitPrice = parseInt($('.unit_price').text()),
-                                            $unitPrice = parseInt($unit.replace(',','')),
-                                            $currentNumber = parseInt($count.text()),
-			                                $total = $('.total');
-
-                                        $('.p_name li button').click( function(e){
-                                            console.log(1);
-                                            e.preventDefault();
-                                            if($(this).hasClass('plus')){ //.plus를 클릭한게 판단이 되면 1만큼 증가
-				                            	$currentNumber += 1;
-				                            }else{
-				                            	if($currentNumber > 0) {
-				                            		$currentNumber -= 1;
-                                                
-				                            	}
-                                            
-				                            }
-				                            $count.text($currentNumber);
-                                            
-
-                                        });
-
-                                        $(".pro_select_list").change(function(){
-                                            var val = $(this).val();
-
-                                            // console.log(val);
-                                        });
-
-
-
-                                    });
-                                </script> -->
-
-                                <!--일반상품버튼-->
-                                <!-- <div class="c_btn f18 t_center">
-                                    <div class="left_btn fw_600"><i class="fa fa-credit-card"></i>바로구매</div>
-                                    <div class="right_btn fw_600"><i class="fa fa-shopping-cart"></i>장바구니</div>
-                                    <div class="favorite_icon"><i class="far fa-heart"></i></div>
-                                </div> -->
-
-                                <!--건강프로모션 검진예약 버튼-->
-                                <div class="health_btn">
-                                    <div class="left_btn fw_600 t_center cursor"><i class="fas fa-cart-plus"></i></i>검진예약</div>
-                                    <div class="favorite_icon t_center cursor"><i class="far fa-heart"></i></div>
+                                    <ul class="p_info_list">
+                                        <li>제조사</li>
+                                        <li>원산지</li>
+                                        <li>브랜드</li>
+                                        <li>판매가격</li>
+                                        <li>가용포인트</li>
+                                        <li>배송비결제</li>
+                                        <li>관리상품번호</li>
+                                    </ul>
+        
+                                    <ul class="p_info_contents">
+                                        <li>(주)위스포츠</li>
+                                        <li>대한민국</li>
+                                        <li>스켈리도</li>
+                                        <li class="fw_600 ft_size mb10"><span class="product_price">49,000</span>원</li>
+                                        <li>10,384P</li>
+                                        <li>주문시 결제</li>
+                                        <li>SJWT1237M</li>
+                                    </ul>
                                 </div>
 
+                                <div class="c_option">
+                                    <ul>
+                                        <li class="o_color7 fw_600 mb3 f17">선택옵션</li>
+                                        <li class="f14">색상/사이즈</li>
+                                        <li>
+                                            <select class="pro_select_list">
+                                                <option class="unit_price"value="">선택</option>
+                                                <option class="unit_price"value="1000">SJWT1237M_블랙_M(95) 8809575842969&nbsp;&nbsp;+ 1000원</option>
+                                                <option class="unit_price"value="0">SJWT1237M_블랙_L(100) 8809575842976&nbsp;&nbsp;+ 0원</option>
+                                                <option class="unit_price"value="0">SJWT1237M_블랙_XL(105) 8809575842983&nbsp;&nbsp;+ 0원</option>
+                                                <option class="unit_price"value="0">SJWT1237M_블랙_2XL(110) 8809575842990&nbsp;&nbsp;+ 0원</option>
+                                                <option class="unit_price"value="0">SJWT1237M_화이트_M(95) 8809575843003&nbsp;&nbsp;+ 0원</option>
+                                                <option class="unit_price"value="0">SJWT1237M_화이트_L(100) 8809575843010&nbsp;&nbsp;+ 0원</option>
+                                                <option class="unit_price"value="0">SJWT1237M_화이트_XL(105) 8809575843027&nbsp;&nbsp;+ 0원</option>
+                                                <option class="unit_price"value="0">SJWT1237M_화이트_2XL(110) 8809575843034&nbsp;&nbsp;+ 0원</option>
+                                            </select>
+                                        </li>
+                                        
+                                        <!-- <li><span class="total_price" total_price = "1000">1000</span> 원</li>
+
+                                        <li>
+                                            
+                                            <input type="text" name="" id="aa_count" value = "1">
+                                            <i class="far fa-plus-square"></i>
+                                        </li> -->
+
+
+                                        <!-- <script>
+
+                                            $("document").ready(function(){
+
+                                                //global variable
+                                                var total_count = 0;
+                                                var total_price = 0;
+
+                                                $(".fa-plus-square").click(function(){
+
+                                                    var aa_count = Number($("#aa_count").val());
+                                                    var a_total_price = Number($(".total_price").attr("total_price"));
+                                                    var p_total_price = Number($(".total_price").text());
+
+                                                    aa_count = aa_count + 1;
+                                                    total_price = a_total_price + p_total_price;
+
+                                                    $("#aa_count").val(aa_count);
+                                                    $(".total_price").text(total_price);
+                                                });
+
+                                                $(".fa-minus-square").click(function(){
+
+                                                    var aa_count = Number($("#aa_count").val());
+
+                                                    aa_count = aa_count - 1;
+
+                                                    if(aa_count < 1)
+                                                    {
+                                                        alert("최소 구매수량은 1개 입니다.");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("#aa_count").val(aa_count);
+                                                        total_count = aa_count;
+                                                    }
+
+                                                    
+                                                });
+                                                
+                                            });
+
+                                        </script> -->
+
+                                    </ul>
+
+                                    <ul class="p_name">
+                                        <li>스켈리도 기모라운드</li>
+                                        <li>
+                                            <button type="button" id="minus"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="t_center count" value="1">
+                                            <button type="button" id="plus" class="plus"><i class="fas fa-plus"></i></button>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="p_price fw_600">
+                                        <li class="f18">총금액</li>
+                                        <li class="price_list f18"><span class="fw_600 total number unit_price product_total_price">49,000</span>원</li>
+                                    </ul>
+
+                                    <!-- <script>
+                                        $(document).ready( function(){
+
+                                            var $count = $('.count').val(), //인풋수량값
+                                                $unit = $('.unit_price').text(), //합계금액값
+                                                $unitPrice = parseInt($('.unit_price').text()),
+                                                $unitPrice = parseInt($unit.replace(',','')),
+                                                $currentNumber = parseInt($count.text()),
+                                                $total = $('.total');
+
+                                            $('.p_name li button').click( function(e){
+                                                console.log(1);
+                                                e.preventDefault();
+                                                if($(this).hasClass('plus')){ //.plus를 클릭한게 판단이 되면 1만큼 증가
+                                                    $currentNumber += 1;
+                                                }else{
+                                                    if($currentNumber > 0) {
+                                                        $currentNumber -= 1;
+                                                    
+                                                    }
+                                                
+                                                }
+                                                $count.text($currentNumber);
+                                                
+
+                                            });
+
+                                            $(".pro_select_list").change(function(){
+                                                var val = $(this).val();
+
+                                                // console.log(val);
+                                            });
+
+
+
+                                        });
+                                    </script> -->
+
+                                    <!--일반상품버튼-->
+                                    <div class="c_btn f18 t_center">
+                                        <div class="left_btn fw_600"><i class="fa fa-credit-card"></i>바로구매</div>
+                                        <div class="right_btn fw_600"><i class="fa fa-shopping-cart"></i>장바구니</div>
+                                        <div class="favorite_icon"><i class="far fa-heart"></i></div>
+                                    </div>
+
+                                    <!--건강프로모션 검진예약 버튼
+                                    <div class="health_btn">
+                                        <div class="left_btn fw_600 t_center cursor"><i class="fas fa-cart-plus"></i></i>검진예약</div>
+                                        <div class="favorite_icon t_center cursor"><i class="far fa-heart"></i></div>
+                                    </div>-->
+
+                                </div>
                             </div>
-                        </div>
+
+                        </form>
+
+
+                        <!--
+                        앞으로 작업할때, 버튼 있는건 왠만함 폼으로 작업해줘~
+                        -->
+                        <script>
+                            
+                            //global variable
+                            var seq = $("#seq").val();
+                            var product_price = Number(COMMON.form.str_num($(".product_price").text()));
+                            var product_total_price = Number(COMMON.form.str_num($(".product_total_price").text()));
+                            var product_amount = Number(COMMON.form.str_num($(".count").val()));
+
+                            var sum_price = 0;
+                            var sum_amount = product_amount;
+                            var option_price = 0;
+
+                            $("document").ready(function(){
+                                
+                                //option selectbox click
+                                $(".pro_select_list").change(function(){
+                                    option_price = Number($(this).val());
+                                    sum_price = product_price + option_price;
+                                    $(".product_total_price").text(COMMON.form.comma(sum_price));
+
+                                    if(option_price == "" || option_price == "0")
+                                    {
+                                        sum_price = 0;
+                                        option_price = 0;
+                                    }
+                                });
+
+                                //plus btn event
+                                $(".plus").click(function(){
+                                    sum_amount += 1;
+                                    $(".count").val(sum_amount);
+                                    sum_price = (product_price + option_price) * sum_amount;
+                                    $(".product_total_price").text(COMMON.form.comma(sum_price));
+                                });
+
+                                //minus btn event
+                                $("#minus").click(function(){
+                                    sum_amount -= 1;
+                                    
+                                    if(sum_amount >= product_amount)
+                                    {
+                                        $(".count").val(sum_amount);
+                                        sum_price = sum_price - (product_price + option_price);
+                                        $(".product_total_price").text(COMMON.form.comma(sum_price));
+                                    }
+                                    else
+                                    {
+                                        $(".count").val(product_amount);
+                                        sum_amount = product_amount;
+                                        alert("최소 구매수량 1개입니다.");
+                                    }
+                                    
+                                });
+
+                                //바로구매
+                                $(".left_btn").click(function(){
+                                    //옵션이 있을경우 선택 유무 확인
+                                    var option_chk = $(".pro_select_list option:selected").val();
+                                    if(option_chk == "")
+                                    {
+                                        alert("옵션을 선택하세요.");
+                                    }
+                                    else
+                                    {
+                                        console.log(product_price);
+                                        console.log(option_price);
+                                        console.log(sum_amount);
+                                        console.log(sum_price);
+                                    }
+                                });
+
+                                $(".right_btn").click(function(){
+                                    //옵션이 있을경우 선택 유무 확인
+                                    var option_chk = $(".pro_select_list option:selected").val();
+                                    if(option_chk == "")
+                                    {
+                                        alert("옵션을 선택하세요.");
+                                    }
+                                    else
+                                    {
+                                        console.log(product_price);
+                                        console.log(option_price);
+                                        console.log(sum_amount);
+                                        console.log(sum_price);
+                                    }
+
+                                });
+
+                                $(".favorite_icon").click(function(){
+                                    //ajax 처리함.
+                                });
+
+                            });
+
+                        </script>
+
                         <!--} 상품정보 끝-->
                     </div>
                     <!--검진예약박스-->
