@@ -29,7 +29,6 @@
 .wrap .contents .c_middle .cm_top .cm_right .c_option select { width: 90%;  }
 .wrap .contents .c_middle .cm_top .cm_right .c_option .f14 { margin-bottom: 1%; }
 
-
 .wrap .contents .c_middle .cm_top .cm_right .c_btn { margin-top: 5%; }
 .wrap .contents .c_middle .cm_top .cm_right .c_btn i { margin-right: 5px; }
 .wrap .contents .c_middle .cm_top .cm_right .left_btn { float: left;  background-color: #d50c0c; width: 35%; padding: 3% 2%; color: white; margin-right: 2%; }
@@ -102,6 +101,8 @@ td, th , tr { border: 1px solid #ddd; }
 .cm_middle h3,.health_wrap .health_box .hbl_left li,.health_wrap .health_box .hbr_left li { color: #737171; }
 .cm_middle .health_wrap { padding: 2% 3%; width: 90%; margin: 0 auto; padding-bottom: 0; }
 .health_wrap .health_box { float: left; width: 50%; }
+.health_wrap .health_box_right { padding-left: 3%; border-left: 1px solid #000; }
+
 .cm_middle .health_wrap::after { content: ''; display: block; overflow: hidden; clear: both; }
 .health_wrap .health_box ul { float: left; }
 .health_wrap .health_box .hbl_left,.health_wrap .health_box .hbr_left { width: 30%; }
@@ -109,11 +110,12 @@ td, th , tr { border: 1px solid #ddd; }
 .health_wrap .health_box .hbr_right { width: 67%; }
 .health_wrap .health_box::after { content: ''; display: block; overflow: hidden; clear: both; }
 .health_wrap .health_box .hbl_left,.health_wrap .health_box .hbr_left .pb18 { padding-bottom: 18%; }
-.health_wrap .health_box .hbl_right input,.health_wrap .health_box .hbr_right input { color: #cfcfcf; }
+.health_wrap .health_box .hbl_right input,.health_wrap .health_box .hbr_right input { color: #8e8e8e; }
 .health_wrap .health_box .hbl_right .gender div input { margin-left: 1%; margin-right: 2%; }
-.cm_middle .check_btn { width: 13%; margin: 0 auto; background-color: #000; color: white; padding: 1.5% 3%; margin-bottom: 3%; }
+.cm_middle .check_btn { width: 13%; margin: 3% auto; background-color: #000; color: white; padding: 1.5% 3%; }
 
 @media (max-width: 1220px) {
+
     .wrap .contents .c_middle .cm_top .cm_right p { font-size: 18px; }
     .f17 { font-size: 14px; }
     .wrap .contents .cm_bottom .cmb_tab ul li a { height: 40px; line-height: 38px; font-size: 14px; }
@@ -121,19 +123,19 @@ td, th , tr { border: 1px solid #ddd; }
     { padding: 0; line-height: 19px; min-width: 20px; font-size: 12px; }
     .wrap .contents .cm_bottom h3,.wrap .contents .c_top a { font-size: 17px; }
     .f18 { font-size: 16px; }
-    .f14  { font-size: 12px; }
+    .cm_middle .check_btn,.f14  { font-size: 12px; }
     .health_wrap .health_box .hbl_left li, .health_wrap .health_box .hbr_left li { font-size: 14px; }
+    .cm_middle .health_wrap { width: 100%; }
     
-
+    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list { padding-left: 0; }
 
 }
 @media (max-width: 810px) {
     .wrap .contents .c_middle .cm_top .cm_right p { font-size: 13px; }
     .wrap .contents .c_middle .cm_top .cm_right .product_text ul li:not(.ft_size) { font-size: 12px; }
     .f18,.wrap .contents .c_middle .cm_top .cm_right .c_option select  { font-size: 14px; }
-    .f14,.f17 { font-size: 12px; }
+    .f14,.f17 { font-size: 12px;  word-break: keep-all;}
 
-    
 }
 
 @media (max-width: 768px) {
@@ -152,8 +154,20 @@ td, th , tr { border: 1px solid #ddd; }
     .wrap .contents .cm_bottom .p_btn .m_btn { width: 20%; padding: 1.99%;  }
     .wrap .contents .cm_bottom table .p1 { width: 20%; }
 
+    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list { padding-left: 26%; }
 
+    .cm_middle .health_wrap { width: 85%; padding: 2% 0; }
+    .cm_middle .health_wrap .health_box { width: 100%; }
+    .cm_middle .health_wrap .health_box_right { border-left: none; }
+    .cm_middle .health_wrap .health_box_right { padding-left: 0; }
+    .health_wrap .health_box .hbl_left { padding-bottom: 5%; }
     
+    .health_wrap .health_box .hbl_right ,.health_wrap .health_box .hbr_right { width: 66%; margin-left: 3%; }
+    .cm_middle { margin-top: 0; }
+    .health_wrap .health_box { width: 80%; }
+    .cm_middle .check_btn { width: 30%; margin-bottom: 10%; }
+    .gender div { font-size: 12px; }
+
 }
 @media (max-width: 500px) {
     .wrap .contents .cm_bottom .cmb_tab ul li a { font-size: 11px; height: 30px; line-height: 28px; }
@@ -162,9 +176,28 @@ td, th , tr { border: 1px solid #ddd; }
     .wrap .contents .cm_bottom .p_btn .w_btn { width: 35%; }
     .wrap .contents .cm_bottom .cmb_tab { margin: 6% 0; }
     .wrap .contents .cm_bottom h3 { font-size: 13px; }
+
+    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name li, .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price li
+    { width: 100%; text-align: center; }
+    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list { padding-left: 0; }
+    .wrap .contents .c_middle .cm_top .cm_right .left_btn { width: 60%; margin-right: 0; margin-left: 15%; }
+    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list span { font-size: 20px; }
+    .wrap .contents .c_middle .cm_top .cm_right .c_option .p_name li { font-size: 15px; }
+    .health_wrap .health_box .hbl_left li, .health_wrap .health_box .hbr_left li { font-size: 12px; }
+    .health_wrap .health_box .hbl_left { padding-bottom: 10%; }
+    .pb20 { padding-bottom: 25%; }
+    .pb10 { padding-bottom: 20%; }
+    .health_wrap .health_box .hbl_right input, .health_wrap .health_box .hbr_right input { font-size: 11px; }
+
+    .wrap .contents .c_middle .cm_top .cm_right .c_option .left_btn { margin-left: 0; margin-right: 2%; }
+
 }
 @media (max-width: 400px) {
     .wrap .contents .c_middle .cm_top .cm_right .c_option select option { width: 90%; }
-
+    .health_wrap .health_box .hbl_left { padding-bottom: 13%; }
+    .pb10 { padding-bottom: 30%; }
     
 }
+
+
+

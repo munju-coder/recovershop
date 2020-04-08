@@ -60,10 +60,10 @@
         <tr>
             <td>product_view.html</td>
             <td>상품상세</td>
-            <td></td>
+            <td>상품수량js미완성</td>
             <td>health_view 포함</td>
             <td></td>
-            <td>ing</td>
+            <td>O</td>
         </tr>
         <tr>
             <td rowspan = "2">order</td>
