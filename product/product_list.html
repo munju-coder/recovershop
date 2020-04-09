@@ -36,6 +36,7 @@
         <!--style sheet-->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="css/product.css">
         <!--goolge webfont-->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet"> 
 
@@ -307,90 +308,32 @@
             </aside>
             <!--} aside fixed top,bottom btn-->
 
-            <!--{ main slide-->
-            <div class="main_slide">
-                <div><img src="../images/main_banner1.jpg" alt="main banner image"></div>
-                <div><img src="../images/main_banner2.jpg" alt="main banner image"></div>
-                <div><img src="../images/main_banner3.jpg" alt="main banner image"></div>
-                <div><img src="../images/main_banner4.jpg" alt="main banner image"></div>
-                <div><img src="../images/main_banner5.jpg" alt="main banner image"></div>
-                <div><img src="../images/main_banner6.jpg" alt="main banner image"></div>
-            </div>
-            <!--} main slide-->
-
 
             <!--{ contents 시작-->
             <div class="contents dw_1200px">
 
-                <!--{ contents slide menu-->
-                <div class="ct_menu">
-                    <div class="ctm_wrap">
-                        <div class="ctm_slide t_center">
-                            <img src="../images/ca_id_01.png" alt="icon_color img">
-                            <img src="../images/ca_id_01_1.png" alt="icon_transparent img">
-                            <span class="ft_600">패션</span>
-                        </div>
-
-                        <div class="ctm_slide t_center">
-                            <img src="../images/m-iconmenu-04.png" alt="icon_color img">
-                            <img src="../images/m-iconmenu-004.png" alt="icon_transparent img">
-                            <span class="ft_600">뷰티</span>
-                        </div>
-
-                        <div class="ctm_slide t_center">
-                            <img src="../images/m-iconmenu-03.png" alt="icon_color img">
-                            <img src="../images/m-iconmenu-003.png" alt="icon_transparent img">
-                            <span class="ft_600">생활가전</span>
-                        </div>
-
-                        <div class="ctm_slide t_center">
-                            <img src="../images/m-iconmenu-01.png" alt="icon_color img">
-                            <img src="../images/m-iconmenu-001.png" alt="icon_transparent img">
-                            <span class="ft_600">식품</span>
-                        </div>
-                        
-                        <div class="ctm_slide t_center">
-                            <img src="../images/m-iconmenu-06.png" alt="icon_color img">
-                            <img src="../images/m-iconmenu-006.png" alt="icon_transparent img">
-                            <span class="ft_600">건강</span>
-                        </div>
-                        
-                        <div class="ctm_slide t_center">
-                            <img src="../images/m-iconmenu-05.png" alt="icon_color img">
-                            <img src="../images/m-iconmenu-005.png" alt="icon_transparent img">
-                            <span class="ft_600">인테리어</span>
-                        </div>
-                        
-                        <div class="ctm_slide t_center">
-                            <img src="../images/m-iconmenu-07.png" alt="icon_color img">
-                            <img src="../images/m-iconmenu-007.png" alt="icon_transparent img">
-                            <span class="ft_600">잡화</span>
-                        </div>
-                        
-                        <div class="ctm_slide t_center">
-                            <img src="../images/ca_id_08.png" alt="icon_color img">
-                            <img src="../images/ca_id_08_8.png" alt="icon_transparent img">
-                            <span class="ft_600">생활용품</span>
-                        </div>
-
-                    </div>
-                </div>
-                <!--} contents slide menu-->
-
                 <!--product list 시작 {-->
-                <div class="ct_inner">
+                <div class="ct_inner p_inner mt3">
                     <section class="product_wrap">
                         <div class="title_text">
                             <h2 class="main-title">
-                                <a href="http://recovershop.co.kr/shop/listtype3.php?type=9">패션</a>
+                                <a href="">패션</a>
                             </h2>
+                        </div>
+
+                        <div class="in_order">
+                            <ul>
+                                <li class="low_list fw_600 cursor">낮은가격순</li>
+                                <li class="fw_600 cursor">높은가격순</li>
+                                <li class="recent_list fw_600 cursor">최근등록순</li>
+                            </ul>
                         </div>
 
                         <ul class="product_box">
                             <li class="col-xs-6 col-sm-3 pb_list t_center">
                                 <div class="pbl_img">
                                     <a href="#" class="thumbnail">
-                                        <img src="../images/pr_img1.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
+                                        <img src="../images/pr_img843171.jpg" alt="SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어]" width="230" height="230">
                                     </a>
                                 </div>
                                 
@@ -502,19 +445,37 @@
                         </ul>
                     </section>
                 </div>
-                <!--product list 시작 }-->
-
-
-
+                <!--product list }-->
 
             </div>
             <!--} contents 끝 -->
 
             <!--product list paging {-->
-            <div>
-
+            <div class="p_paging t_center">
+                <div class="pp_wrap">
+                    <a class="a_active fw_600" href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href="">6</a>
+                    <a href="">7</a>
+                    <a href="">8</a>
+                    <a href="">9</a>
+                    <a class="tw_num" href="">10</a>
+                    <a href=""><i class="fas fa-angle-right"></i></a>
+                    <a href=""><i class="fas fa-angle-double-right"></i></a>
+                </div>
             </div>
             <!--product list paging }-->
+
+            <style>
+                .p_paging { margin-bottom: 2%; }
+                .p_paging .pp_wrap a {  display: inline-block; width: 26px; padding: 5px; background-color: white; border: 1px solid #c1c0c0;  border-radius: 5px; color: #555;  }
+                .p_paging .pp_wrap a:hover { background-color: #f3f3f1; }
+                .p_paging .pp_wrap .a_active { background-color: #4c4f6f; color: white; }
+                .p_paging .pp_wrap .tw_num { padding-left: 1px; } 
+            </style>
 
 
             <!--{ footer 시작 -->

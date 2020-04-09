@@ -1,3 +1,5 @@
+
+/*product view*/
 .wrap .contents .c_middle .cm_top .cm_right .product_text .p_info_contents.ft_size { font-size: 18px; color: #000; margin-bottom: 15%; }
 .wrap .contents { margin-top: 2%; }
 .wrap .contents .c_top { margin-bottom: 2%; border-bottom: 1px solid #333; padding-bottom: 2%; }
@@ -114,6 +116,18 @@ td, th , tr { border: 1px solid #ddd; }
 .health_wrap .health_box .hbl_right .gender div input { margin-left: 1%; margin-right: 2%; }
 .cm_middle .check_btn { width: 13%; margin: 3% auto; background-color: #000; color: white; padding: 1.5% 3%; }
 
+/*product list*/
+.contents .p_inner .product_wrap .title_text { margin-bottom: 0; }
+.contents .p_inner .product_wrap .in_order ul li { float: left; border-right: 1px solid #9e9e9e; padding: 0 1%; color: #929292; font-size: 14px; }
+.contents .p_inner .product_wrap .in_order ul li:hover { color: brown; }
+.contents .p_inner .product_wrap .in_order ul .low_list { padding-left: 0; }
+.contents .p_inner .product_wrap .in_order ul .recent_list { border-right: none; }
+.contents .p_inner .product_wrap .in_order ul::after { content: ''; display: block; overflow: hidden; clear: both; }
+.contents .p_inner .product_wrap .in_order { border: 1px solid #ddd; border-top: none; margin: 0 0 3% 0; }
+.contents .p_inner .product_wrap .in_order ul { padding: 1% 0;  padding-left: 1%; } 
+
+
+
 @media (max-width: 1220px) {
 
     .wrap .contents .c_middle .cm_top .cm_right p { font-size: 18px; }
@@ -167,6 +181,10 @@ td, th , tr { border: 1px solid #ddd; }
     .health_wrap .health_box { width: 80%; }
     .cm_middle .check_btn { width: 30%; margin-bottom: 10%; }
     .gender div { font-size: 12px; }
+    
+    /*product_list*/
+    .contents .p_inner .product_wrap .in_order ul { padding: 2% 0; padding-left: 1%; }
+
 
 }
 @media (max-width: 500px) {
@@ -190,6 +208,12 @@ td, th , tr { border: 1px solid #ddd; }
     .health_wrap .health_box .hbl_right input, .health_wrap .health_box .hbr_right input { font-size: 11px; }
 
     .wrap .contents .c_middle .cm_top .cm_right .c_option .left_btn { margin-left: 0; margin-right: 2%; }
+
+    /*product_list*/
+    .contents .p_inner .product_wrap .in_order ul li { font-size: 12px; }
+    .wrap .p_paging { margin-top: 5%; }
+    .wrap .p_paging .pp_wrap a { width: 23px; padding: 3px; font-size: 12px; }
+    .wrap .p_paging .pp_wrap { width: 70%; margin: 0 auto; }
 
 }
 @media (max-width: 400px) {
