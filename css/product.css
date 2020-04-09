@@ -127,7 +127,6 @@ td, th , tr { border: 1px solid #ddd; }
 .contents .p_inner .product_wrap .in_order ul { padding: 1% 0;  padding-left: 1%; } 
 
 
-
 @media (max-width: 1220px) {
 
     .wrap .contents .c_middle .cm_top .cm_right p { font-size: 18px; }
@@ -142,6 +141,8 @@ td, th , tr { border: 1px solid #ddd; }
     .cm_middle .health_wrap { width: 100%; }
     
     .wrap .contents .c_middle .cm_top .cm_right .c_option .p_price .price_list { padding-left: 0; }
+
+    
 
 }
 @media (max-width: 810px) {
@@ -184,6 +185,7 @@ td, th , tr { border: 1px solid #ddd; }
     
     /*product_list*/
     .contents .p_inner .product_wrap .in_order ul { padding: 2% 0; padding-left: 1%; }
+    
 
 
 }
@@ -211,9 +213,7 @@ td, th , tr { border: 1px solid #ddd; }
 
     /*product_list*/
     .contents .p_inner .product_wrap .in_order ul li { font-size: 12px; }
-    .wrap .p_paging { margin-top: 5%; }
-    .wrap .p_paging .pp_wrap a { width: 23px; padding: 3px; font-size: 12px; }
-    .wrap .p_paging .pp_wrap { width: 70%; margin: 0 auto; }
+
 
 }
 @media (max-width: 400px) {

@@ -46,7 +46,7 @@
             <td>slide 2개 미완성</td>
             <td></td>
             <td></td>
-            <td>ing</td>
+            <td>O</td>
         </tr>
         <tr>
             <td rowspan = "2">product</td>
