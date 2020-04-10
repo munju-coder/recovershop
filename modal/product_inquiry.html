@@ -31,8 +31,6 @@
         <!--slick slide-->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-        <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
         <!--style sheet-->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/main.css">
@@ -41,78 +39,66 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet"> 
 
     </head>
+    
+    <script>
+        $(document).ready( function(){
 
-    <body>
-        <div class="find_info">
-            <div class="fi_top fw_600">
-                <h1>회원정보찾기</h1>
-            </div>
-
-            <script>
-                $(document).ready( function(){
-                    var $selectEmail = $('.select_domain'),
-                        $targetInput = $('.email_domain')
-
-                    $selectEmail.change( function(){
-				    var domain = $(this).val();
-				    $targetInput.val(domain);
-			        });
-
-                    /**
-                    * @brief serializeObject
-                    * form  
-                    */
-                    $.fn.serializeObject = function() {
-                        var obj = null;
-                        try {
-                            if (this[0].tagName && this[0].tagName.toUpperCase() == "FORM") {
-                                var arr = this.serializeArray();
-                                if (arr) {
-                                    obj = {};
-                                    jQuery.each(arr, function() {
-                                        obj[this.name] = this.value;
-                                    });
-                                }
-                            }
-                        } catch (e) {
-                            alert(e.message);
-                        } finally {
+            /**
+            * @brief serializeObject
+            * form  
+            */
+            $.fn.serializeObject = function() {
+                var obj = null;
+                try {
+                    if (this[0].tagName && this[0].tagName.toUpperCase() == "FORM") {
+                        var arr = this.serializeArray();
+                        if (arr) {
+                            obj = {};
+                            jQuery.each(arr, function() {
+                                obj[this.name] = this.value;
+                            });
                         }
-                    
-                        return obj;
-                    };
-                
-                });
-            </script>
-            <form class="t_left" action="">
-                <fieldset>
-                    <div class="fi_txt">
-                        <p class="f14">회원가입 시 등록하신 이메일 주소를 입력해주세요.</p>
-                        <p class="f14">해당 이메일로 아이디와 비밀번호 정보를 보내드립니다.</p>
-                    </div>
-                    
-                    <div class="fi_middle">
-			            <input type="text" class="email_name" value="E-mail"> @
-                        <input type="text" class="email_domain" value="">
-                        
-			            <select class="select_domain">
-			        	    <option value="daum.net">daum</option>
-			        	    <option value="naver.com">naver</option>
-			        	    <option value="gmail.com">gmail</option>
-			        	    <option value="yahoo.com">yahoo</option>
-			        	    <option value="">직접입력</option>
-			            </select>
+                    }
+                } catch (e) {
+                    alert(e.message);
+                } finally {
+                }
+            
+                return obj;
+            };
+        });
+    </script>
+    <body>
+        <div class="product_inquiry point_box">
+			
+			<div class="fi_top fw_600">
+                <h1>상품문의쓰기</h1>
+			</div>
 
-                        <button type="submit" class="check_btn">확인</button>                        
-                    
-                    </div>
+			<div class="pi_box">
+				<div class="pib_top f12"><input type="checkbox" name="iq_secret" id="iq_secret" value="1">비밀글</div>
 
-                </fieldset>
-                <!-- 자동등록방지숫자 -->
+				<div class="pib_middle">
+					<ul>
+						<li><input type="text" class="pib_email" placeholder="aaa@aaa.com"></li>
+						<li><p>이메일을 입력하시면 답변 등록 시 답변이 이메일로 전송됩니다.</p></li>
+					</ul>
 
-            </form> 
+					<ul>
+						<li><input type="text" class="" placeholder="01012345678"></li>
+						<li><p>휴대폰번호를 입력하시면 답변 등록 시 답변등록 알림이 SMS로 전송됩니다.</p></li>
+					</ul>
+				</div>
+
+				<div class="pib_bottom">
+					<div class="pbi_sub"><input type="text" placeholder="제목"></div>
+					<div class="pbi_txt"><textarea name="" id="" cols="30" rows="10"></textarea></div>
+				</div>
+
+				<div class="pi_btn t_right fw_600"><a href="#">작성완료</a></div>
+			</div>		
+			
         </div>
-       
     </body>
 </html>
 

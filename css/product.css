@@ -108,6 +108,8 @@ td, th , tr { border: 1px solid #ddd; }
 .cm_middle .health_wrap::after { content: ''; display: block; overflow: hidden; clear: both; }
 .health_wrap .health_box ul { float: left; }
 .health_wrap .health_box .hbl_left,.health_wrap .health_box .hbr_left { width: 30%; }
+.health_wrap .health_box:not(.health_box_right) { border-right: 1px solid #000; }
+.health_wrap .health_box_right { padding-left: 3%; }
 .health_wrap .health_box .hbl_right { width: 60%; }
 .health_wrap .health_box .hbr_right { width: 67%; }
 .health_wrap .health_box::after { content: ''; display: block; overflow: hidden; clear: both; }
