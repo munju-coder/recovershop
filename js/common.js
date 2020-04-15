@@ -47,7 +47,7 @@ $(document).ready( function(){
      * @brief header 메뉴버튼 클릭시 header left 메뉴 펼쳐짐. 
      */
     $('.menu_btn, .hdl_close, .M_bg').click( function(){ 
-        $(".hd_wrap, .M_bg").toggle();
+        $(".hd_left, .hd_wrap, .M_bg").toggle();
 
     });
 

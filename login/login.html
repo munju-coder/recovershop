@@ -31,8 +31,6 @@
         <!--slick slide-->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-        <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
         <!--style sheet-->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/main.css">
@@ -113,43 +111,6 @@
     </head>
  
     <body>
-        <style>
-            input[type=text], input[type=password] { padding: 1%; }
-            /* div { overflow: hidden; } */
-            
-
-            .contents .login_wrap .login_box { width: 400px; min-height: 430px; margin:0 auto; margin-top: 5%; background-color: white; box-shadow: 0 10px 30px #c6c6c6; }
-            .contents .login_wrap .login_box .logbox_top { padding-top: 10%; padding-bottom: 5%; }
-            .contents .login_wrap .login_box .logbox_top h2 { color: #777; }
-            /* .contents .login_wrap .login_box .logbox_top,
-            .contents .login_wrap .login_box .logbox_middle,
-            .contents .login_wrap .login_box .logbox_bottom { padding:2%; } */
-            .contents .login_wrap .login_box .logbox_middle { padding: 15px; padding-top: 0; }
-            .contents .login_wrap .login_box .logbox_middle .lbm_box { width:100%; overflow: hidden; padding-top: 15px; }
-            .contents .login_wrap .login_box .logbox_middle .lbm_box div { float:left; }
-            .contents .login_wrap .login_box .logbox_middle .lbm_box .lbmb_icon { width:10%; }
-            .contents .login_wrap .login_box .logbox_middle .lbm_box .lbmb_icon i { color: #777; padding-top: 7px; }
-            .contents .login_wrap .login_box .logbox_middle .lbmb_bottom { padding-top: 5px; }
-            .contents .login_wrap .login_box .logbox_middle .lbmb_bottom .lbmb_check { margin: 20px 0; }
-            /* .contents .login_wrap .login_box .logbox_middle .lbm_box .lbmb_icon i { font-size:3.3rem; } */
-            .contents .login_wrap .login_box .logbox_middle .lbm_box .lbmb_ibox { width:90%; margin-bottom: 2%; }
-            /* .contents .login_wrap .login_box .logbox_btn { width:20%; margin:0 auto; padding:2% 0; } */
-            .contents .login_wrap .login_box .logbox_btn { width: 92%; margin: 0 auto; }
-            .contents .login_wrap .login_box .logbox_btn input[type=submit] { width: 100%; font-weight: 600; padding: 4% 0%; background-color: #e82828; color: white; }
-            .contents .login_wrap .login_box .logbox_middle .lbm_box .lbmb_ibox .lbmb_input { padding: 3%; border-radius: 10px; border: 1px solid #b3b3b3; }
-
-            /* @media screen and (max-width: 768px) {
-                .contents, .contents img, .c_middle {width:100%;}
-                .contents .c_middle .login_box  {width:100% !important;}
-                .board_list .bl_top  { width:20% !important; }
-                .board_list .bl_top > div {width:100%; padding: 0 !important;}
-                
-                .board_list .bl_list  { width:80% !important;}
-                .board_list .bl_list > div {width:100%; text-align: left !important; padding: 0 !important;}
-            }             
-            */
-        </style>
-
         <div class="contents">
             <div class="login_wrap">
                 
@@ -162,20 +123,12 @@
 
                         <div class="logbox_middle">
                             <div class="lbm_box">
-                                <div class="lbmb_icon">
-                                    <i class="fas fa-user f22"></i>
-                                </div>
-
                                 <div class="lbmb_ibox">
                                     <input type="text" class = "lbmb_input w98" name="mb_id" id="mb_id" placeholder="아이디를 입력하세요.">
                                 </div>
                             </div>
 
                             <div class="lbm_box lbmb_bottom">
-                                <div class="lbmb_icon">
-                                    <i class="fas fa-key f22"></i>
-                                </div>
-
                                 <div class="lbmb_ibox">
                                     <input type="password" class = "lbmb_input w98" name="mb_passwd" id="mb_passwd" placeholder="패스워드를 입력하세요.">
                                 </div>
@@ -190,24 +143,11 @@
                             <div class="lbmb_check f12"><input type="checkbox">자동로그인</div>
                             <div class="lbmb_footer f12">
                                 <ul>
-                                    <li><input type="submit" class="lbmbf_left" value="아이디/비밀번호찾기"></li>
+                                    <li class="lbmbf_left"><input type="submit" value="아이디/비밀번호찾기"></li>
                                     <li><input type="submit" value="회원가입"></li>
                                 </ul>
-                                <!-- <input type="submit" class="lbmbf_left" value="아이디/비밀번호찾기">
-                                <input type="submit" value="회원가입"> -->
                             </div>
-
-                            <style>
-                                .lbmb_check { text-align: center; margin: 20px 0; }
-                                .contents .login_wrap .login_box .logbox_bottom .lbmb_footer ul li { float: left; width: 50%; }
-                                .contents .login_wrap .login_box .logbox_bottom .lbmb_footer ul::after { content: ''; display: block; overflow: hidden; clear: both; }
-                                .contents .login_wrap .login_box .logbox_bottom .lbmb_footer { background-color: #f0f0f0; height: 60px; line-height: 60px; }
-                                
-                            </style>
-
                         </div>
-
-
 
                     </div>
                 </form>
