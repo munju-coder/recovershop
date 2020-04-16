@@ -31,19 +31,16 @@
         <!--slick slide-->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-        <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
         <!--style sheet-->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/main.css">
-        <!-- <link rel="stylesheet" href="css/product.css"> -->
         <!--goolge webfont-->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet"> 	
 
         <style>
-            /* aside {height:100%; overflow:hidden;} */
+            
             div {overflow:hidden;}
-            .hd_left {display:none;}
+         
         </style>
         <script>
             $("document").ready(function(){
@@ -73,6 +70,20 @@
                 });
             });
 
+        </script>
+
+        <script>
+
+            $(document).ready( function(){
+                
+                //상태설명보기 버튼 토글
+                $('.delivery_state_btn').click( function(){
+
+                $('.delivery_ex').toggle();
+                console.log(1);
+
+                });
+            });
         </script>
     </head>
  
@@ -148,15 +159,13 @@
             </header>
             <!--} header-->
 
-            <!--{ aside menu-->
+             <!--{ aside menu-->
             <aside class="hd_left">
-
                 <div class="hdl_close cursor">
                     <i class="fas fa-times"></i>
                 </div>
+
                 <div class="hd_wrap">
-                    
-                    
                     <div class="hdl_login t_center">
                         <div class="hdl_lwrap">
                             <form name="" action="">
@@ -281,74 +290,12 @@
                 <div class="content dw_1200px">
                     <div class="order_box">
                         <div class="ob_top">
-                            <div class="obt_subject f22 fw_600">
+                            <div class="obt_subject f22 fw_600 result_obt_subject">
                                 주문 상세 내역
                             </div>
         
-                            <style>
-                                .mb_2 { margin-bottom: 20px; }
-                                /* .content .ob_top, .ob_middle { padding-bottom:3%;} */
-                                .content .detail_order { overflow: hidden; border: 1px solid rgb(244, 244, 244); background-color: #fafafa; }
-
-                                .content .order_box .obt_list {width:100%;}
-
-                                .board_list {width:100%;}
-                                .board_list .bl_top {float:left; width:100%; border-bottom:1px solid #797979; }
-                                .board_list .bl_top div {padding:1.5% 0;}
-                                .board_list .bl_top .blb_subject {float:left; font-weight:bold;}
-
-                                .board_list .bl_list {float:left; width:100%; border-bottom:1px solid #dddddd;}
-                                .board_list .bl_list div {padding:1% 0;}
-                                .board_list .bl_list .blb_box {float:left;}
-                                .board_list .bl_list .blb_box ul li {float:left;}
-                                .board_list .bl_list .blb_box ul li:first-child {padding-right:2%;}            
-                                .board_list .bl_list .blb_box ul li img { width: 50%; }
-
-                                .content .order_box { padding: 4% 0; }
-                                .content .order_box .obm_left .obm_box_subject {border-bottom:1px solid #dddddd; margin-bottom:2%; padding-bottom: 2%; }
-                                .content .order_box .obm_left .obm_i_box { padding:1.5% 0; }
-                                .content .order_box .obm_left .obm_i_box div { float:left; }
-                                .content .order_box .obm_left .obm_i_box .obmib_subject { width:15%; font-size:15px;  }
-                                .content .order_box .obm_left .obm_i_box .obmib_input { width:85%; font-size: 13px; }
-                                .content .order_box .obm_left .obm_i_box .obmib_input input[type=text], .obmib_input .zip_btn {float:left;}
-                                .content .order_box .obm_left .obm_i_box .obmib_input .zip_btn {margin-left:2%; padding:1% 2.5%; background-color: cadetblue; color:#ffffff;}
-
-                                .content .order_box .obm_right { background-color: #eceff4; box-shadow: inset 7px 0 11px -5px #ced8e5;  }
-
-                                .content .order_box .obm_right .obmr_box { padding-top: 7%;  margin-bottom:2%; }
-                                .content .order_box .obm_right .obmr_box .obmrb_box { width:100%; background-color: #ffffff; padding: 5% 3%; padding-bottom: 8%; border-bottom:1px solid #dddddd;}
-                                .content .order_box .obm_right .obmr_box .obmrb_box .obmrbb_subject {float:left;}
-                                .content .order_box .obm_right .obmr_box .obmrb_box .obmrbb_price { float:right; }
-                                .content .order_box .obm_right .obmr_select {width:100%;}
-                                .content .order_box .obm_right .obmr_select div {float:left; width:50%; font-size:20px; font-weight:bold; color:#ffffff; text-align: center; padding:1.5% 0; cursor:pointer;}
-                                .content .order_box .obm_right .obmr_btn_box input {float:left; width:50%; padding:3% 0; text-align: center; font-size:20px; font-weight:bold; border:none; color:#ffffff;}
-                                .content .order_box .ob_top .obt_subject { margin-bottom: 2%; padding-top: 0; }
-                                .delivery_ex .de_box p { float: left; }
-                                .delivery_ex .de_box::after { content: ''; display: block; overflow: hidden; clear: both; }
-                                .obm_order_box {  background-color: white; padding: 3%; box-shadow: 0 2px 5px #ddd; }
-                                .delivery_ex { display: none; }
-                                .delivery_state_btn { background-color: white; display: inline-block; padding: 5px; border: 1px solid #9b9b9b;  margin: 1% 0;  }
-                                .delivery_state_btn a { color: #717070; }
-                                .delivery_ex { background-color: #eae9e9; border: 1px solid #d9d9d9; padding: 1.5% 0; margin-bottom: 5%; }
-                                .delivery_ex .de_box { margin-bottom: 1%; }
-                                .delivery_ex .de_box .deb_txt { margin: 0 1%;  }
-                                .content .order_box .obm_left { background-color: #fafafa; }
-                                .content .order_box .obm_right .obmr_box .obmrb_box .obmrbbs_f { font-size: 14px; }
-                                .content .order_box .obm_right .order_cancel_btn input[type="submit"] { width: 100%; font-size: 14px; background-color: white; color: red; border: 1px solid red; }
-                                .content .order_box .obm_right .order_cancel_btn input[type="submit"]:hover { background-color: #ff1515; color: #fff; }
-
-                                @media (max-width:992px) {
-                                    .delivery_state_btn { padding-bottom: 8px; }
-                                    .content .order_box .obm_left .obm_i_box .obmib_subject { font-size: 13px; }
-                                    .board_list .bl_list .blb_box ul li { font-size: 12px; }
-                                    .content .order_box .ob_top .obt_subject { font-size: 18px; }
-                                    .board_list .bl_top .blb_subject,.board_list .bl_list .blb_box { font-size: 13px; }
-                                    .content .order_box .obm_right .obmr_box .obmrb_box .obmrbbs_f { font-size: 12px; }
-                                }
-                            </style>
-                            
-                            <div class="obt_list">
-                                <div class="board_list">
+                            <div class="obt_list w100 PC_order">
+                                <div class="board_list ">
                                     <div class="bl_top">
                                         <div class="w30 blb_subject t_center">구매 상품</div>
                                         <div class="w5 blb_subject t_center">수량</div>
@@ -373,233 +320,242 @@
                                         <div class="w10 blb_box t_center">무료배송</div>
                                         <div class="w10 blb_box t_center">입금</div>
                                     </div>
-
-                                    <div class="delivery_state_btn t_right f13">
-                                        <a class="fw_600 f12" href="#">상태설명보기</a>
-                                    </div>
-
-                                    <!--{ 상태설명보기 btn-->
-                                    <div class="delivery_ex f14">
-                                        <div class="de_box">
-                                            <p class="fw_600 deb_txt">주문 :</p>
-                                            <p>주문이 접수되었습니다.</p>
-                                        </div>
-
-                                        <div class="de_box">
-                                            <p class="fw_600 deb_txt">입금 :</p>
-                                            <p>입금(결제)이 완료 되었습니다.</p>
-                                        </div>
-
-                                        <div class="de_box">
-                                            <p class="fw_600 deb_txt">준비 :</p>
-                                            <p>상품 준비 중입니다.</p>
-                                        </div>
-
-                                        <div class="de_box">
-                                            <p class="fw_600 deb_txt">배송 :</p>
-                                            <p>상품 배송 중입니다.</p>
-                                        </div>
-
-                                        <div class="de_box">
-                                            <p class="fw_600 deb_txt">완료 :</p>
-                                            <p>배송이 완료되었습니다.</p>
-                                        </div>
-                                    </div>
-                                    <!--} 상태설명보기 btn-->
-                                    <script>
-
-                                        $(document).ready( function(){
-                                            
-                                            //상태설명보기 버튼 토글
-                                            $('.delivery_state_btn').click( function(){
-
-                                            $('.delivery_ex').toggle();
-                                            console.log(1);
-
-                                            });
-                                        });
-                                    </script>
-
                                 </div>
                             </div>
+
+                            <div class="obt_list w100 M_order">
+                                <div class="board_list">
+                                    <div class="bl_top fw_600">
+                                        주문상품 정보
+                                    </div>
         
+                                    <div class="bl_list">
+                                        <div class="w40 blb_box">
+                                            <img src="../images/pr_img9.jpg" alt="product image">
+                                        </div>
+                                        <div class="w5 blb_box"><span class="fw_600">상품명:</span> zzzzzzzzzzzz</div>
+                                        <div class="w5 blb_box"><span class="fw_600">수량:</span> 1</div>
+                                        <div class="w15 blb_box"><span class="fw_600">판매가:</span> 100,000</div>
+                                        <div class="w15 blb_box"><span class="fw_600">소계:</span> 100,000</div>
+                                        <div class="w15 blb_box"><span class="fw_600">포인트:</span> 0</div>
+                                        <div class="w10 blb_box"><span class="fw_600">배송비:</span> 무료배송</div>
+                                        <div class="w15 blb_box"><span class="fw_600">상태:</span> 입금</div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                                    
+                            <div class="delivery_state_btn t_right f13">
+                                <a class="fw_600 f12" href="#">상태설명보기</a>
+                            </div>
+
+                            <!--{ 상태설명보기 btn-->
+                            <div class="delivery_ex f14">
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">주문 :</p>
+                                    <p>주문이 접수되었습니다.</p>
+                                </div>
+
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">입금 :</p>
+                                    <p>입금(결제)이 완료 되었습니다.</p>
+                                </div>
+
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">준비 :</p>
+                                    <p>상품 준비 중입니다.</p>
+                                </div>
+
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">배송 :</p>
+                                    <p>상품 배송 중입니다.</p>
+                                </div>
+
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">완료 :</p>
+                                    <p>배송이 완료되었습니다.</p>
+                                </div>
+                            </div>
+                            <!--} 상태설명보기 btn-->
                         </div>
-        
+                        <!--order_top 끝-->
+
                         <!--{ ob_middle 시작-->
                         <div class="ob_middle detail_order">
                             <div class="obm_left col-xs-12 col-sm-8">
-                                <div class="obm_order_box mb3">
-                                    <div class="obm_box_subject f17 fw_600">
+                                <div class="obm_order_box mb3 result_obm_order_box">
+                                    <div class="obm_box_subject f17 fw_600 obm_box_result">
                                         결제 정보
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">주문번호</div>
-                                        <div class="obmib_input">2019031020065070</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">주문번호</div>
+                                        <div class="obmib_input result_input">2019031020065070</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">주문일시</div>
-                                        <div class="obmib_input">2019-03-10 20:09:19</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">주문일시</div>
+                                        <div class="obmib_input result_input">2019-03-10 20:09:19</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">결제방식</div>
-                                        <div class="obmib_input">무통장</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">결제방식</div>
+                                        <div class="obmib_inpu result_inputt">무통장</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">결제금액</div>
-                                        <div class="obmib_input">아직 입금되지 않았거나 입금정보를 입력하지 못하였습니다.</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">결제금액</div>
+                                        <div class="obmib_input result_input">아직 입금되지 않았거나 입금정보를 입력하지 못하였습니다.</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">입금자명</div>
-                                        <div class="obmib_input">조문주</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">입금자명</div>
+                                        <div class="obmib_input result_input">조문주</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">입금계좌</div>
-                                        <div class="obmib_input">기업은행 : 167-141774-01-019 예금주명 주식회사 예원엠앤디(주)</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">입금계좌</div>
+                                        <div class="obmib_input result_input">기업은행 : 167-141774-01-019 예금주명 주식회사 예원엠앤디(주)</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">포인트사용</div>
-                                        <div class="obmib_input">0 P</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">포인트사용</div>
+                                        <div class="obmib_input result_input">0 P</div>
                                     </div>
                                 </div>
         
-                                <div class="obm_order_box mb3">
-                                    <div class="obm_box_subject f17 fw_600">
+                                <div class="obm_order_box mb3 result_obm_order_box">
+                                    <div class="obm_box_subject f17 fw_600 obm_box_result">
                                         주문자 정보
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">이름</div>
-                                        <div class="obmib_input">조문주</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">이름</div>
+                                        <div class="obmib_input result_input">조문주</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">전화번호</div>
-                                        <div class="obmib_input">010-0000-0000</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">전화번호</div>
+                                        <div class="obmib_input result_input">010-0000-0000</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">핸드폰</div>
-                                        <div class="obmib_input">010-0000-0000</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">핸드폰</div>
+                                        <div class="obmib_input result_input">010-0000-0000</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">주소</div>
-                                        <div class="obmib_input">(14303) 경기 광명시 오리로619번길 11, 2층 (하안동)</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">주소</div>
+                                        <div class="obmib_input result_input">(14303) 경기 광명시 오리로619번길 11, 2층 (하안동)</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">E-mail</div>
-                                        <div class="obmib_input">test2@test.co.kr</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">E-mail</div>
+                                        <div class="obmib_input result_input">test2@test.co.kr</div>
                                     </div>                            
                                 </div>
 
-                                <div class="obm_order_box mb3">
-                                    <div class="obm_box_subject f17 fw_600">
+                                <div class="obm_order_box mb3 result_obm_order_box">
+                                    <div class="obm_box_subject f17 fw_600 obm_box_result">
                                         받으시는 분
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">이름</div>_
-                                        <div class="obmib_input">조문주</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">이름</div>
+                                        <div class="obmib_input result_input">조문주</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">전화번호</div>
-                                        <div class="obmib_input">010-1234-5678</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">전화번호</div>
+                                        <div class="obmib_input result_input">010-1234-5678</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">핸드폰</div>
-                                        <div class="obmib_input">010-1234-5678</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">핸드폰</div>
+                                        <div class="obmib_input result_input">010-1234-5678</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">주소</div>
-                                        <div class="obmib_input">(14303) 경기 광명시 오리로619번길 11, 2층 (하안동)</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">주소</div>
+                                        <div class="obmib_input result_input">(14303) 경기 광명시 오리로619번길 11, 2층 (하안동)</div>
                                     </div>                         
                                 </div>
         
-                                <div class="obm_order_box mb3">
-                                    <div class="obm_box_subject f17 fw_600">
+                                <div class="obm_order_box mb3 result_obm_order_box">
+                                    <div class="obm_box_subject f17 fw_600 obm_box_result">
                                         배송 정보
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">이름</div>
-                                        <div class="obmib_input">조문주</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">이름</div>
+                                        <div class="obmib_input result_input">조문주</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">전화번호</div>
-                                        <div class="obmib_input">2019031020065070</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">전화번호</div>
+                                        <div class="obmib_input result_input">2019031020065070</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">핸드폰</div>
-                                        <div class="obmib_input"> 	010-0000-0000</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">핸드폰</div>
+                                        <div class="obmib_input result_input"> 	010-0000-0000</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">주소</div>
-                                        <div class="obmib_input">(14303) 경기 광명시 오리로619번길 11, 2층 (하안동)</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">주소</div>
+                                        <div class="obmib_input result_input">(14303) 경기 광명시 오리로619번길 11, 2층 (하안동)</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">E-mail</div>
-                                        <div class="obmib_input">test2@test.co.kr</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">E-mail</div>
+                                        <div class="obmib_inpu result_inputt">test2@test.co.kr</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">요청사항</div>
-                                        <div class="obmib_input">무인택배함에 보관해주세요.</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">요청사항</div>
+                                        <div class="obmib_input result_input">무인택배함에 보관해주세요.</div>
                                     </div>
         
-                                    <div class="obm_i_box mb_2">
-                                        <div class="obmib_subject fw_600">택배</div>
-                                        <div class="obmib_input">배송 정보를 입력하지 않았습니다.</div>
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">택배</div>
+                                        <div class="obmib_input result_input">배송 정보를 입력하지 않았습니다.</div>
                                     </div>
                                 </div>
         
                             </div>
         
-                            <div class="obm_right col-xs-12 col-sm-4">
+                            <div class="obm_right col-xs-12 col-sm-4 result_obm_right">
                                 <div class="obmr_box">
-                                    <div class="obmrb_box">
+                                    <div class="obmrb_box order_resultbox">
                                         <div class="obmrbb_subject obmrbbs_f">주문총액</div>
                                         <div class="obmrbb_price">100,000 원</div>
                                     </div>
 
-                                    <div class="obmrb_box">
+                                    <div class="obmrb_box order_resultbox">
                                         <div class="obmrbb_subject obmrbbs_f">총계</div>
                                         <div class="obmrbb_price">100,000 원</div>
                                     </div>
         
-                                    <div class="obmrb_box">
+                                    <div class="obmrb_box order_resultbox">
                                         <div class="obmrbb_subject obmrbbs_f">적립포인트</div>
                                         <div class="obmrbb_price">5,000 원</div>
                                     </div>
                                 </div>
-        
+                                
                                 <div class="obmr_box">
-                                    <div class="obmrb_box">
-                                        <div class="obmrbb_subject obmrbbs_f fw_600">총 구매액</div>
+                                    <div class="obmrb_box bg_color fw_600 order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f">총 구매액</div>
                                         <div class="obmrbb_price"> 100,000  원</div>
                                     </div>
         
-                                    <div class="obmrb_box">
-                                        <div class="obmrbb_subject obmrbbs_f fw_600">미결제액</div>
+                                    <div class="obmrb_box bg_color order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f">미결제액</div>
                                         <div class="obmrbb_price"> 0 원</div>
                                     </div>
         
-                                    <div class="obmrb_box">
-                                        <div class="obmrbb_subject obmrbbs_f fw_600">결제액</div>
+                                    <div class="obmrb_box bg_color order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f">결제액</div>
                                         <div class="obmrbb_price"> 100,000  원</div>
                                     </div>
                                 </div>
@@ -612,6 +568,7 @@
                         </div>
                         <!--} ob_middle 끝-->
                     </div>
+                    <!--order_box 끝-->
         
                 </div>
             <!--} contents 끝 -->
