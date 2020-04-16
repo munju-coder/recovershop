@@ -2,207 +2,487 @@
 <html>
     <head>
         <meta charset="UTF-8">
-
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-		
-
-        <style>
-            body {padding:0; margin:0;}
-            div {overflow:hidden;}
-            input[type=text] {padding:1%;}
-            ul {list-style:none; overflow:hidden;}
-            ul, li {margin:0px;padding:0px;}
-
-            .header {width:100%; min-height:50px; background-color: aquamarine;}
-            .content {width:1200px; min-height:50px;  margin:0 auto;}
-
-            .content .member_box {width:100%; min-height: 200px; }
-            .content .member_box .mb_top, .mb_middle, .mb_bottom {padding:1.5% 0;}
-            .content .member_box .mb_top ul li {float:right; padding:1% 2%; border:1px solid #dddddd; margin-right:1%; cursor:pointer;}
-
-            .content .member_box .mb_middle {width:100%;}
-            .content .member_box .mb_middle .mbm_top {border:1px solid #dddddd; }
-            .content .member_box .mb_middle .mbm_top div {padding:1% 0;}
-            .content .member_box .mb_middle .mbm_top .mbmt_right ul li {float:left; padding-right:2%;}
-            .content .member_box .mb_middle .mbm_top .mbmt_bottom {width:100%; background-color: #f8f8f8; min-height:70px; border-top:1px solid #dddddd;}
-
-            .board_box {padding:2% 0;}
-            .board_box .board_subject {border-bottom:1px solid #dddddd;}
-            .board_list {width:100%;}
-            .board_list .bl_top {float:left; width:100%; border-bottom:1px solid #dddddd;}
-            .board_list .bl_top div {padding:1.5% 0;}
-            .board_list .bl_top .blb_subject {float:left; font-weight:bold;}
-
-            .board_list .bl_list {float:left; width:100%; border-bottom:1px solid #dddddd;}
-            .board_list .bl_list div {padding:1% 0;}
-            .board_list .bl_list .blb_box {float:left;}
-            .board_list .bl_list .blb_box ul li {float:left;}
-            .board_list .bl_list .blb_box ul li:first-child {padding-right:2%;}            
-            .board_list .bl_list .blb_box ul li img {width:100px;}
-
-            .footer {width:100%; min-height:50px; background-color: blueviolet;}
-
-
-            /**
-             * common css
-            */
-
-           /*basic*/
-           .cursor {cursor:pointer;}
-
-            /*font-size*/
-            .font_s_23b {font-size:23px; font-weight:bold;}
-            .font_s_23 {font-size:23px;}
-            .font_s_20b {font-size:20px; font-weight:bold;}
-            .font_s_20 {font-size:20px;}
-            .font_s_17b {font-size:17px; font-weight:bold;}
-            .font_s_17 {font-size:17px;}
-
-            /*text align*/
-            .text_a_l {text-align: left;}
-            .text_a_c {text-align: center;}
-            .text_a_r {text-align: right;}
-
-            .text_c_ff2b64 {color:#ff2b64;}
-
-            /*board list box width common*/
-            .w_50 {width:50%;}
-            .w_40 {width:40%;}
-            .w_35 {width:35%;}
-            .w_30 {width:30%;}
-            .w_25 {width:25%;}
-            .w_20 {width:20%;}
-            .w_15 {width:15%;}
-            .w_10 {width:10%;}
-            .w_5 {width:5%;}
-
-            @media screen and (max-width: 768px) {
-                .content {width:100%;}
-                .board_list .bl_top  { width:20% !important; }
-                .board_list .bl_top > div {width:100%; padding: 0 !important;}
-                
-                .board_list .bl_list  { width:80% !important;}
-                .board_list .bl_list > div {width:100%; text-align: left !important; padding: 0 !important;}
-            }            
-        </style>
-
-        <script>
-            $("document").ready(function(){
-
-            });
-        </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> recovershop </title>
+        <!--jquery-->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <!--js-->
+        <script src="../js/main.js"></script>
+        <script src="../js/common.js"></script>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!--font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!--favicon-->
+        <link rel="apple-touch-icon" sizes="57x57" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/favicon-16x16.png">
+        <!--slick slide-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <!--style sheet-->
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <!--goolge webfont-->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
     </head>
  
     <body>
-        <div class="header">mypage</div>
+        <div class="wrap">
+            <!--menu click bg call-->
+            <div class="M_bg"></div> 
+            <!--{ header-->
+            <header>
+                <!--hd_top 모바일버전에서는 삭제해주세요-->
+                <div class="hd_top">
+                    <ul>
+                        <li><a class="fw_600" href="#"><i class="fas fa-shopping-cart"></i> 장바구니</a></li>
+                        <li><a class="fw_600" href="#">마이페이지</a></li>
+                        <li><a class="fw_600" href="#">회원가입</a></li>
+                        <li><a class="fw_600" href="#">로그인</a></li>
 
-        <div class="content">
+                        <!--모바일버전에서 추가 
+                        <li><a href="#">정보수정</a></li>
+                        <li><a href="#">로그아웃</a></li>
+                        <li><a href="#" style="color:red;">관리자</a></li> -->
+                    </ul>
+                </div>
 
-            <div class="member_box">
+                <div class="hd_middle dw_1200px">
+                    <div class="logo">
+                        <a href="../index.html"><img id="PC_logo" src="../images/logo_img.png" alt="pc_logo img"></a>
+                        <a href="../index.html"><img id="M_logo" src="../images/M_logo.png" alt="M_logo img"></a>
+                    </div>
 
-                <div class="mb_top">
-                    <div class="col-sm-6 font_s_20b">마이페이지</div>
+                    <div class="formArea">
+                        <form name="frmsearch1" action="http://recovershop.co.kr/shop/search.php">
+                            <input type="text" name="q" placeholder="검색어를 입력하세요." value="" id="sch_str" required="">
+                            <button type="submit" id="sch_submit"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
+                        </form>
+                    </div>
 
-                    <div class="col-sm-6">
-                        <ul>
-                            <li>포인트 등록</li>
-                            <li>정보수정</li>
-                            <li>회원탈퇴</li>
-                        </ul>
+                    <div class="menu_slide">
+                        <div class="header_slide">
+                            <div><img class="sub_slide" src="../images/sub_slide1.png" alt="sub slide img1"></div>
+                            <div><img class="sub_slide" src="../images/sub_slide2.png" alt="sub slide img2"></div>
+                        </div>
+
+                        <div class="slide_btn">     
+                            <a href="#"><img class="slick-prev" src="../images/btn_sb_prev.png" alt="prev icon"></a>
+                            <a href="#"><img class="slick-next" src="../images/btn_sb_next.png" alt="next icon"></a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mb_middle">
-                    <div class="mbm_top">
-                        <div class="col-sm-6 mbmt_left">
-                            <i class="far fa-user"></i> 조문주
+                <div class="hd_bottom">
+                    <div class="hdb_menu dw_1200px">
+                        <div class="ft_600">
+                            <button type="button" class="menu_btn">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </button>
                         </div>
 
-                        <div class="col-sm-6 mbmt_right">
+                        <!--프로모션 메뉴 (모바일에서는 탭메뉴로 넘어감) -->
+                        <div class="tmenu_slide">
+                            <div><a class="hm_slide fw_600" href="#">더블포인트</a></div>
+                            <div class="m_width"><a class="hm_slide fw_600 f_color" href="#">핫딜</a></div>
+                            <div><a class="hm_slide fw_600" href="#">무료배송데이</a></div>
+                            <div><a class="hm_slide fw_600" href="#">선착순이벤트</a></div>
+                            <div><a class="hm_slide fw_600 f_color" href="#">리커버랭킹</a></div>
+                            <div><a class="hm_slide fw_600" href="#">건강검진이벤트</a></div>
+                            <div><a class="hm_slide fw_600" href="#">공동구매</a></div>
+                        </div>
+
+                    </div>                    
+                </div>
+            </header>
+            <!--} header-->
+
+            <!--{ aside menu-->
+            <aside class="hd_left">
+                <div class="hdl_close cursor">
+                    <i class="fas fa-times"></i>
+                </div>
+
+                <div class="hd_wrap">
+                    <div class="hdl_login t_center">
+                        <div class="hdl_lwrap">
+                            <form name="" action="">
+                            <!-- 로그인 전 적용해야할 폼 -->
+                            <fieldset class="before_logoin">
+                                <input type="text" name="mb_id" id="ol_id" placeholder="아이디" required="" maxlength="20">
+                                <input type="password" id="ol_pw" name="mb_password" placeholder="비밀번호" required="" maxlength="20">
+
+                                <div id="al_wrap">
+                                    <input type="checkbox" id="auto_login" name="auto_login" value="1">
+                                    <label for="auto_login" id="auto_login_label">자동로그인</label>
+                                </div>
+                                
+                                <input type="submit" id="ol_submit" value="로그인" class="btn_submit ft_600">
+                            </fieldset>
+
+                            <!-- 로그인 후 적용해야할 폼
+                            <div class="after_login">
+                                <div class="al_top">
+                                    <div class="alt_right">
+                                        <img src="images/no_profile.gif" alt="profile image">
+                                        <a href=""><i class="fa fa-cog" aria-hidden="true"></i></a>
+                                    </div>
+
+                                    <div class="alt_left">
+                                        <p>테스트28님</p>
+                                        <button type="text">로그아웃</button>
+                                    </div>
+                                </div>
+
+                                <div class="al_bottom">
+                                    <div class="alb_right">
+                                        <div class="c">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </div>
+                                        <span>0</span>
+                                    </div>
+
+                                    <div class="alb_left">
+                                        <div class="">
+                                            <i class="fa fa-database" aria-hidden="true"></i>
+                                        </div>
+                                        <span>1,015,564</span>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="hdl_twrap">
+                        <div class="hdl_tab">
                             <ul>
-                                <li>보유포인트 : <span class="text_c_ff2b64">100,000</span> P</li>
-                                <li>보유쿠폰 : <span class="text_c_ff2b64">0</span> 개</li>
+                                <li class="tablinks cursor f_active" tab_name="tab1"><a href="#">카테고리</a></li>
+                                <li class="tablinks cursor" tab_name="tab2"><a href="#">프로모션</a></li>
+                                <li class="tablinks cursor" tab_name="tab3"><a href="#">마이페이지</a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="tabcontent tab_active" id="tab1">
+                            <ul>
+                                <li>패션</li>
+                                <li>뷰티</li>
+                                <li>생활가전</li>
+                                <li>식품</li>
+                                <li>건강</li>
+                                <li>인테리어</li>
+                                <li>잡화</li>
+                                <li>생활용품</li>
+                                <li>기타</li>
+                            </ul>
+                        </div>
+                    
+                        <div class="tabcontent" id="tab2">
+                            <ul>
+                                <li>프로모션</li>
+                                <li>더블포인트</li>
+                                <li>핫딜</li>
+                                <li>무료배송데이</li>
+                                <li>선착순이벤트</li>
+                                <li>리커버랭킹</li>
+                                <li>건강검진이벤트</li>
+                                <li>공동구매</li>
+                            </ul>
+                        </div>
+                    
+                        <div class="tabcontent" id="tab3">
+                            <ul>
+                                <li>마이페이지</li>
+                                <li>주문내역</li>
+                                <li>검진예약내역</li>
+                                <li>FAQ</li>
+                                <li>1:1문의</li>
+                                <li>개인결제</li>
+                                <li>세일상품</li>
+                            </ul>
+                        </div>
+                        
+                    </div>  
+                     
+                </div>
+                
+            </aside>
+            <!--} aside menu-->
+
+            <!--{ aside fixed top,bottom btn-->
+            <aside class="side_menu">
+                <div class="sm_wrap">
+                    <div class="top_btn">
+                        <a href="#"><i class="fa fa-caret-up"></i></a>
+                    </div>
+
+                    <div class="bottom_btn">
+                        <a href="#"><i class="fa fa-caret-down"></i></a>
+                    </div>
+                </div>
+            </aside>
+            <!--} aside fixed top,bottom btn-->
+
+            <!--{ content-->
+            <div class="content dw_1200px">
+                <!--{ member_box-->
+                <div class="member_box">
+                    <div class="mb_top">
+                        <div class="font_s_20b">마이페이지</div>
+
+                        <div class="my_option">
+                            <ul>
+                                <li><a href="#">포인트 등록</a></li>
+                                <li><a href="#">정보수정</a></li>
+                                <li><a href="#">회원탈퇴</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb_middle">
+                        <div class="mbm_top">
+                            <div class="mbmt_top">
+                                <div class="mbmt_left fw_600">
+                                    <i class="far fa-user"></i> 조문주
+                                </div>
+
+                                <div class="mbmt_right">
+                                    <ul>
+                                        <li class="fw_600">보유포인트 : <span class="text_c_ff2b64">100,000</span> P</li>
+                                        <li class="fw_600">보유쿠폰 : <span class="text_c_ff2b64">0</span> 개</li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+
+                            <div class="mbmt_bottom">
+                                <div class="mbmtb_info">
+                                    <div class="mbmtb_info_div f14"><span class="fw_600">연락처:</span> 010-1234-5678</div>
+                                    <div class="mbmtb_info_div f14"><span class="fw_600">E-Mail:</span> aaa@aaa.com</div>
+                                    <div class="mbmtb_info_div f14"><span class="fw_600">최종접속일시:</span> 2020-04-16 08:47:36</div>
+                                    <div class="mbmtb_info_div f14"><span class="fw_600">회원가입일시:</span> 2020-04-16 11:20:33</div>
+                                    <div class="mbmtb_info_div f14 word_break"><span class="fw_600">주소:</span> (11111) 경기도 광명시 오리로619 11, 예원이케이빌딩 2층</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="caret-up_btn">
+                            <a href="#"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+                        </div>
+
+                        <script>
+                            $(document).ready( function(){
+
+                                /**
+                                 * @param string
+                                 * @brief caret-up_btn 클릭시 .mbmt_bottom 펼쳐짐. 
+                                 */
+
+                                $('.caret-up_btn').click( function(){
+
+                                    $('.mbmt_bottom').toggle();
+                                });
+                            });
+                        </script>
+
+                        <div class="mbm_middle">
+
+                            <div class="board_box">
+                                <div class="board_subject font_s_20b">최근 주문 내역
+                                    <div class="m_btn t_right f12"><a href="#"><img src="../images/more-btn.gif" alt="more_btn">더보기</a></div>
+                                </div>
+
+                                <div class="board_list PC_board_list">
+                                    <div class="bl_top">
+                                        <div class="w20 blb_subject t_center">주문번호</div>
+                                        <div class="w20 blb_subject t_center">주문일시</div>
+                                        <div class="w10 blb_subject t_center">상품수</div>
+                                        <div class="w15 blb_subject t_center">주문금액</div>
+                                        <div class="w15 blb_subject t_center">입금액</div>
+                                        <div class="w10 blb_subject t_center">미입금액</div>
+                                        <div class="w10 blb_subject t_center">상태</div>
+                                    </div>
+
+                                    <div class="bl_list">
+                                        <div class="w20 blb_box t_center">2019032915462525</div>
+                                        <div class="w20 blb_box t_center">19-03-29 15:46 (금)</div>
+                                        <div class="w10 blb_box t_center">1</div>
+                                        <div class="w15 blb_box t_center">39,000원</div>
+                                        <div class="w15 blb_box t_center">39,000원</div>
+                                        <div class="w10 blb_box t_center">39,000원</div>
+                                        <div class="w10 blb_box t_center c_red fw_600">주문취소</div>
+                                    </div>
+                                </div>
+
+                                <div class="board_list M_board_list">
+                                    <!-- <div class="bl_top">
+                                        <div class="w30 blb_subject t_center">주문번호</div>
+                                        <div class="w15 blb_subject t_center">주문일시</div>
+                                        <div class="w5 blb_subject t_center">상품수</div>
+                                        <div class="w15 blb_subject t_center">주문금액</div>
+                                        <div class="w15 blb_subject t_center">입금액</div>
+                                        <div class="w10 blb_subject t_center">미입금액</div>
+                                        <div class="w10 blb_subject t_center">상태</div>
+                                    </div> -->
+
+                                    <div class="bl_list">
+                                        <div class="w30 blb_box t_center"><span class="fw_600">주문번호</span>: 2019032915462525</div>
+                                        <div class="w15 blb_box t_center"><span class="fw_600">주문일시</span>: 19-03-29 15:46 (금)</div>
+                                        <div class="w5 blb_box t_center"><span class="fw_600">상품수</span>: 1</div>
+                                        <div class="w15 blb_box t_center"><span class="fw_600">주문금액</span>: 39,000원</div>
+                                        <div class="w15 blb_box t_center"><span class="fw_600">입금액</span>: 39,000원</div>
+                                        <div class="w10 blb_box t_center"><span class="fw_600">미입금액</span>: 39,000원</div>
+                                        <div class="w10 blb_box t_center"><span class="fw_600">상태</span>: 주문취소</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="board_box mb5">
+                                <div class="board_subject font_s_20b">최근 검진 예약내역
+                                    <div class="m_btn t_right f12"><a href="#"><img src="../images/more-btn.gif" alt="more_btn">더보기</a></div>
+                                </div>
+
+                                <div class="board_list PC_board_list">
+                                    <div class="bl_top">
+                                        <div class="w10 blb_subject t_center">이름</div>
+                                        <div class="w10 blb_subject t_center">생년월일</div>
+                                        <div class="w5 blb_subject t_center">성별</div>
+                                        <div class="w10 blb_subject t_center">예약희망일</div>
+                                        <div class="w15 blb_subject t_center">연락처</div>
+                                        <div class="w30 blb_subject t_center">상품명</div>
+                                        <div class="w10 blb_subject t_right">예약일시</div>
+                                        <div class="w10 blb_subject t_center">상태</div>
+                                    </div>
+
+                                    <div class="bl_list">
+                                        <div class="w10 blb_box t_center">조문주</div>
+                                        <div class="w10 blb_box t_center">1994-06-18</div>
+                                        <div class="w5 blb_box t_center">여</div>
+                                        <div class="w10 blb_box t_center">2020-04-11</div>
+                                        <div class="w15 blb_box t_center">010-1234-5678</div>
+                                        <div class="w30 blb_box t_center health_name">yewon 건강검진 새건병원 행복나눔레드</div>
+                                        <div class="w10 blb_box t_right">2020-04-11</div>
+                                        <div class="w10 blb_box t_center c_red fw_600">주문취소</div>
+                                    </div>
+                                </div>
+
+                                <div class="board_list M_board_list">
+                                    <!-- <div class="bl_top">
+                                        <div class="w30 blb_subject t_center">주문번호</div>
+                                        <div class="w15 blb_subject t_center">주문일시</div>
+                                        <div class="w5 blb_subject t_center">상품수</div>
+                                        <div class="w15 blb_subject t_center">주문금액</div>
+                                        <div class="w15 blb_subject t_center">입금액</div>
+                                        <div class="w10 blb_subject t_center">미입금액</div>
+                                        <div class="w10 blb_subject t_center">상태</div>
+                                    </div> -->
+
+                                    <div class="bl_list">
+                                        <div class="w30 blb_box t_center"><span class="fw_600">주문번호</span>: 2019032915462525</div>
+                                        <div class="w15 blb_box t_center"><span class="fw_600">주문일시</span>: 19-03-29 15:46 (금)</div>
+                                        <div class="w5 blb_box t_center"><span class="fw_600">상품수</span>: 1</div>
+                                        <div class="w15 blb_box t_center"><span class="fw_600">주문금액</span>: 39,000원</div>
+                                        <div class="w15 blb_box t_center"><span class="fw_600">입금액</span>: 39,000원</div>
+                                        <div class="w10 blb_box t_center"><span class="fw_600">미입금액</span>: 39,000원</div>
+                                        <div class="w10 blb_box t_center"><span class="fw_600">상태</span>: 주문취소</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--} member_box-->
+            </div>
+            <!--{ content-->
+
+
+            <!--{ footer 시작 -->
+            <footer>
+                <div class="ft_wrap dw_1200px">
+                    <!-- PC와 Mobile 버전 슬라이드 적용 -->
+                    <!-- <div class="ft_top">
+                        <div class="ft_slide">
+                            <div><a class="fw_600" href="#">회사소개</ac></div>
+                            <div><a class="fw_600" href="#">공지사항</a></div>
+                            <div><a class="fw_600" href="#">서비스이용약관</a></div>
+                            <div><a class="fw_600" href="#">개인정보처리방침</a></div>
+                            <div><a class="fw_600" href="#">청소년보호정책</a></div>
+                            <div><a class="fw_600" href="#">캐쉬이용약관</a></div>
+                            <div><a class="fw_600" href="#">포인트이용약관</a></div>
+                            <div><a class="fw_600" href="#">입점문의</a></div>
+                            <div><a class="fw_600" href="#">배송정책및안내</a></div>
+                            <div><a class="fw_600" href="#">환불및반품규정</a></div>
+                            <div class="pr0"><a class="fw_600" href="#">포인트적립</a></div>
+                        </div>
+                    </div> -->
+
+                    <div class="ft_middle">
+                        <!-- 모바일 버전일 때 추가해주세요 -->
+                        <div class="ft_mobile_menu mb3 t_center">
+                            <a href="#">로그인</a>
+                            <a href="#">회원가입</a>
+                            <!-- 모바일 로그인 후 로그인,회원가입-> 정보수정, 로그아웃으로 바뀜 -->
+                            <!-- <a href="#">정보수정</a>
+                            <a href="#">로그아웃</a> -->
+                        </div>
+
+                        <div class="ft_left mb3">
+                            <!-- PC 버전 하단 로고 -->
+                            <a href="#"><img id="PC_ftlogo" src="../images/ft_card_img.png" alt="하단 로고 이미지"></a>
+                            <!-- 모바일 버전 하단로고 교체해주세요 -->
+                            <a href="#"><img id="M_ftlogo" src="../images/mobile_logo_img2.png" alt="모바일 로고 이미지"></a>
+                        </div>
+
+                        <div class="ft_center t_left">
+                            <ul>
+                                <li><strong>회사명</strong>: 주식회사 예원엠엔디 <strong>주소</strong>: 경기도 광명시 오리로길 619번길 11( 하안동 232번지 ) 예원이케이빌딩</li>
+                                <li><strong>사업자 등록번호</strong> : 835-87-00673 <strong>대표</strong> : 서제학</li>
+                                <li><strong>전화</strong> : 02-2616-8952 <strong>팩스</strong> : 02-897-8952 email : gmlquf74@naver.com <strong>개인정보 보호책임자</strong> : 김영민</li>
+                                <li><strong>부가통신사업신고번호</strong> : 제2017-경기광명-0300호</li>
+                                <li class="ft_bottom aaa_color"><span>Copyright © 2018 주식회사 예원엠앤디. All Rights Reserved.</span></li>  
                             </ul>
                         </div>
 
-                        <div class="mbmt_bottom">
-                            <div class="col-sm-6 mbmtb_left">
-                                <div class=""></div>
-                            </div>
-
-                            <div class="col-sm-6 mbmtb_right">
-
-                            </div>
+                        <!-- 모바일 버전에서는 고객센터 삭제해주세요 -->
+                        <div class="ft_right t_right">
+                            <ul>
+                                <li class="ft_color fw_600 f22 g_color">고객센터</li>
+                                <li class="ft_color fw_600 f22 g_color">02-2616-8952</li>
+                                <li class="aaa_color">월-금 am 9:00 - pm 18:00</li>
+                                <li class="aaa_color">점심시간 pm 12:00 - pm 13:00</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="mbm_middle">
-
-                        <div class="board_box">
-                            <div class="board_subject font_s_20b">최근 주문 내역</div>
-                            <div class="board_list">
-                                <div class="bl_top">
-                                    <div class="w_30 blb_subject text_a_c">주문번호</div>
-                                    <div class="w_15 blb_subject text_a_c">주문일시</div>
-                                    <div class="w_5 blb_subject text_a_c">상품수</div>
-                                    <div class="w_15 blb_subject text_a_c">주문금액</div>
-                                    <div class="w_15 blb_subject text_a_c">입금액</div>
-                                    <div class="w_10 blb_subject text_a_c">미입금액</div>
-                                    <div class="w_10 blb_subject text_a_c">상택</div>
-                                </div>
-    
-                                <div class="bl_list">
-                                    <div class="w_30 blb_box text_a_c">2019032915462525</div>
-                                    <div class="w_15 blb_box text_a_c">19-03-29 15:46 (금)</div>
-                                    <div class="w_5 blb_box text_a_r">1</div>
-                                    <div class="w_15 blb_box text_a_r">39,000원</div>
-                                    <div class="w_15 blb_box text_a_r">39,000원</div>
-                                    <div class="w_10 blb_box text_a_c">39,000원</div>
-                                    <div class="w_10 blb_box text_a_c">주문취소</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="board_box">
-                            <div class="board_subject font_s_20b">최근 검진 예약 내역</div>
-                            <div class="board_list">
-                                <div class="bl_top">
-                                    <div class="w_30 blb_subject text_a_c">주문번호</div>
-                                    <div class="w_15 blb_subject text_a_c">주문일시</div>
-                                    <div class="w_5 blb_subject text_a_c">상품수</div>
-                                    <div class="w_15 blb_subject text_a_c">주문금액</div>
-                                    <div class="w_15 blb_subject text_a_c">입금액</div>
-                                    <div class="w_10 blb_subject text_a_c">미입금액</div>
-                                    <div class="w_10 blb_subject text_a_c">상택</div>
-                                </div>
-    
-                                <div class="bl_list">
-                                    <div class="w_30 blb_box text_a_c">2019032915462525</div>
-                                    <div class="w_15 blb_box text_a_c">19-03-29 15:46 (금)</div>
-                                    <div class="w_5 blb_box text_a_r">1</div>
-                                    <div class="w_15 blb_box text_a_r">39,000원</div>
-                                    <div class="w_15 blb_box text_a_r">39,000원</div>
-                                    <div class="w_10 blb_box text_a_c">39,000원</div>
-                                    <div class="w_10 blb_box text_a_c">주문취소</div>
-                                </div>
-                            </div>
-                        </div>
-                        
+                    <!-- 모바일 버전에서 하단 메뉴 추가해주세요 -->
+                    <div class="ft_botmenu">
+                        <ul>
+                            <li><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="menu_btn"><a href="#"><i class="fas fa-align-justify"></i></a></li>
+                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-user"></i></a></li>
+                            <li class="top_btn"><a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a></li>
+                        </ul>
                     </div>
-
-                    <div class="mbm_bottom"></div>
                 </div>
-
-                <div class="mb_bottom"></div>
-
-            </div>
-
+            </footer>
+            <!--} footer 끝 -->
         </div>
-
-
-        <div class="footer">mypage</div>
+        <!--} wrap-->
     </body>
 </html>
