@@ -36,6 +36,50 @@
         <link rel="stylesheet" href="../css/main.css">
         <!--google webfont-->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+        
+        <script>
+            $("document").ready(function(){
+
+                var formHeight = $(".obm_left").height();
+                //$(".obm_right").css("height", formHeight);
+
+                //zip_btn
+                $(".zip_btn").click(function(){
+                    //COMMON.kakao.addrss call
+                    alert("주소찾기 넣어주세요.");
+                });
+
+                //obmrs_pay button click
+                $(".obmrs_pay").click(function(){
+                    $(".obmrs_card").css("color", "#ffffff");
+                    $(this).css("color", "red");
+                    $(".obmrs_card_info").hide();
+                    $(".obmrs_pay_info").show();
+                });
+
+                $(".obmrs_card").click(function(){
+                    $(".obmrs_pay").css("color", "#ffffff");
+                    $(this).css("color", "red");
+                    $(".obmrs_pay_info").hide();
+                    $(".obmrs_card_info").show();
+                });
+            });
+
+        </script>
+
+        <script>
+
+            $(document).ready( function(){
+                
+                //상태설명보기 버튼 토글
+                $('.delivery_state_btn').click( function(){
+
+                $('.delivery_ex').toggle();
+                console.log(1);
+
+                });
+            });
+        </script>
     </head>
  
     <body>
@@ -215,8 +259,11 @@
                                 <li>세일상품</li>
                             </ul>
                         </div>
-                    </div>   
+                        
+                    </div>  
+                     
                 </div>
+                
             </aside>
             <!--} aside menu-->
 
@@ -234,16 +281,225 @@
             </aside>
             <!--} aside fixed top,bottom btn-->
 
-            <!--{ content-->
-            <div class="content dw_1200px">
-                <div class="c_top f20 fw_600 reg_result_top">회원 가입 완료</div>
+            <!--{ content 시작-->
+                <div class="content dw_1200px">
+                    <div class="order_box">
+                        <div class="ob_top health_top">
+                            <div class="obt_subject f22 fw_600 result_obt_subject">
+                                검진예약 상세 내역
+                            </div>
+        
+                            <div class="obt_list w100 PC_order">
+                                <div class="board_list ">
+                                    <div class="bl_top">
+                                        <div class="w30 blb_subject t_center">구매 상품</div>
+                                        <div class="w5 blb_subject t_center">수량</div>
+                                        <div class="w15 blb_subject t_center">판매가</div>
+                                        <div class="w15 blb_subject t_center">소계</div>
+                                        <div class="w15 blb_subject t_center">포인트</div>
+                                        <div class="w10 blb_subject t_center">배송비</div>
+                                        <div class="w10 blb_subject t_center">상태</div>
+                                    </div>
+        
+                                    <div class="bl_list">
+                                        <div class="w30 blb_box">
+                                            <ul>
+                                                <li class="t_center"><img src="../images/pr_img34.jpg" alt="product image"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="w5 blb_box t_center">1</div>
+                                        <div class="w15 blb_box t_center">100,000</div>
+                                        <div class="w15 blb_box t_center">100,000</div>
+                                        <div class="w15 blb_box t_center">0</div>
+                                        <div class="w10 blb_box t_center">무료배송</div>
+                                        <div class="w10 blb_box t_center">예약완료</div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="c_middle border_box_1_p3 f17 reg_result_middle ">
-                    <p class="word_break">조문주님의 리커버샵 회원 가입을 진심으로 축하합니다.<i class="far fa-smile"></i><br></p>
-                    <p>리커버샵에서 다양한 혜택을 누리세요.</p>
+                            <div class="obt_list w100 M_order health_M_order">
+                                <div class="board_list">
+                                    <div class="bl_top fw_600">
+                                        검진상품 정보
+                                    </div>
+        
+                                    <div class="bl_list">
+                                        <div class="w40 blb_box health_box">
+                                            <img src="../images/pr_img34.jpg" alt="product image">
+                                        </div>
+                                        <div class="w5 blb_box"><span class="fw_600">상품명:</span> yewon 건강검진 새건병원 행복나눔 그린</div>
+                                        <div class="w5 blb_box"><span class="fw_600">수량:</span> 1</div>
+                                        <div class="w15 blb_box"><span class="fw_600">판매가:</span> 100,000</div>
+                                        <div class="w15 blb_box"><span class="fw_600">소계:</span> 100,000</div>
+                                        <div class="w15 blb_box"><span class="fw_600">포인트:</span> 0</div>
+                                        <div class="w10 blb_box"><span class="fw_600">배송비:</span> 무료배송</div>
+                                        <div class="w blb_box"><span class="fw_600">상태:</span> 예약완료 (2020-04-24)</div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                                    
+                            <div class="delivery_state_btn t_right f13">
+                                <a class="fw_600 f12" href="#">상태설명보기</a>
+                            </div>
+
+                            <!--{ 상태설명보기 btn-->
+                            <div class="delivery_ex f14">
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">주문 :</p>
+                                    <p>주문이 접수되었습니다.</p>
+                                </div>
+
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">입금 :</p>
+                                    <p>입금(결제)이 완료 되었습니다.</p>
+                                </div>
+
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">준비 :</p>
+                                    <p>상품 준비 중입니다.</p>
+                                </div>
+
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">배송 :</p>
+                                    <p>상품 배송 중입니다.</p>
+                                </div>
+
+                                <div class="de_box">
+                                    <p class="fw_600 deb_txt">완료 :</p>
+                                    <p>배송이 완료되었습니다.</p>
+                                </div>
+                            </div>
+                            <!--} 상태설명보기 btn-->
+                        </div>
+                        <!--order_top 끝-->
+
+                        <!--{ ob_middle 시작-->
+                        <div class="ob_middle detail_order health_order">
+                            <div class="obm_left col-xs-12 col-sm-8">
+                                <div class="obm_order_box mb3 result_obm_order_box">
+                                    <div class="obm_box_subject f17 fw_600 obm_box_result">
+                                        결제 정보
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">주문번호</div>
+                                        <div class="obmib_input result_input">2019031020065070</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">주문일시</div>
+                                        <div class="obmib_input result_input">2019-03-10 20:09:19</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">결제방식</div>
+                                        <div class="obmib_inpu result_inputt">무통장</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">결제금액</div>
+                                        <div class="obmib_input result_input">아직 입금되지 않았거나 입금정보를 입력하지 못하였습니다.</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">입금자명</div>
+                                        <div class="obmib_input result_input">조문주</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">입금계좌</div>
+                                        <div class="obmib_input result_input">기업은행 : 167-141774-01-019 예금주명 주식회사 예원엠앤디(주)</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">포인트사용</div>
+                                        <div class="obmib_input result_input">0 P</div>
+                                    </div>
+                                </div>
+
+                                <div class="obm_order_box mb3 result_obm_order_box">
+                                    <div class="obm_box_subject f17 fw_600 obm_box_result">
+                                        검진예약 정보
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">이름</div>
+                                        <div class="obmib_input result_input">조문주</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">생년월일</div>
+                                        <div class="obmib_input result_input">2020-04-20</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">예약희망일</div>
+                                        <div class="obmib_input result_input">2020-04-20</div>
+                                    </div>
+        
+                                    <div class="obm_i_box mb_2 obm_result health_result">
+                                        <div class="obmib_subject fw_600 result_subject health_input">상품명</div>
+                                        <div class="obmib_input result_input health_input">yewon 건강검진 새건병원 행복나눔 그린</div>
+                                    </div>
+
+                                    <div class="obm_i_box mb_2 obm_result">
+                                        <div class="obmib_subject fw_600 result_subject">예약일시</div>
+                                        <div class="obmib_input result_input">2020-04-24 09:25:34</div>
+                                    </div>                         
+                                
+                                </div>
+
+                            </div>
+
+                            <div class="obm_right col-xs-12 col-sm-4 result_obm_right health_obm_right">
+                                <div class="obmr_box">
+                                    <div class="obmrb_box order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f">주문총액</div>
+                                        <div class="obmrbb_price">100,000 원</div>
+                                    </div>
+    
+                                    <div class="obmrb_box order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f">총계</div>
+                                        <div class="obmrbb_price">100,000 원</div>
+                                    </div>
+        
+                                    <div class="obmrb_box order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f">적립포인트</div>
+                                        <div class="obmrbb_price">5,000 원</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="obmr_box">
+                                    <div class="obmrb_box bg_color fw_600 order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f">총 구매액</div>
+                                        <div class="obmrbb_price"> 100,000  원</div>
+                                    </div>
+        
+                                    <div class="obmrb_box bg_color order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f fw_600">결제액</div>
+                                        <div class="obmrbb_price fw_600"> 100,000  원</div>
+                                    </div>
+    
+                                    <div class="obmrb_box bg_color order_resultbox">
+                                        <div class="obmrbb_subject obmrbbs_f fw_600">검진예약날짜</div>
+                                        <div class="obmrbb_price fw_600"> 2020-04-24</div>
+                                    </div>
+                                </div>
+    
+                                <div class="obmr_btn_box order_cancel_btn t_center">
+                                    <input type="submit" value="예약취소하기">
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <!--} ob_middle 끝-->
+                    </div>
+                    <!--order_box 끝-->
                 </div>
-            </div>
-            <!--} content-->
+            <!--} contents 끝 -->
 
             <!--{ footer 시작 -->
             <footer>
@@ -315,8 +571,8 @@
                     </div>
                 </div>
             </footer>
-            <!--} footer-->
+            <!--} footer 끝 -->
         </div>
-         <!--} wrap-->
+        <!--} wrap-->
     </body>
 </html>

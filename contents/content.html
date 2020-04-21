@@ -15,35 +15,36 @@
         <!--font Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <!--favicon-->
-        <link rel="apple-touch-icon" sizes="57x57" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="http://recovershop.co.kr/plugin/openGN5/img/favicon/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../images/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../images/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../images/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../images/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../images/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon/apple-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/apple-icon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon/apple-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/apple-icon-16x16.png">
         <!--slick slide-->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-        <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
         <!--style sheet-->
-        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/import.css">
         <link rel="stylesheet" href="../css/main.css">
-        <!-- <link rel="stylesheet" href="css/product.css"> -->
-        <!--goolge webfont-->
+        <!--google webfont-->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet"> 
 
     </head>
 
     <body>
         <!--{ wrap-->
+        <div class="wrap">
+            <!--menu click bg call-->
+            <div class="M_bg"></div> 
+            <!--{ wrap-->
         <div class="wrap">
             <!--menu click bg call-->
             <div class="M_bg"></div> 
@@ -66,12 +67,12 @@
 
                 <div class="hd_middle dw_1200px">
                     <div class="logo">
-                        <a href="../index.html"><img id="PC_logo" src="../images/logo_img.png" alt="pc_logo img"></a>
-                        <a href="../index.html"><img id="M_logo" src="../images/M_logo.png" alt="M_logo img"></a>
+                        <a href="index.html"><img id="PC_logo" src="../images/logo_img.png" alt="pc_logo img"></a>
+                        <a href="index.html"><img id="M_logo" src="../images/M_logo.png" alt="M_logo img"></a>
                     </div>
 
                     <div class="formArea">
-                        <form name="frmsearch1" action="http://recovershop.co.kr/shop/search.php">
+                        <form name="frmsearch1" action="">
                             <!-- <label for="sch_str" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label> -->
                             <input type="text" name="q" placeholder="검색어를 입력하세요." value="" id="sch_str" required="">
                             <button type="submit" id="sch_submit"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
@@ -112,17 +113,80 @@
 
                     </div>                    
                 </div>
+
+                <!-- 메뉴슬라이드 스크립트 -->
+                <!-- <script>
+                    $(document).ready( function(){
+                        var windowWidth = $( window ).width();
+                        console.log(windowWidth);
+
+                        if(windowWidth < 768) {
+
+                            $('.tmenu_slide').slick({
+                                arrows : false,
+                                dots: false,
+                                infinite: false,
+                                slidesToShow: 6,
+                                slidesToScroll: 1,
+                                draggable : true, 
+                                responsive: [ 
+                                    { 
+                                        breakpoint: 768, 
+                                        settings: {   
+                                            slidesToShow: 6,
+                                            slidesToScroll : 1
+                                        } 
+                                    }
+                                ]
+
+                            });
+                        } else if (windowWidth > 768) {
+
+                            $('.tmenu_slide').slick({
+                                arrows : false,
+                                dots: false,
+                                infinite: false,
+                                slidesToShow: 6,
+                                slidesToScroll: 1,
+                                draggable : false, 
+                                responsive: false
+
+                            });
+                        
+                        }
+
+
+                        
+
+                        $('.ctm_wrap').slick({
+                            slidesToShow: 8,
+                            slidesToScroll: 1,
+                            dots: false,
+                            arrows: false,
+                        });
+
+                        $('.ft_top').slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false,
+                            arrows: false,
+
+                        });
+
+
+                    });
+                </script> -->
+                
             </header>
             <!--} header-->
 
             <!--{ aside menu-->
             <aside class="hd_left">
-                <div class="hd_wrap">
-                    
-                    <div class="hdl_close cursor">
-                        <i class="fas fa-times"></i>
-                    </div>
+                <div class="hdl_close cursor">
+                    <i class="fas fa-times"></i>
+                </div>
 
+                <div class="hd_wrap">
                     <div class="hdl_login t_center">
                         <div class="hdl_lwrap">
                             <form name="" action="">
@@ -185,40 +249,41 @@
                     
                         <div class="tabcontent tab_active" id="tab1">
                             <ul>
-                                <li>패션</li>
-                                <li>뷰티</li>
-                                <li>생활가전</li>
-                                <li>식품</li>
-                                <li>건강</li>
-                                <li>인테리어</li>
-                                <li>잡화</li>
-                                <li>생활용품</li>
-                                <li>기타</li>
+                                <li><a href="#">패션</a></li>
+                                <li><a href="#">뷰티</a></li>
+                                <li><a href="#">생활가전</a></li>
+                                <li><a href="#">식품</a></li>
+                                <li><a href="#">건강</a></li>
+                                <li><a href="#">인테리어</a></li>
+                                <li><a href="#">잡화</a></li>
+                                <li><a href="#">생활용품</a></li>
+                                <li><a href="#">기타</a></li>
                             </ul>
                         </div>
                     
                         <div class="tabcontent" id="tab2">
                             <ul>
-                                <li>프로모션</li>
-                                <li>더블포인트</li>
-                                <li>핫딜</li>
-                                <li>무료배송데이</li>
-                                <li>선착순이벤트</li>
-                                <li>리커버랭킹</li>
-                                <li>건강검진이벤트</li>
-                                <li>공동구매</li>
+                                <li><a href="#">프로모션</a></li>
+                                <li><a href="#">더블포인트</a></li>
+                                <li><a href="#">핫딜</a></li>
+                                <li><a href="#">무료배송데이</a></li>
+                                <li><a href="#">선착순이벤트</a></li>
+                                <li><a href="#">리커버랭킹</a></li>
+                                <li><a href="#">건강검진이벤트</a></li>
+                                <li><a href="#">공동구매</a></li>
                             </ul>
                         </div>
                     
                         <div class="tabcontent" id="tab3">
                             <ul>
-                                <li>마이페이지</li>
-                                <li>주문내역</li>
-                                <li>검진예약내역</li>
-                                <li>FAQ</li>
-                                <li>1:1문의</li>
-                                <li>개인결제</li>
-                                <li>세일상품</li>
+                                <li><a href="#">마이페이지</a></li>
+                                <li><a href="#">주문내역</a></li>
+                                <li><a href="#">검진예약내역</a></li>
+                                <li><a href="#">쿠폰존</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">1:1문의</a></li>
+                                <li><a href="#">개인결제</a></li>
+                                <li><a href="#">세일상품</a></li>
                             </ul>
                         </div>
                         
@@ -233,11 +298,11 @@
             <aside class="side_menu">
                 <div class="sm_wrap">
                     <div class="top_btn">
-                        <a href="#"><i class="fa fa-caret-up"></i></a>
+                        <a href="#"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="bottom_btn">
-                        <a href="#"><i class="fa fa-caret-down"></i></a>
+                        <a href="#"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </aside>

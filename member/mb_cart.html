@@ -32,9 +32,9 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
         <!--style sheet-->
-        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/import.css">
         <link rel="stylesheet" href="../css/main.css">
-        <!--goolge webfont-->
+        <!--google webfont-->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
     </head>
  
@@ -280,6 +280,27 @@
 
                 </div>
 
+                <div class="board_list M_board_list mb_M_order_middle">
+                    <div class="bl_list">
+                        <div class="w40 blb_box t_center fw_600 cart_product_box">
+                            <ul class="cart_left">
+                                <li><input type="checkbox" checked="checked"></li>
+                                <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
+                            </ul>
+
+                            <ul class="cart_right">
+                                <li><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
+                            </ul>
+                        </div>
+                        <div class="w10 blb_box t_center cart_blb_box"><strong>상품명</strong>: SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</div>
+                        <div class="w20 blb_box t_center cart_blb_box"><strong>총수량</strong>: 1</div>
+                        <div class="w10 blb_box t_center cart_blb_box"><strong>판매가</strong>: 49,000원</div>
+                        <div class="w10 blb_box t_center cart_blb_box"><strong>포인트</strong>: 0</div>
+                        <div class="w10 blb_box t_center cart_blb_box"><strong>배송비</strong>: 선불</div>
+                        <div class="w10 blb_box t_center cart_blb_box"><strong>소계</strong>: 49,000원</div>
+                    </div>
+                </div>
+
                 <div class="mb_bottom cart_right_btn">
                     <div class="mb_btn t_center f14 cl_btn">
                         <div class = "btn_box">
@@ -310,103 +331,6 @@
                     
                 </div>
 
-                <style>
-                    /*mb_cart*/
-                    .name_input div {float:left; }
-                    .name_input div:first-child {width:10%; padding:0px;}
-                    .name_input div:first-child input[type=checkbox] {margin-left:10px;}
-                    .name_input div:last-child {width:90%; padding:0px;}
-                    /* .board_list .bl_list .cart_product_box .cart_left li { width: 100%; } */
-                    .content .member_box .cart_pc_middle { margin-bottom: 0; }
-                    .board_list .bl_list .cart_product_box ul { float: left; width: 50%; }
-                    /* .board_list .bl_list .cart_product_box ul li a img { width: 25%; } */
-                    /* .cart_right { overflow: visible; } */
-                    .board_list .bl_list .cart_product_box { padding: 10px; /* border-right: 1px solid #ddd; */ }
-                    .board_list .bl_list .cart_product_box .cart_right { width:60%; padding: 20px; font-size: 14px; word-break: keep-all; }
-                    /* .board_list .bl_list .cart_btn { border: 1px solid blue; margin-top: 10px; font-size: 12px; padding: 5px; }
-                    .board_list .bl_list .cart_btn a { color: blue; } */
-                    .board_list .bl_list .cart_product_box .cart_left { width: 40%; }
-                    .board_list .bl_list .cart_product_box .cart_left li:first-child { width: 3%; }
-                    .board_list .bl_list .cart_product_box .cart_left li:last-child { width: 92%;  }
-                    .board_list .bl_list .cart_product_box .cart_left li:last-child img { width: 70%; padding-top: 4px; }
-
-                    .cart_right_btn .mb_btn input { /* padding: 0; */width: 80px; margin-right: 10px; background-color: white; border: 1px solid #ddd; padding: 10px; color: rgb(85, 85, 85); }
-                    /* .cart_right_btn .mb_btn .delete_btn { background-color: ;} */
-                    .cart_right_btn { padding-top: 0; }
-                    .cart_right_btn .mb_btn { padding: 0; }
-                    .cart_right_btn .btn_box { text-align: left; width: 100%;  }
-                    /* #cart_middle { background-color: #ddd; padding: 10px; }
-                    #cart_middle ul { padding: 4%; }
-                    #cart_middle ul li { float: left; width: 33%; font-size: 17px; font-weight: 600; color: #797979; }
-                    #cart_middle ul::after { content: ''; display: block; overflow: hidden; clear: both; } */
-                    .cart_right_btn .cl_btn {float:left; width:40%;}
-                    .cart_right_btn .cl_btn:last-child {text-align:right;}
-                    /* .cart_right_btn .mb_btn input {width:20%;} */
-                    .mb_right_info { width: 30%; float: right; text-align: right; }
-                    .mb_right_info ul li { float: left; width: 33%; font-size: 13px; }
-                    .mb_right_info ul::after { content: ''; display: block; overflow: hidden; clear: both; }
-                    /* .mb_right_info ul { padding: 10px; } */
-                    .mb_right_info ul li strong { font-weight: 600; }
-                    .cart_right_btn .mb_btn .delete_btn:hover { background-color: red; color: white; }
-                    .cart_right_btn .mb_btn .empty_btn:hover { background-color: #ddd; }
-                    @media(max-width:992px) {
-                        .cart_bottom_btn { padding: 10px; }
-                        .cart_bottom_btn .mb_btn input { font-size: 13px; }
-                        .mb_right_info ul li { text-align: right; width: 100%; margin-bottom: 5px;  }
-                        .cart_right_btn .cl_btn .btn_box { font-size: 12px; margin: 0; }
-                        
-                    }
-                    @media (max-width:768px) {
-                        .board_list .bl_list .cart_product_box ul { float: none; }
-                        .board_list .bl_list .cart_product_box .cart_left li:last-child { width: 100%; }
-                        .mb_M_order_middle { margin-bottom: 0; border-top: 1px solid #ddd; }
-                        .board_list .bl_list .cart_product_box .cart_left { width: 100%; }
-                        .board_list .bl_list .cart_product_box { padding: 0; }
-                        .mb_M_order_middle .bl_list { padding: 10px; }
-                        .board_list .bl_list .cart_product_box .cart_left li:last-child img { margin-top: 10px; width: 33%; }
-                        .board_list .bl_list .cart_product_box .cart_right { padding-left: 0; padding-bottom: 0; width: 53%; }
-                        .cart_blb_box strong { font-weight: 600; }
-                        .cart_bottom_btn { margin-bottom: 20vh; }
-                        .cart_bottom_btn .mb_btn { width: 100%; }
-                        .content .board_list .bl_list .cart_blb_box { margin-top: 0; }
-                        /* .cart_bottom_btn { padding: 0; } */
-                        .cart_bottom_btn { padding: 10px 0; }
-                        .cart_bottom_btn .btn_box input { width: 49%; margin-right: 2%; }
-                        .cart_bottom_btn .btn_box input:last-child { float: right; }
-
-
-                    }
-
-                </style>
-
-                <div class="board_list M_board_list mb_M_order_middle">
-                    <div class="bl_list">
-                        <div class="w40 blb_box t_center fw_600 cart_product_box">
-                            <ul class="cart_left">
-                                <li><input type="checkbox" checked="checked"></li>
-                                <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
-                            </ul>
-
-                            <ul class="cart_right">
-                                <li><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
-                            </ul>
-                        </div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>상품명</strong>: SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</div>
-                        <div class="w20 blb_box t_center cart_blb_box"><strong>총수량</strong>: 1</div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>판매가</strong>: 49,000원</div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>포인트</strong>: 0</div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>배송비</strong>: 선불</div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>소계</strong>: 49,000원</div>
-                    </div>
-                </div> 
-
-               
-                <style>
-                    .content .member_box .cart_pc_middle { padding-bottom: 10px; }
-                    .cart_bottom_btn .mb_btn input:first-child { background-color: red; margin-right: 10px; }
-                    /* .cart_bottom_btn { width: 154px; } */
-                    .content .board_list .bl_list .cart_bottom_btn { width: 100%; }
-                </style>
                 <div class="mb_bottom cart_bottom_btn">
                     <div class="btn_box mb_btn t_center fw_600">
                         <input type="button" value="쇼핑계속하기">

@@ -46,7 +46,7 @@ $(document).ready( function(){
      * @param string
      * @brief header 메뉴버튼 클릭시 header left 메뉴 펼쳐짐. 
      */
-    $('.menu_btn, .hd_left, .M_bg').click( function(){ 
+    $('.menu_btn, .M_bg,.hdl_close').click( function(){ 
         $(".hd_wrap, .M_bg, .hdl_close ").toggle();
 
     });
