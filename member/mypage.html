@@ -37,6 +37,29 @@
         <!--google webfont-->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
     </head>
+    <script>
+        $(document).ready( function(){
+
+            /**
+             * @param string
+             * @brief caret-up_btn 클릭시 .mbmt_bottom toggle
+             */
+
+            $('.caret-up_btn').click( function(){
+
+                $('.mbmt_bottom').toggle();
+                
+                if($(".mbmt_bottom").css("display") == "block")
+                {
+                    $('.caret-up_btn a i').attr('class','fa fa-caret-up');
+                }
+                else
+                {
+                    $('.caret-up_btn a i').attr('class','fa fa-caret-down');
+                }
+            });
+        });
+    </script>
  
     <body>
         <div class="wrap">
@@ -281,23 +304,8 @@
                         </div>
 
                         <div class="caret-up_btn">
-                            <a href="#"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
                         </div>
-
-                        <script>
-                            $(document).ready( function(){
-
-                                /**
-                                 * @param string
-                                 * @brief caret-up_btn 클릭시 .mbmt_bottom 펼쳐짐. 
-                                 */
-
-                                $('.caret-up_btn').click( function(){
-
-                                    $('.mbmt_bottom').toggle();
-                                });
-                            });
-                        </script>
 
                         <div class="mbm_middle">
 

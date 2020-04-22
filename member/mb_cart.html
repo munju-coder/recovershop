@@ -37,6 +37,72 @@
         <!--google webfont-->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
     </head>
+
+
+    <script>
+        $(document).ready( function(){
+            
+            //총계 계산을 위한 전역변수 선언
+            var sum_price = 0;
+
+            //1.checkbox 전체 선택
+            $('#pd_input').click( function(){
+                var chk = $(this).is(":checked");
+                if(chk == true)
+                {
+                    $(".cart_left #each_price").prop('checked', true);
+                }
+                else
+                {
+                    $(".cart_left #each_price").prop('checked', false);
+                }
+            //2.checkbox all 선택시 총계 계산
+            var Each = $(".cart_left #each_price").attr("pd_price");
+                $productPrice = $(this).attr(Each);
+                // console.log($productPrice);
+                sum_price = sum_price + $productPrice; 
+
+                //가져올 변수 선언 상품 가격 속성을 가져옴
+                pd_price  = $(this).attr("pd_price");
+                total = sum_price + pd_price;
+
+                console.log(total); //Nan
+                console.log(isNaN(NaN)); //true
+
+
+            });
+            
+
+
+            
+
+                
+
+
+        });
+
+
+        /**
+            1. 체크박스 전체 checked and false
+            2. chack all -> 총계 계산하기
+            3. 개별 checkbox -> 개별값 계산하기
+        */
+
+        //전역 변수
+        var sum_price = 0;
+
+        //전체를 클릭하는 함수
+        /*
+            {
+                pd_price  = $(this).attr("pd_price");
+                sum_price = sum_price + pd_price;
+            }
+
+
+            console.log(sum_price);
+        */
+
+    </script>
  
     <body>
         <div class="wrap">
@@ -249,7 +315,7 @@
                     <div class="bl_top">
                         
                         <div class="w40 blb_subject name_input">
-                            <div><input type="checkbox" checked="checked"></div>
+                            <div><input type="checkbox" id="pd_input" name="pr_price" ></div>
                             <div class = "t_center">상품명</div>                            
                         </div>
 
@@ -263,7 +329,7 @@
                     <div class="bl_list">
                         <div class="w40 blb_box t_center fw_600 cart_product_box">
                             <ul class="cart_left">
-                                <li><input type="checkbox" checked="checked"></li>
+                                <li><input type="checkbox" pd_price = "49000" id="each_price"></li>
                                 <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
                             </ul>
 
@@ -276,6 +342,24 @@
                         <div class="w10 blb_box t_center">0</div>
                         <div class="w10 blb_box t_center">선불</div>
                         <div class="w10 blb_box t_center">49,000원</div>
+                    </div>
+
+                    <div class="bl_list">
+                        <div class="w40 blb_box t_center fw_600 cart_product_box">
+                            <ul class="cart_left">
+                                <li><input type="checkbox" pd_price = "19000" id="each_price"></li>
+                                <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
+                            </ul>
+
+                            <ul class="cart_right">
+                                <li><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
+                            </ul>
+                        </div>
+                        <div class="w10 blb_box t_center">1</div>
+                        <div class="w20 blb_box t_center">19,000원</div>
+                        <div class="w10 blb_box t_center">0</div>
+                        <div class="w10 blb_box t_center">선불</div>
+                        <div class="w10 blb_box t_center">19,000원</div>
                     </div>
 
                 </div>

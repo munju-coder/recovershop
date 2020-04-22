@@ -426,7 +426,6 @@ input::placeholder { font-size: 80%; padding-left: 5px; }
 /*mb_order_list*/
 .content .member_box .mb_pc_order_middle { padding-bottom: 20px; }
 .content .member_box .sub_member { color: gray; padding-bottom: 20px; font-size: 14px; }
-.content .member_box .mb_pc_order_middle { margin-bottom: 100vh; }
 .content .member_box .mb_pc_order_middle .bl_list .g_color { color: #6c6a6a; }
 
 /*mb_id_search*/
@@ -448,12 +447,12 @@ input[type="text"] { padding: 5px; }
 .m10px { margin: 10px; }
 .m10px input { color: #b9b9b9; font-size: 14px; border: 1px solid #acacac; }
 .p_color { background-color: #f0f0f0; color: #000; padding: 10px; border-bottom: 1px solid #c7c5c5; border-top: 1px solid #c7c5c5; }
-.point_box .pb_top { background-color:#ea6b86; color: white; padding: 15px; }
+.point_box .pb_top { background-color:#333; color: white; padding: 15px; }
 .point_box .pb_middle input { width: 100%; }
 .point_box .pb_btn a { color: white; padding: 10px; display: inline-block; font-size: 14px; }
 .point_box .pb_btn { margin-top: 40px; }
-.point_box .pb_btn .happy_user { background-color: #30a5d3; }
-.point_box .pb_btn .normal_user { background-color: red; }
+.point_box .pb_btn .happy_user { background-color: #30a5d3; border-radius: 5px; }
+.point_box .pb_btn .normal_user { background-color: red; border-radius: 5px; }
 
 /*product_inquiry*/
 .product_inquiry .pi_box { padding-left: 20px; }		
@@ -509,7 +508,10 @@ input[type="text"] { padding: 5px; }
 .cart_bottom_btn .mb_btn input:first-child { background-color: red; margin-right: 10px; }
 .content .board_list .bl_list .cart_bottom_btn { width: 100%; }
 
+/*mb_health_list*/
+.member_box .p_paging { margin-top: 30px; margin-bottom: 30vh; }
 /*mb_health_detail*/
+
 .content .order_box .obm_left .health_result { padding-top: 0; padding-bottom: 5px; }
 .content .order_box .obm_left .obm_i_box .health_input { line-height: 21px; }
 .content .order_box .health_obm_right { height: 951px; }
@@ -693,7 +695,7 @@ input[type="text"] { padding: 5px; }
 
 /*my_cart*/
 .board_list .bl_list .cart_product_box ul { float: none; }
-.mb_M_order_middle { margin-bottom: 2%; border-top: 1px solid #ddd; }
+.mb_M_order_middle { margin-bottom: 2%; /* border-top: 1px solid #ddd; */ }
 .board_list .bl_list .cart_product_box .cart_left li:last-child ,
 .board_list .bl_list .cart_product_box .cart_left { width: 100%; }
 .board_list .bl_list .cart_product_box .cart_left li:last-child img { width: 100%; margin-top: 10px; }
@@ -716,6 +718,9 @@ input[type="text"] { padding: 5px; }
 .content .health_order { margin-top: 20px; }
 .content .order_box .health_top { border-bottom: 2px solid #333; padding-bottom: 10px; }
 .content .order_box .health_obm_right { height: 100%; }
+/*mb_health_list*/
+.member_box .mb_M_health_middle { border-top: 1px solid #ddd; }
+
 
 /* footer */
 .wrap footer .ft_middle .ft_left #PC_ftlogo { display: none; }

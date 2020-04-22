@@ -10,6 +10,7 @@
         <!--js-->
         <script src="../js/main.js"></script>
         <script src="../js/common.js"></script>
+        <script src="../js/COMMON_geo.js"></script>
         <!--bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!--font Awesome-->
@@ -37,119 +38,176 @@
         <!--google webfont-->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet"> 
         <!--address kakao-->
-        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+        <!-- <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> -->
 
     </head>
     <script>
+        //input maxlength
+        function maxLengthCheck(object) {
+            if(object.value.length > object.maxLength) {
+                object.value = object.value.slice(0, object.maxLength);
+            }
+
+        }
         $("document").ready(function(){
 
+            /**
+            * @brief input type only number
+            */
+            //카드번호 문자X
+            $(".obmrbb_subject input").each(function(){
+                $(this).keyup(function(event){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                });
+            }); 
+            //유효기간 문자X
+            $(".obmrbb_period input").each(function(){
+                $(this).keyup(function(event){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                });
+            }); 
+
+
+            //전역변수
+            var pay_type = null;
             $("#order_form").submit(function(e){
                     e.preventDefault();
                     var formObject = $(this).serializeObject();
 
                     if(formObject['mb_name'] == "")
                     {
-                        alert("*필수주문정보를 입력해주세요.");
-
+                        alert("주문하시는분의 이름을 입력해주세요.");
                         return false;
                     }
 
                     if(formObject['mb_mobile'] == "")
                     {
-                        alert("핸드폰 번호를 입력해주세요.");
-
+                        alert("주문하시는분의 핸드폰 번호를 입력해주세요.");
                         return false;
                     }
 
                     if(formObject['mb_zip'] == "")
                     {
-                        alert("주소를 입력해주세요.");
-
+                        alert("주문하시는분의 주소를 입력해주세요.");
                         return false;
                     }
 
                     if(formObject['mb_addr_2'] == "")
                     {
-                        alert("상세주소를 입력해주세요.");
-
+                        alert("주문하시는분의 상세주소를 입력해주세요.");
                         return false;
                     }
 
-                    if(formObject['mb_addr_3'] == "")
+                    if(formObject['r_name'] == "")
                     {
-                        alert("이메일을 입력해주세요.");
-
+                        alert("받으시는분의 정보를 입력해주세요.");
                         return false;
                     }
+
+                    if(formObject['r_mobile'] == "")
+                    {
+                        alert("받으시는분의 핸드폰 번호를 입력해주세요.");
+                        return false;
+                    }
+
+                    if(formObject['r_zip'] == "")
+                    {
+                        alert("받으시는분의 우편번호를 입력해주세요.");
+                        return false;
+                    }
+
+                    if(formObject['r_addr_1'] == "")
+                    {
+                        alert("받으시는분의 주소를 입력해주세요.");
+                        return false;
+                    }
+
+                    if(formObject['r_addr_2'] == "")
+                    {
+                        alert("받으시는분의 상세주소를 입력해주세요.");
+                        return false;
+                    }
+
+                    console.log(pay_type);
+
+                    if(pay_type == null){
+                        alert("결제 방식을 선택해주세요.");
+                        return false;
+                    }
+                    else 
+                    {
+                        if(pay_type == "무통장") 
+                        {
+                            if(formObject['cash_name'] == "") {
+                                alert("입금자명을 입력해 주세요.");
+                                return false;
+                            }
+                        }
+                        else if(pay_type == "신용카드") 
+                        {
+                            if(formObject['card_num_1'] == "" || formObject['card_num_2'] == "" || formObject['card_num_3'] == "" || formObject['card_num_4'] == ""  ) 
+                            {
+                                alert("카드번호를 입력해주세요.");
+                                return false;
+                            }
+
+                            if(formObject['card_num_mm'] == "" || formObject['card_num_yy'] == "") 
+                            {
+                                alert("유효기간을 입력해주세요.");
+                                return false;
+                            }
+
+                            if(formObject['install_period'] == "" ) 
+                            {
+                                alert("할부기간을 선택해주세요.");
+                                return false;
+                            }
+                        }
+                    }
+
+                    
 
             });
 
 
-            /**
-             * @brief daum kakao api "주소 찾기"
-             */
-            // COMMON.daum = {
-            //     DaumPostcode : function (devide)
-            //     {
-            //         daum.postcode.load(function () {
-            //             new daum.Postcode({
-            //                 oncomplete: function (data) {
-                                
-            //                     let fullAddr = ''; 
-            //                     let extraAddr = '';    
-                                
-            //                     if (data.userSelectedType === 'R') { 
-            //                         fullAddr = data.roadAddress;
-                
-            //                     } else { 
-            //                         fullAddr = data.jibunAddress;
-            //                     }    
-                                
-            //                     if (data.userSelectedType === 'R') {
-                                    
-            //                         if (data.bname !== '') {
-            //                             extraAddr += data.bname;
-            //                         }
-                                    
-            //                         if (data.buildingName !== '') {
-            //                             extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-            //                         }
-                                    
-            //                         fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
-            //                     }				
-                                
-            //                     if(devide == "zip_btn")
-            //                     {
-            //                         document.getElementById('mb_zip').value = data.zonecode;
-            //                         document.getElementById('mb_addr_1').value = fullAddr;
-            //                         document.getElementById('mb_addr_2').focus();
-            //                     }
-            //                     else if(devide == "r_zip_btn")
-            //                     {
-            //                         document.getElementById('r_zip').value = data.zonecode;
-            //                         document.getElementById('r_addr_1').value = fullAddr;
-            //                         document.getElementById('r_addr_2').focus();
-            //                     }
-                                                
-            //                 }
-            //             }).open();
-            //         });        
-            //     }
-            // };
 
-            
-            //zip_btn
+
+            /**
+            * @brief #same input checked  
+            */
+            $('#same').click( function(){
+
+                var chk = $(this).is(":checked");
+
+                if(chk == true)
+                {
+                    $('.obm_order_box input').each(function(i){
+                        $('#' + $('.obm_order_box input').eq(i).attr("id").replace('mb', 'r')).val($('.obm_order_box input').eq(i).val());
+                    });
+                }
+                else
+                {
+                    $('.obm_receiver_box input').each(function(i){
+                        $('#' + $('.obm_receiver_box input').eq(i).attr("id")).val('');
+                    });
+                }
+            });
+
+
+          
+            //zip_btn (kakao find address)
             $(".zip_btn").click(function(){
                 //COMMON.kakao.addrss call
-
                     var devide = $(this).attr("id");
                     COMMON.kakao.DaumPostcode(devide);
-
-                
             });
 
             //obmrs_pay button click
             $(".obmrs_pay").click(function(){
+                pay_type = "무통장";
                 $(".obmrs_card").css("color", "#777").css("border", "none");
                 $(this).css("color", "#ff006c");
                 $(this).css("border", "1px solid #ff006c");
@@ -158,6 +216,7 @@
             });
 
             $(".obmrs_card").click(function(){
+                pay_type = "신용카드";
                 $(".obmrs_pay").css("color", "#777").css("border", "none");;
                 $(this).css("color", "#ff006c");
                 $(this).css("border", "1px solid #ff006c");
@@ -479,7 +538,7 @@
                                         <div class="obmib_subject">우편번호</div>
                                         <div class="obmib_input">
                                             <input type="text" name="mb_zip" id="mb_zip" class = "w30" value = "" placeholder="우편번호 입력하세요.">
-                                            <div class="zip_btn cursor fw_600 f14">주소찾기</div>
+                                            <div class="zip_btn cursor fw_600 f14" id = "zip_btn">주소찾기</div>
                                         </div>
                                     </div>
     
@@ -505,41 +564,6 @@
                                     </div>
     
                                 </div>
-
-                                <script>
-                                    $(document).ready( function(){
-
-                                        $('#same').click( function(){
-                                            
-                                            $('.obm_order_box input').each(function(i){
-                                                /* if($('.obm_order_box input').eq(i).val() == "")
-                                                {
-                                                    alert($('.obm_order_box input').eq(i).attr("id") + "를 입력하세요.");
-                                                    return false;
-                                                } */
-                                                $('#' + $('.obm_order_box input').eq(i).attr("id").replace('mb', 'r')).val($('.obm_order_box input').eq(i).val());
-                                            });
-
-
-                                        // var inputVal = $('#mb_name').val();
-                                        //     $mbTel = $('#mb_tel').val();
-                                        //     $mbMobile = $('#mb_mobile').val();
-                                        //     $mbZip = $('#mb_zip').val();
-                                        //     $mbAddr1 = $('#mb_addr_1').val(); mb_addr_
-                                        //     $mbAddr2 = $('#mb_addr_2').val();
-                                        // // alert(inputVal); 
-                                        // $('#r_name').val(inputVal);
-                                        // $('#r_tel').val($mbTel);
-                                        // $('#r_mobile').val($mbMobile);
-                                        // $('#r_zip').val($mbZip);
-                                        // $('#r_addr_1').val($mbAddr1);
-
-
-
-                                        });
-                                    });
-
-                                </script>
     
                                 <div class="obm_receiver_box">
                                     <div class="obm_box_subject f17 fw_600">
@@ -549,7 +573,7 @@
                                     <div class="obm_i_box">
                                         <div class="obmib_subject">배송지 선택</div>
                                         <div class="obmib_input">
-                                            <input type="checkbox" name="" id="same"> 주문자와 동일
+                                            <input type="checkbox" name="checkbox" id="same"> 주문자와 동일
                                         </div>
                                     </div>
                                     
@@ -578,7 +602,7 @@
                                         <div class="obmib_subject">우편번호</div>
                                         <div class="obmib_input">
                                             <input type="text" name="r_zip" id="r_zip" class = "w30" value = "" placeholder="우편번호 입력하세요.">
-                                            <div class="zip_btn cursor fw_600 f14">주소찾기</div>
+                                            <div class="zip_btn cursor fw_600 f14" id = "r_zip_btn">주소찾기</div>
                                         </div>
                                     </div>
     
@@ -675,24 +699,24 @@
                                     <div class="obmrb_box order_p0">
                                         <div class="obmrbb_subject">기업은행 : 167-141774-01-019</div>
                                         <div class="obmrbb_subject">예금주명 주식회사 예원엠앤디</div>
-                                        <div class="obmrbb_subject"> 입금자 명 : <input type="text" class = "w50" name="" id=""></div>
+                                        <div class="obmrbb_subject"> 입금자 명 : <input type="text" class = "w50" name="cash_name" id=""></div>
                                     </div>
                                 </div>
-    
+
                                 <div class="obmr_box obmrs_card_info">
                                     <div class="obmrb_box order_p0">
                                         <div class="obmrbb_subject">
                                             <span>카드번호</span>
-                                            <input type="number" class = "w19" name="" id="">
-                                            <input type="number" class = "w19" name="" id="">
-                                            <input type="number" class = "w19" name="" id="">
-                                            <input type="number" class = "w19" name="" id="">
+                                            <input type="number" numberOnly class = "w19" name="card_num_1" id="" maxlength="4" oninput="maxLengthCheck(this);"/>
+                                            <input type="number" numberOnly class = "w19" name="card_num_2" id="" maxlength="4" oninput="maxLengthCheck(this);"/>
+                                            <input type="number" numberOnly class = "w19" name="card_num_3" id="" maxlength="4" oninput="maxLengthCheck(this);"/>
+                                            <input type="number" numberOnly class = "w19" name="card_num_4" id="" maxlength="4" oninput="maxLengthCheck(this);"/>
                                         </div>
 
-                                        <div class="obmrbb_subject">
+                                        <div class="obmrbb_subject obmrbb_period">
                                             <span>유효기간</span>
-                                            <input type="number" class = "w20" name="" id="">
-                                            <input type="number" class = "w20" name="" id="">
+                                            <input type="number" class = "w20" placeholder="04" name="card_num_mm" id="" maxlength="2" oninput="maxLengthCheck(this);"/>
+                                            <input type="number" class = "w20" placeholder="22" name="card_num_yy" id="" maxlength="2" oninput="maxLengthCheck(this);"/>
                                         </div>
                                         <div class="obmrbb_subject">
                                             <span>할부기간</span>

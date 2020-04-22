@@ -352,7 +352,7 @@ COMMON.winOpen = {
 /**
  * @brief daum kakao api "주소 찾기"
  */
-COMMON.daum = {
+COMMON.kakao = {
     DaumPostcode : function (devide)
     {
         daum.postcode.load(function () {
@@ -382,7 +382,7 @@ COMMON.daum = {
                         fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
                     }				
                     
-                    if(devide == "mb_zip_btn")
+                    if(devide == "zip_btn")
                     {
                         document.getElementById('mb_zip').value = data.zonecode;
                         document.getElementById('mb_addr_1').value = fullAddr;
