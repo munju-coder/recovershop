@@ -9,6 +9,7 @@
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <!--js-->
         <script src="../js/main.js"></script>
+        <script src="../js/COMMON_geo.js"></script>
         <script src="../js/common.js"></script>
         <!--bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -41,67 +42,66 @@
 
     <script>
         $(document).ready( function(){
-            
-            //총계 계산을 위한 전역변수 선언
+            /**
+            * @brief product input check total price
+            */
             var sum_price = 0;
 
-            //1.checkbox 전체 선택
-            $('#pd_input').click( function(){
+            $('#pd_all_input').click( function(){
                 var chk = $(this).is(":checked");
+                var subUnchk = $('.each_chk').prop(':checked', true);
+
                 if(chk == true)
                 {
-                    $(".cart_left #each_price").prop('checked', true);
+                    $(".cart_left input").prop('checked', true);
+
+                    $(".each_chk").each(function(){ 
+                        var each_price = Number($(this).attr("pd_price")); 
+                        sum_price = sum_price + each_price; 
+                    });                    
+                    $("#cart_sum_price").text(COMMON.form.comma(sum_price));
                 }
                 else
                 {
-                    $(".cart_left #each_price").prop('checked', false);
+                    $(".cart_left input").prop('checked', false);
+                    sum_price = 0;
+                    $("#cart_sum_price").text(COMMON.form.comma(sum_price));
+
                 }
-            //2.checkbox all 선택시 총계 계산
-            var Each = $(".cart_left #each_price").attr("pd_price");
-                $productPrice = $(this).attr(Each);
-                // console.log($productPrice);
-                sum_price = sum_price + $productPrice; 
-
-                //가져올 변수 선언 상품 가격 속성을 가져옴
-                pd_price  = $(this).attr("pd_price");
-                total = sum_price + pd_price;
-
-                console.log(total); //Nan
-                console.log(isNaN(NaN)); //true
-
-
+                
+                if(chk == true && subUnchk == false)
+                {
+                    $('.each_chk').each(function(){
+                        var each_price2 = Number($(this).attr("pd_price"));
+                        sum_price = sum_price - each_price2;
+                        $("#cart_sum_price").text(COMMON.form.comma(sum_price));
+                    }); 
+                }
             });
             
 
+            $(".each_chk").each(function(){
+                $(this).click(function(){ 
+                    
+                    var each_price1 = Number($(this).attr("pd_price"));
+                    var chk = $(this).is(":checked");
 
-            
+                    
+                    if ( chk == true) 
+                    {
+                        sum_price = sum_price + each_price1;
+                        $("#cart_sum_price").text(COMMON.form.comma(sum_price));
 
-                
-
-
+                    } 
+                    else 
+                    {
+                        sum_price = sum_price - each_price1;
+                        $("#cart_sum_price").text(COMMON.form.comma(sum_price));
+                    }
+                    
+                });
+            });
         });
-
-
-        /**
-            1. 체크박스 전체 checked and false
-            2. chack all -> 총계 계산하기
-            3. 개별 checkbox -> 개별값 계산하기
-        */
-
-        //전역 변수
-        var sum_price = 0;
-
-        //전체를 클릭하는 함수
-        /*
-            {
-                pd_price  = $(this).attr("pd_price");
-                sum_price = sum_price + pd_price;
-            }
-
-
-            console.log(sum_price);
-        */
-
     </script>
  
     <body>
@@ -305,124 +305,146 @@
 
         <!--{ content 시작-->
         <div class="content dw_1200px">
-            <!--{ member_box-->
-            <div class="member_box">
-                <div class="mb_top f20 fw_600 mb_order_top">
-                    장바구니
-                </div>
+            <form>
+                <!--{ member_box-->
 
-                <div class="board_list PC_board_list mb_pc_order_middle cart_pc_middle">
-                    <div class="bl_top">
+                <div class="member_box">
+                    <div class="mb_top f20 fw_600 mb_order_top">
+                        장바구니
+                    </div>
+
+                    <div class="board_list PC_board_list mb_pc_order_middle cart_pc_middle">
+                        <div class="bl_top">
+                            
+                            <div class="w40 blb_subject name_input">
+                                <div><input type="checkbox" id="pd_all_input" name="pr_price" ></div>
+                                <div class = "t_center">상품명</div>                            
+                            </div>
+
+                            <div class="w10 blb_subject t_center">총수량</div>
+                            <div class="w20 blb_subject t_center">판매가</div>
+                            <div class="w10 blb_subject t_center">포인트</div>
+                            <div class="w10 blb_subject t_center">배송비</div>
+                            <div class="w10 blb_subject t_center">소계</div>
+                        </div>
+
+                        <div class="bl_list">
+                            <div class="w40 blb_box t_center fw_600 cart_product_box">
+                                <ul class="cart_left">
+                                    <li><input type="checkbox" pd_price = "49000" class = "each_chk"></li>
+                                    <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
+                                </ul>
+
+                                <ul class="cart_right">
+                                    <li><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
+                                </ul>
+                            </div>
+                            <div class="w10 blb_box t_center">1</div>
+                            <div class="w20 blb_box t_center">49,000원</div>
+                            <div class="w10 blb_box t_center">0</div>
+                            <div class="w10 blb_box t_center">선불</div>
+                            <div class="w10 blb_box t_center">49,000원</div>
+                        </div>
+
+                        <div class="bl_list">
+                            <div class="w40 blb_box t_center fw_600 cart_product_box">
+                                <ul class="cart_left">
+                                    <li><input type="checkbox" pd_price = "19000" class = "each_chk"></li>
+                                    <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
+                                </ul>
+
+                                <ul class="cart_right">
+                                    <li><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
+                                </ul>
+                            </div>
+                            <div class="w10 blb_box t_center">1</div>
+                            <div class="w20 blb_box t_center">19,000원</div>
+                            <div class="w10 blb_box t_center">0</div>
+                            <div class="w10 blb_box t_center">선불</div>
+                            <div class="w10 blb_box t_center">19,000원</div>
+                        </div>
+
+                    </div>
+
+                    <div class="board_list M_board_list mb_M_order_middle">
+                        <div class="bl_list border_B">
+                            <div class="w40 blb_box t_center fw_600 cart_product_box">
+                                <ul class="cart_left">
+                                    <li><input type="checkbox" checked="checked"></li>
+                                    <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
+                                </ul>
+
+                                <ul class="cart_right">
+                                    <li class="mt3"><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
+                                </ul>
+                            </div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>상품명</strong>: SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</div>
+                            <div class="w20 blb_box t_center cart_blb_box"><strong>총수량</strong>: 1</div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>판매가</strong>: 49,000원</div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>포인트</strong>: 0</div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>배송비</strong>: 선불</div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>소계</strong>: 49,000원</div>
+                        </div>
+
+                        <div class="bl_list">
+                            <div class="w40 blb_box t_center fw_600 cart_product_box">
+                                <ul class="cart_left">
+                                    <li><input type="checkbox" checked="checked"></li>
+                                    <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
+                                </ul>
+
+                                <ul class="cart_right">
+                                    <li class="mt3"><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
+                                </ul>
+                            </div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>상품명</strong>: SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</div>
+                            <div class="w20 blb_box t_center cart_blb_box"><strong>총수량</strong>: 1</div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>판매가</strong>: 49,000원</div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>포인트</strong>: 0</div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>배송비</strong>: 선불</div>
+                            <div class="w10 blb_box t_center cart_blb_box"><strong>소계</strong>: 49,000원</div>
+                        </div>
+                    </div>
+
+                    <div class="mb_bottom cart_right_btn">
+                        <div class="mb_btn t_center f14 cl_btn">
+                            <div class = "btn_box">
+                                <input type="button" class="delete_btn" value="선택삭제">
+                                <input type="button" class="empty_btn" value="비우기">
+                            </div>
+                        </div>
                         
-                        <div class="w40 blb_subject name_input">
-                            <div><input type="checkbox" id="pd_input" name="pr_price" ></div>
-                            <div class = "t_center">상품명</div>                            
-                        </div>
-
-                        <div class="w10 blb_subject t_center">총수량</div>
-                        <div class="w20 blb_subject t_center">판매가</div>
-                        <div class="w10 blb_subject t_center">포인트</div>
-                        <div class="w10 blb_subject t_center">배송비</div>
-                        <div class="w10 blb_subject t_center">소계</div>
-                    </div>
-
-                    <div class="bl_list">
-                        <div class="w40 blb_box t_center fw_600 cart_product_box">
-                            <ul class="cart_left">
-                                <li><input type="checkbox" pd_price = "49000" id="each_price"></li>
-                                <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
-                            </ul>
-
-                            <ul class="cart_right">
-                                <li><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
-                            </ul>
-                        </div>
-                        <div class="w10 blb_box t_center">1</div>
-                        <div class="w20 blb_box t_center">49,000원</div>
-                        <div class="w10 blb_box t_center">0</div>
-                        <div class="w10 blb_box t_center">선불</div>
-                        <div class="w10 blb_box t_center">49,000원</div>
-                    </div>
-
-                    <div class="bl_list">
-                        <div class="w40 blb_box t_center fw_600 cart_product_box">
-                            <ul class="cart_left">
-                                <li><input type="checkbox" pd_price = "19000" id="each_price"></li>
-                                <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
-                            </ul>
-
-                            <ul class="cart_right">
-                                <li><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
-                            </ul>
-                        </div>
-                        <div class="w10 blb_box t_center">1</div>
-                        <div class="w20 blb_box t_center">19,000원</div>
-                        <div class="w10 blb_box t_center">0</div>
-                        <div class="w10 blb_box t_center">선불</div>
-                        <div class="w10 blb_box t_center">19,000원</div>
-                    </div>
-
-                </div>
-
-                <div class="board_list M_board_list mb_M_order_middle">
-                    <div class="bl_list">
-                        <div class="w40 blb_box t_center fw_600 cart_product_box">
-                            <ul class="cart_left">
-                                <li><input type="checkbox" checked="checked"></li>
-                                <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
-                            </ul>
-
-                            <ul class="cart_right">
-                                <li><span>SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</span></li>
-                            </ul>
-                        </div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>상품명</strong>: SJWT1237M 300g 기모 SRX 라운드 긴소매[히트기어] * 1</div>
-                        <div class="w20 blb_box t_center cart_blb_box"><strong>총수량</strong>: 1</div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>판매가</strong>: 49,000원</div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>포인트</strong>: 0</div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>배송비</strong>: 선불</div>
-                        <div class="w10 blb_box t_center cart_blb_box"><strong>소계</strong>: 49,000원</div>
-                    </div>
-                </div>
-
-                <div class="mb_bottom cart_right_btn">
-                    <div class="mb_btn t_center f14 cl_btn">
-                        <div class = "btn_box">
-                            <input type="button" class="delete_btn" value="선택삭제">
-                            <input type="button" class="empty_btn" value="비우기">
-                        </div>
-                    </div>
+                        <div class="mb_right_info">
+                            <ul>
+                                <li class="">
+                                    <span>배송비</span>
+                                    <strong>0</strong> 원
+                                </li>
                     
-                    <div class="mb_right_info">
-                        <ul>
-                            <li class="">
-                                <span>배송비</span>
-                                <strong>0</strong> 원
-                            </li>
-                
-                            <li class="">
-                                <span>포인트</span>
-                                <strong>0</strong> 점
-                            </li>
-                
-                            <li class="">
-                                <span>총계</span>
-                                <strong>15,000</strong> 원 
-                            </li>
-                         
-                        </ul>
-                    </div>
+                                <li class="">
+                                    <span>포인트</span>
+                                    <strong>0</strong> 점
+                                </li>
                     
-                </div>
+                                <li class="">
+                                    <span>총계</span>
+                                    <strong id = "cart_sum_price">0</strong> 원 
+                                </li>
+                            
+                            </ul>
+                        </div>
+                        
+                    </div>
 
-                <div class="mb_bottom cart_bottom_btn">
-                    <div class="btn_box mb_btn t_center fw_600">
-                        <input type="button" value="쇼핑계속하기">
-                        <input type="button" value="주문하기">
-                    </div>                    
-                </div>
+                    <div class="mb_bottom cart_bottom_btn">
+                        <div class="btn_box mb_btn t_center fw_600">
+                            <input type="button" value="쇼핑계속하기">
+                            <input type="button" value="주문하기">
+                        </div>                    
+                    </div>
 
-            </div>
+                </div>
+            </form>
         </div>
         <!--} content 끝-->
 

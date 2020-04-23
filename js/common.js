@@ -52,6 +52,26 @@ $(document).ready( function(){
     });
 
     /**
+    * @brief left_menu login check
+    */
+    $('#login_form').submit( function(e){
+        e.preventDefault();
+        var formObject = $(this).serializeObject();
+        if(formObject['mb_id'] == "")
+        {
+            alert("아이디를 입력해주세요.");
+            return false;
+        }
+
+        if(formObject['mb_password'] == "")
+        {
+            alert("비밀번호를 입력해주세요.");
+            return false;
+        }
+
+    });
+    
+    /**
      * @param string
      * @brief aside right top, bottom 버튼 동작.
      */
