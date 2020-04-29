@@ -10,6 +10,7 @@
         <!--js-->
         <script src="../js/main.js"></script>
         <script src="../js/common.js"></script>
+        <script src="../js/COMMON_geo.js"></script>
         <!--bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!--font Awesome-->
@@ -72,9 +73,27 @@
                     var chk_3 = $("input:checkbox[name=chk_3]").is(":checked");
                     var chk_4 = $("input:checkbox[name=chk_4]").is(":checked");                    
 
-                    if(chk_1 == false || chk_2 == false || chk_3 == false || chk_4 == false)
+                    if(chk_1 == false)
                     {
-                        alert("하단 내용의 체크박스를 선택하세요.");
+                        alert('리커버샵 이용약관에 동의해주세요.');
+                        return false
+                    }
+                    if(chk_2 == false)
+                    {
+                        alert('개인정보취급방침에 동의해주세요.');
+                        return false
+                    }
+
+                    if(chk_3 == false)
+                    {
+                        alert('포인트 지급 및 사용에 대한 약관에 동의해주세요.');
+                        return false
+                    }
+
+                    if(chk_4 == false)
+                    {
+                        alert('캐쉬 지급 및 사용에 대한 약관에 동의해주세요.');
+                        return false
                     }
                     else
                     {
@@ -85,7 +104,7 @@
                 $("#all_chk").click(function(){
                     
                     var chk = $(this).is(":checked");
-        
+
                     if(chk == true)
                     {
                         $("input:checkbox[id='chk_1']").prop("checked", true);
@@ -99,7 +118,48 @@
                         $("input:checkbox[id='chk_2']").prop("checked", false);
                         $("input:checkbox[id='chk_3']").prop("checked", false);
                         $("input:checkbox[id='chk_4']").prop("checked", false);
-                    }                    
+                    }    
+
+            
+                });
+
+                $('.cm_middle input').each( function(){
+                    var subCheck = $('.cm_middle input').is(':checked');
+                    $('.cm_middle input').click( function(){
+                        if(subCheck == false) {
+                            $('#all_chk').prop('checked',false);
+                        }
+                        else 
+                        {
+                            $('#all_chk').prop('checked',true);
+                        }
+                    });
+                            
+                });
+
+
+                $('#mb_chk_form').submit( function(e){
+                    e.preventDefault();
+                    var formObject = $(this).serializeObject();
+                    if(formObject['chk_1'] == '') {
+                        alert('리커버샵 이용약관에 동의해주세요.');
+                        return false
+                    }
+                    if(formObject['chk_2'] == '') {
+                        alert('개인정보취급방침에 동의해주세요.');
+                        return false
+                    }
+
+                    if(formObject['chk_3'] == '') {
+                        alert('포인트 지급 및 사용에 대한 약관에 동의해주세요.');
+                        return false
+                    }
+
+                    if(formObject['chk_4'] == '') {
+                        alert('캐쉬 지급 및 사용에 대한 약관에 동의해주세요.');
+                        return false
+                    }
+
                 });
             });
         </script>
@@ -306,73 +366,71 @@
 
             <!--{ content-->
             <div class="content dw_1200px mb_re_content">
-                <!-- <div class="c_top"></div> -->
+                <form action="" id="mb_chk_form" name="mb_chk_form">
+                    <div class="c_middle reg_chk_box"> 
+                        <div class="cm_top">
+                            <div class="nice_chk_box">
+                                <div class="ncb_top">나이스평가정보에서 인증 받은 휴대폰 번호를 사용하고 있습니다.</div>
 
-                <div class="c_middle reg_chk_box">
-                    
-                    <div class="cm_top">
-                        <div class="nice_chk_box">
-                            <div class="ncb_top">나이스평가정보에서 인증 받은 휴대폰 번호를 사용하고 있습니다.</div>
+                                <div class="ncb_btn font_s_20b cursor">휴대폰 본인인증</div>
 
-                            <div class="ncb_btn font_s_20b cursor">휴대폰 본인인증</div>
-
-                            <div class="ncb_chk">
-                                하단 약관에 모두 동의합니다.
-                                <input type="checkbox" name="all_chk" id="all_chk">
+                                <div class="ncb_chk">
+                                    하단 약관에 모두 동의합니다.
+                                    <input type="checkbox" name="all_chk" id="all_chk">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="cm_middle">
-                        <div class="cmm_chk_box">
-                            <div class="cmm_subject f17 fw_600">1. 리커버샵 이용약관</div>
-                            <div class="cmm_textarea">
-                                <textarea name="" id="" >
+                        <div class="cm_middle">
+                            <div class="cmm_chk_box">
+                                <div class="cmm_subject f17 fw_600">1. 리커버샵 이용약관</div>
+                                <div class="cmm_textarea">
+                                    <textarea name="" id="" >
+                                        
+                                    </textarea>
                                     
-                                </textarea>
-                                
+                                </div>
+                                <div class="cmm_chk_1">
+                                    리커버샵 이용약관에 동의합니다.
+                                    <input type="checkbox" name="chk_1" id="chk_1">
+                                </div>                        
                             </div>
-                            <div class="cmm_chk_1">
-                                본인은 내용에 동의합니다.
-                                <input type="checkbox" name="chk_1" id="chk_1">
-                            </div>                        
-                        </div>
 
-                        <div class="cmm_chk_box">
-                            <div class="cmm_subject f17 fw_600">2. 개인정보취급방침</div>
-                            <div class="cmm_textarea">
-                                <textarea name="" id="" ></textarea>
+                            <div class="cmm_chk_box">
+                                <div class="cmm_subject f17 fw_600">2. 개인정보취급방침</div>
+                                <div class="cmm_textarea">
+                                    <textarea name="" id="" ></textarea>
+                                </div>
+                                <div class="cmm_chk_1">
+                                    개인정보취급방침에 동의합니다.
+                                    <input type="checkbox" name="chk_2" id="chk_1">
+                                </div>                        
                             </div>
-                            <div class="cmm_chk_1">
-                                본인은 내용에 동의합니다.
-                                <input type="checkbox" name="chk_2" id="chk_1">
-                            </div>                        
-                        </div>
 
-                        <div class="cmm_chk_box">
-                            <div class="cmm_subject f17 fw_600">3. 포인트 지급 및 사용에 대한 약관</div>
-                            <div class="cmm_textarea">
-                                <textarea name="" id="" ></textarea>
+                            <div class="cmm_chk_box">
+                                <div class="cmm_subject f17 fw_600">3. 포인트 지급 및 사용에 대한 약관</div>
+                                <div class="cmm_textarea">
+                                    <textarea name="" id="" ></textarea>
+                                </div>
+                                <div class="cmm_chk_1">
+                                    포인트 지급 및 사용에 대한 약관에 동의합니다.
+                                    <input type="checkbox" name="chk_3" id="chk_1">
+                                </div>                        
                             </div>
-                            <div class="cmm_chk_1">
-                                본인은 내용에 동의합니다.
-                                <input type="checkbox" name="chk_3" id="chk_1">
-                            </div>                        
-                        </div>
 
-                        <div class="cmm_chk_box">
-                            <div class="cmm_subject f17 fw_600">4. 캐쉬 지급 및 사용에 대한 약관</div>
-                            <div class="cmm_textarea">
-                                <textarea name="" id="" ></textarea>
+                            <div class="cmm_chk_box">
+                                <div class="cmm_subject f17 fw_600">4. 캐쉬 지급 및 사용에 대한 약관</div>
+                                <div class="cmm_textarea">
+                                    <textarea name="" id="" ></textarea>
+                                </div>
+                                <div class="cmm_chk_1">
+                                    캐쉬 지급 및 사용에 대한 약관에 동의합니다.
+                                    <input type="checkbox" name="chk_4" id="chk_1">
+                                </div>                        
                             </div>
-                            <div class="cmm_chk_1">
-                                본인은 내용에 동의합니다.
-                                <input type="checkbox" name="chk_4" id="chk_1">
-                            </div>                        
                         </div>
-
                     </div>
-                </div>
+                </form>
             </div>
             <!--{ content-->
 

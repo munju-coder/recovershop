@@ -74,7 +74,7 @@
                     $('.each_chk').each(function(){
                         var each_price2 = Number($(this).attr("pd_price"));
                         sum_price = sum_price - each_price2;
-                        $("#cart_sum_price").text(COMMON.form.comma(sum_price));
+                        // $("#cart_sum_price").text(COMMON.form.comma(sum_price));
                     }); 
                 }
             });
@@ -101,6 +101,51 @@
                     
                 });
             });
+
+            $('.delete_btn').click( function(){
+
+                var select_Btn= new Array();
+
+                $("input:checkbox[name='chk[]']:checked").each(function (i) {  
+                    select_Btn[i] = Number($(this).attr("pd_price"));
+                });
+
+                console.log(select_Btn);
+
+                if(select_Btn.length <= 0)
+                {
+                    alert("삭제하실 상품을 선택하세요.");
+                }
+                else
+                {
+                    var conf = confirm("선택하신 상품을 삭제 하시겠습니까?");
+
+                    if(conf == true)
+                    {
+                        $('.each_chk').each( function(i){
+                            var chk = $(this).is(":checked");
+
+                            if(chk == true)
+                            {
+                                $(this).parents('.bl_list').remove();
+                                
+                                sum_price = 0;
+                                $("input:checkbox[name='chk[]']:checked").each(function (i) {  
+                                    pd_price[i] = Number($(this).attr("pd_price"));
+                                    sum_price += pd_price[i];
+                                });
+                                
+                                $("#cart_sum_price").text(COMMON.form.comma(sum_price));                        
+                            }
+                        });
+                    }
+                    
+                }
+
+            });
+
+
+            
         });
     </script>
  
