@@ -46,76 +46,73 @@
             * @brief product input check total price
             */
             var sum_price = 0;
-            var seq = new Array();
-            var pd_price = new Array();
-            
-            $('.each_chk').each( function(i){
+
+            $('#pd_all_input').click( function(){
                 var chk = $(this).is(":checked");
+                var subUnchk = $('.each_chk').prop(':checked', true);
+
                 if(chk == true)
                 {
-                    pd_price[i] = Number($(".each_chk").eq(i).attr("pd_price"));
-                    sum_price = sum_price + pd_price[i];
-                }
-            });
+                    $(".cart_left input").prop('checked', true);
 
-            $("#cart_sum_price").text(COMMON.form.comma(sum_price));
-
-            $('#pd_all_input').click(function(){
-						
-                if($("#pd_all_input").prop("checked") == true) 
-                {
-                    sum_price = 0;
-                    $("input:checkbox[name='chk[]']").prop("checked",true);
-
-                    $("input:checkbox[name='chk[]']:checked").each(function (i) {  
-                        pd_price[i] = Number($(this).attr("pd_price"));
-                        sum_price += pd_price[i];
-                    });
+                    $(".each_chk").each(function(){ 
+                        var each_price = Number($(this).attr("pd_price")); 
+                        sum_price = sum_price + each_price; 
+                    });                    
                     $("#cart_sum_price").text(COMMON.form.comma(sum_price));
                 }
-                else 
+                else
                 {
-                    $("input:checkbox[name='chk[]']").prop("checked",false); 
+                    $(".cart_left input").prop('checked', false);
                     sum_price = 0;
                     $("#cart_sum_price").text(COMMON.form.comma(sum_price));
+
                 }
                 
-            });	
+                if(chk == true && subUnchk == false)
+                {
+                    $('.each_chk').each(function(){
+                        var each_price2 = Number($(this).attr("pd_price"));
+                        sum_price = sum_price - each_price2;
+                        // $("#cart_sum_price").text(COMMON.form.comma(sum_price));
+                    }); 
+                }
+            });
+            
 
-            $("input:checkbox[name='chk[]']").each(function(i){
+            $(".each_chk").each(function(){
                 $(this).click(function(){ 
-
-                    $('#pd_all_input').prop("checked",false); 
+                    
+                    var each_price1 = Number($(this).attr("pd_price"));
                     var chk = $(this).is(":checked");
-                    var each_price = Number($(this).attr("pd_price"));;
 
+                    
                     if ( chk == true) 
                     {
-                        sum_price += each_price;
-                        $("#cart_sum_price").text(COMMON.form.comma(sum_price));                        
+                        sum_price = sum_price + each_price1;
+                        $("#cart_sum_price").text(COMMON.form.comma(sum_price));
+
                     } 
                     else 
-                    {                                              
-                        sum_price -=  each_price;
+                    {
+                        sum_price = sum_price - each_price1;
                         $("#cart_sum_price").text(COMMON.form.comma(sum_price));
                     }
                     
                 });
-                
-            });            
+            });
 
-            //선택삭제 $('.delete_btn') 를 누르면 해야할일
             $('.delete_btn').click( function(){
 
-                var sss = new Array();
+                var select_Btn= new Array();
 
                 $("input:checkbox[name='chk[]']:checked").each(function (i) {  
-                    sss[i] = Number($(this).attr("pd_price"));
+                    select_Btn[i] = Number($(this).attr("pd_price"));
                 });
-                
-                console.log(sss);
 
-                if(sss.length <= 0)
+                console.log(select_Btn);
+
+                if(select_Btn.length <= 0)
                 {
                     alert("삭제하실 상품을 선택하세요.");
                 }
@@ -137,15 +134,18 @@
                                     pd_price[i] = Number($(this).attr("pd_price"));
                                     sum_price += pd_price[i];
                                 });
+                                
                                 $("#cart_sum_price").text(COMMON.form.comma(sum_price));                        
                             }
                         });
                     }
                     
                 }
- 
+
             });
 
+
+            
         });
     </script>
  
@@ -373,10 +373,10 @@
                             <div class="w10 blb_subject t_center">소계</div>
                         </div>
 
-                        <div class="bl_list product_cart_list">
+                        <div class="bl_list">
                             <div class="w40 blb_box t_center fw_600 cart_product_box">
                                 <ul class="cart_left">
-                                    <li><input type="checkbox" pd_price="49000" class="each_chk" name = "chk[]"></li>
+                                    <li><input type="checkbox" pd_price = "49000" class = "each_chk"></li>
                                     <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
                                 </ul>
 
@@ -394,7 +394,7 @@
                         <div class="bl_list">
                             <div class="w40 blb_box t_center fw_600 cart_product_box">
                                 <ul class="cart_left">
-                                    <li><input type="checkbox" pd_price="19000" class="each_chk" name = "chk[]"></li>
+                                    <li><input type="checkbox" pd_price = "19000" class = "each_chk"></li>
                                     <li><a href="../product/product_view.html"><img src="../images/pr_img1.jpg" alt="product image"></a></li>
                                 </ul>
 
