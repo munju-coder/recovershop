@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="UTF-8">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,7 +76,7 @@
                         <form name="frmsearch1" action="">
                             <!-- <label for="sch_str" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label> -->
                             <input type="text" name="q" placeholder="검색어를 입력하세요." value="" id="sch_str" required="">
-                            <button type="submit" id="sch_submit"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
+                            <button type="submit" id="sch_submit" class="cursor"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
                         </form>
                     </div>
 
@@ -97,17 +97,17 @@
                     <div class="hdb_menu dw_1200px">
                         <div class="ft_600">
                             <button type="button" class="menu_btn">
-                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                <i class="fa fa-bars"></i>
                             </button>
                         </div>
 
                         <!--프로모션 메뉴 (모바일에서는 탭메뉴로 넘어감) -->
                         <div class="tmenu_slide">
                             <div><a class="hm_slide fw_600" href="#">더블포인트</a></div>
-                            <div class="m_width"><a class="hm_slide fw_600 f_color" href="#">핫딜</a></div>
+                            <div class="m_width"><a class="hm_slide fw_600 recover_color" href="#">핫딜</a></div>
                             <div><a class="hm_slide fw_600" href="#">무료배송데이</a></div>
                             <div><a class="hm_slide fw_600" href="#">선착순이벤트</a></div>
-                            <div><a class="hm_slide fw_600 f_color" href="#">리커버랭킹</a></div>
+                            <div><a class="hm_slide fw_600 recover_color" href="#">리커버랭킹</a></div>
                             <div><a class="hm_slide fw_600" href="#">건강검진이벤트</a></div>
                             <div><a class="hm_slide fw_600" href="#">공동구매</a></div>
                         </div>
@@ -132,7 +132,7 @@
                                     <input type="text" name="mb_id" id="ol_id" placeholder="아이디" maxlength="20">
                                     <input type="password" name="mb_password" id="ol_pw" placeholder="비밀번호" maxlength="20">
 
-                                    <div id="al_wrap">
+                                    <div id="al_wrap" class="t_left">
                                         <input type="checkbox" id="auto_login" name="auto_login" value="1">
                                         <label for="auto_login" id="auto_login_label">자동로그인</label>
                                     </div>
@@ -178,7 +178,7 @@
                     <div class="hdl_twrap">
                         <div class="hdl_tab">
                             <ul>
-                                <li class="tablinks cursor f_active" tab_name="tab1"><a href="#">카테고리</a></li>
+                                <li class="tablinks cursor catego_active" tab_name="tab1"><a href="#">카테고리</a></li>
                                 <li class="tablinks cursor" tab_name="tab2"><a href="#">프로모션</a></li>
                                 <li class="tablinks cursor" tab_name="tab3"><a href="#">마이페이지</a></li>
                             </ul>
@@ -235,11 +235,11 @@
             <aside class="side_menu">
                 <div class="sm_wrap">
                     <div class="top_btn">
-                        <a href="#"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-caret-up"></i></a>
                     </div>
 
-                    <div class="bottom_btn">
-                        <a href="#"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                    <div class="bottom_btn t_center">
+                        <a href="#"><i class="fa fa-caret-down"></i></a>
                     </div>
                 </div>
             </aside>
