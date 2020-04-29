@@ -30,19 +30,9 @@
 .wrap header .hd_bottom .hdb_menu .tmenu_slide { width: 90%; margin-left: 20px; }
 .wrap header .hd_bottom .hdb_menu .tmenu_slide .hm_slide { line-height: 41px; font-size: 15px; padding-right: 25px; }
 
-/*header_left menu(aside menu) 로그인 전 화면 적용*/
+/*aside menu 로그인 전 화면 적용*/
 .wrap aside .hd_wrap { position: fixed;  width: 100%; height: 100%; top: 0; z-index: 2000;  display: none; }
-.wrap aside .hd_wrap {
-    width: 260px;
-    height: 100%;
-    background-color: #fff;
-    padding: 15px;
-    position: absolute;
-    z-index: 2000;
-    -webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4);
-    -moz-box-shadow: 0 0 5px rgba(55,55,5,0.4);
-    box-shadow: 0 0 5px rgba(55,55,5,0.4);
-} 
+.wrap aside .hd_wrap { width: 260px; height: 100%; background-color: #fff; padding: 15px; position: absolute; z-index: 2000; -webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4); -moz-box-shadow: 0 0 5px rgba(55,55,5,0.4); box-shadow: 0 0 5px rgba(55,55,5,0.4); } 
 .wrap aside.hd_left { position: absolute; top: 0; height: 100%; }
 .wrap aside.hd_left .hdl_login { position: relative; margin: 0 0 10px; padding: 10px 0; }
 .wrap aside.hd_left .hdl_close { position: absolute; top: 0; z-index: 11; left: 260px; background-color: black; padding: 10px 15px; display:none; }
@@ -68,7 +58,7 @@
 .f_active { font-weight: 900; border-bottom: 1px solid rgb(51, 51, 51); }
 .tab_active { display: block; }
 
-/*header_left menu 로그인 후 화면적용*/
+/*aside menu 로그인 후 화면적용*/
 aside.hd_left .hd_wrap .hdl_login .hdl_lwrap .login_form .after_login { width: 100%; }
 aside.hd_left .hd_wrap .hdl_login .hdl_lwrap .login_form .after_login .al_top .alt_right { float: left; }
 aside.hd_left .hd_wrap .hdl_login .hdl_lwrap .login_form .after_login .al_top::after { content: " "; display: block; overflow: hidden; clear: both; }
