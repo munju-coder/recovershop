@@ -117,7 +117,7 @@
         </tr>
         <tr>
             <td>product_review.html</td>
-            <td>사용후기1</td>
+            <td>사용후기11</td>
             <td></td>
             <td></td>
             <td></td>
