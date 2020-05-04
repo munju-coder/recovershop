@@ -115,14 +115,14 @@ $(document).ready( function(){
      * @brief sub_img click,mouseover event
      */
 
-    $('.sub_img ul li').each( function(){
+    // $('.sub_img ul li').each( function(){
         
-        $(this).click( function(e){
-            e.preventDefault();
-            var img = $(this).find('img').attr('src');
-            $('.main_img').find('img').attr('src',img);
-        });
-    });
+    //     $(this).click( function(e){
+    //         e.preventDefault();
+    //         var img = $(this).find('img').attr('src');
+    //         $('.main_img').find('img').attr('src',img);
+    //     });
+    // });
 
     $('.sub_img ul li a img').mouseover( function(){
         // console.log($(this).attr('src'))
