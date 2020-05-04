@@ -1,7 +1,7 @@
 /*product view*/
 .wrap .contents .c_middle .cm_top .cm_right .product_text .p_info_contents.ft_size { font-size: 18px; color: #000; margin-bottom: 15%; }
 .wrap .contents { margin-top: 2%; }
-.wrap .contents .c_top { border-bottom: 1px solid #333; padding-bottom: 2%; }
+.wrap .contents .c_top { border-bottom: 1px solid #333; padding-bottom: 15px; }
 .wrap .contents .c_top a { font-size: 24px; }
 .wrap .contents .c_middle .cm_top { overflow: hidden; margin: 5% 3% 0 0;}
 .wrap .contents .c_middle::after { content: ''; display: block; overflow: hidden; clear: both; } 
